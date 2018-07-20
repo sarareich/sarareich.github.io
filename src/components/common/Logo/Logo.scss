@@ -1,0 +1,23 @@
+@import '../../../styles/breakpoints.scss';
+
+#full-name {
+  transition: opacity 1s;
+}
+
+#r {
+  opacity: 0;
+  transition: transform 800ms, opacity 1s;
+}
+
+@include bp(extra-small-landscape) {
+  .logo {
+    #full-name {
+      opacity: 0;
+    }
+
+    #r {
+      opacity: 100;
+      transform: translate(-100px);
+    }
+  }
+}

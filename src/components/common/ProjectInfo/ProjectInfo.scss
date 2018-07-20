@@ -1,0 +1,38 @@
+@import '../../../styles/breakpoints.scss';
+
+.project-info__title {
+  line-height: 3rem;
+  margin-bottom: 0;
+}
+
+.project-info__summary {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.25rem;
+}
+
+.summary {
+  align-items: baseline;
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.summary__subtitle {
+  width: 10rem;
+}
+
+.summary__info {
+  flex: 1;
+}
+
+@include bp(tab) {
+  .summary {
+    display: block;
+  }
+}
+
+@include bp(extra-small-landscape) {
+  .summary {
+    display: block;
+  }
+}
