@@ -8,9 +8,9 @@
   margin-bottom: 3rem;
 }
 
-.portfolio-image {
+.portfolio-image__container {
   background: $blue-green;
-  height: 264px;
+  height: 350px;
   position: relative;
   transition: box-shadow .3s ease-out, transform .3s ease-out;
 
@@ -31,6 +31,10 @@
       transform: translate(0, -1rem);
     }
   }
+}
+
+.portfolio-image {
+  width: 100%;
 }
 
 .portfolio-image__caption,
