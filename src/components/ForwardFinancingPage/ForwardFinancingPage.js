@@ -3,6 +3,7 @@ import Hero from '../common/Hero/Hero';
 import ProjectInfo from '../common/ProjectInfo/ProjectInfo';
 import ProjectDescription from '../common/ProjectDescription/ProjectDescription'
 import projectInfo from '../../constants/projectInfo';
+import FFHero from '../../assets/ForwardFinancing/FF_Hero.png';
 
 class ForwardFinancingPage extends React.Component {
   render() {
@@ -18,6 +19,8 @@ class ForwardFinancingPage extends React.Component {
       <div className="forward-financing-wrapper">
         <Hero
           background="#52995c"
+          image={FFHero}
+          imageAlt="Forward Financing"
         />
         <div className="forward-financing page">
           <ProjectInfo
