@@ -9,7 +9,7 @@ class HomePage extends React.Component {
         <div className="portfolio-content">
           <NavLink
             to="/work/forward-financing"
-            className="portfolio-image__container two-thirds"
+            className="portfolio-image__container two-thirds green-gradient"
           >
             <img
               src={FFHome}
@@ -17,7 +17,7 @@ class HomePage extends React.Component {
               className="portfolio-image"
             />
             <div className="portfolio-image__caption">
-              <h4 className="portfolio-image__caption-text heading-4">
+              <h4 className="portfolio-image__caption-text heading-3">
                 Forward Financing
               </h4>
             </div>
