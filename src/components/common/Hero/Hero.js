@@ -22,7 +22,7 @@ class Hero extends React.Component {
 
 Hero.propTypes = {
   background: PropTypes.string.isRequired,
-  image: PropTypes.element,
+  image: PropTypes.string,
   imageAlt: PropTypes.string
 };
 
