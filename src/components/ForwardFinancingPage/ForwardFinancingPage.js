@@ -7,6 +7,9 @@ import FFHero from '../../assets/ForwardFinancing/FF_Hero.png';
 import MPMobile from '../../assets/ForwardFinancing/MP_Mobile_Statements.png';
 import MPDesktop from '../../assets/ForwardFinancing/MP_Desktop_Statements.png';
 import MPTablet from '../../assets/ForwardFinancing/MP_Tablet_Statements.png';
+import AdvancesDesktop from '../../assets/ForwardFinancing/Desktop_AdvancePage.png';
+import AdvancesTablet from '../../assets/ForwardFinancing/Tablet_AdvancePage.png';
+import AdvancesMobile from '../../assets/ForwardFinancing/Mobile_AdvancePage.png';
 
 class ForwardFinancingPage extends React.Component {
   renderHero() {
@@ -58,6 +61,19 @@ class ForwardFinancingPage extends React.Component {
     );
   }
 
+  renderLongImage(color, image) {
+    return (
+      <div
+        className="project-image__container__large"
+        style={{
+          backgroundColor: color
+        }}
+      >
+        <img src={image} className="project-image"/>
+      </div>
+    )
+  }
+
   renderContext() {
     return (
       <div className="portfolio-content description">
@@ -98,21 +114,21 @@ class ForwardFinancingPage extends React.Component {
               previous payments and fees.
             </p>
           </div>
-          <div className="wireframes full-width">
-            {this.renderSubtitle("Wireframes")}
-          </div>
-          <div className="desktop full-width">
-            {this.renderSubtitle("Desktop UI")}
-            {this.renderImage("#52995c", MPDesktop)}
-          </div>
-          <div className="tablet full-width">
-            {this.renderSubtitle("Tablet UI")}
-            {this.renderImage("#52995c", MPTablet)}
-          </div>
-          <div className="mobile full-width">
-            {this.renderSubtitle("Mobile UI")}
-            {this.renderImage("#52995c", MPMobile)}
-          </div>
+        </div>
+        <div className="wireframes">
+          {this.renderSubtitle("Wireframes")}
+        </div>
+        <div className="desktop">
+          {this.renderSubtitle("Desktop UI")}
+          {this.renderImage("#52995c", MPDesktop)}
+        </div>
+        <div className="tablet">
+          {this.renderSubtitle("Tablet UI")}
+          {this.renderImage("#52995c", MPTablet)}
+        </div>
+        <div className="mobile">
+          {this.renderSubtitle("Mobile UI")}
+          {this.renderImage("#52995c", MPMobile)}
         </div>
       </div>
     );
@@ -139,6 +155,18 @@ class ForwardFinancingPage extends React.Component {
               and payment history in order to keep track of funding goals and better serve merchants.
             </p>
           </div>
+        </div>
+        <div className="desktop">
+          {this.renderSubtitle("Desktop UI")}
+          {this.renderLongImage("#97BA98", AdvancesDesktop)}
+        </div>
+        <div className="tablet">
+          {this.renderSubtitle("Tablet UI")}
+          {this.renderImage("#97BA98", AdvancesTablet)}
+        </div>
+        <div className="mobile">
+          {this.renderSubtitle("Mobile UI")}
+          {this.renderImage("#97BA98", AdvancesMobile)}
         </div>
       </div>
     );
