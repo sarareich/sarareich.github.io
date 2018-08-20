@@ -16,11 +16,22 @@ class MunchPage extends React.Component {
     );
   }
 
+  renderProjectInfo() {
+    return (
+      <ProjectInfo
+        title="Munch"
+        subtitle="Interaction Design 1 Project"
+        summaryInfo={projectInfo.munchProjectInfo}
+      />
+    );
+  }
+
   render() {
     return (
       <div className="munch-wrapper">
         {this.renderHero()}
         <div className="munch page">
+          {this.renderProjectInfo()}
         </div>
       </div>
     );
