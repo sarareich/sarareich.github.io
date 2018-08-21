@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import './styles/styles.css';
+import 'react-image-lightbox/style.css';
 import App from './components/App/App';
 import HomePage from './components/HomePage/HomePage';
 import ForwardFinancingPage from './components/ForwardFinancingPage/ForwardFinancingPage';
