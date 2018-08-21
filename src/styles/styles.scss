@@ -112,6 +112,14 @@ body {
   }
 }
 
+//LIGHTBOX
+
+.ril__navButtons, .ril__builtinButton {
+  &:focus {
+    outline: none;
+  }
+}
+
 @import '../components/Header/Header.scss';
 @import '../components/HomePage/HomePage.scss';
 @import '../components/ForwardFinancingPage/ForwardFinancingPage.scss';

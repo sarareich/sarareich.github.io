@@ -2,7 +2,6 @@ import React from 'react';
 import Lightbox from 'react-image-lightbox';
 import Hero from '../common/Hero/Hero';
 import ProjectInfo from '../common/ProjectInfo/ProjectInfo';
-import ProjectDescription from '../common/ProjectDescription/ProjectDescription'
 import projectInfo from '../../constants/projectInfo';
 import Title from '../common/ProjectAssets/Title';
 import Subtitle from '../common/ProjectAssets/Subtitle';
@@ -118,17 +117,17 @@ class MunchPage extends React.Component {
           {
             personaImages.map((image, index) => {
               return (
-                <div className="one-third">
+                <div className="one-third" key={index}>
                   <img
                     src={image}
-                    className="project-image__small"
+                    className="project-image__small zoom"
+                    alt="Persona"
                     onClick={(event) => this.openPersonaLightbox(index, event)}
                   />
                 </div>
               );
             })
           }
-
           {personaLightboxIsOpen && (
             <Lightbox
               mainSrc={personaImages[personaPhotoIndex]}

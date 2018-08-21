@@ -1,7 +1,6 @@
 import React from 'react';
 import Hero from '../common/Hero/Hero';
 import ProjectInfo from '../common/ProjectInfo/ProjectInfo';
-import ProjectDescription from '../common/ProjectDescription/ProjectDescription';
 import Title from '../common/ProjectAssets/Title';
 import Subtitle from '../common/ProjectAssets/Subtitle';
 import Image from '../common/ProjectAssets/Image';
@@ -92,6 +91,7 @@ class ForwardFinancingPage extends React.Component {
           />
           <Image
             image={MPDesktop}
+            alt="Merchant Portal Desktop UI"
             color="#52995c"
           />
         </div>
@@ -101,6 +101,7 @@ class ForwardFinancingPage extends React.Component {
           />
           <Image
             image={MPTablet}
+            alt="Merchant Portal Tablet UI"
             color="#52995c"
           />
         </div>
@@ -110,6 +111,7 @@ class ForwardFinancingPage extends React.Component {
           />
           <Image
             image={MPMobile}
+            alt="Merchant Portal Mobile UI"
             color="#52995c"
           />
         </div>
@@ -147,6 +149,7 @@ class ForwardFinancingPage extends React.Component {
           />
           <LongImage
             image={AdvancesDesktop}
+            alt="Partner Portal Advances Desktop UI"
             color="#97BA98"
           />
         </div>
@@ -156,6 +159,7 @@ class ForwardFinancingPage extends React.Component {
           />
           <Image
             image={AdvancesTablet}
+            alt="Partner Portal Advances Tablet UI"
             color="#97BA98"
           />
         </div>
@@ -165,6 +169,7 @@ class ForwardFinancingPage extends React.Component {
           />
           <Image
             image={AdvancesMobile}
+            alt="Partner Portal Advances Mobile UI"
             color="#97BA98"
           />
         </div>

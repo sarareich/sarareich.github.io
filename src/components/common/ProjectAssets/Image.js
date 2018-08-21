@@ -10,7 +10,7 @@ class Image extends React.Component {
           backgroundColor: this.props.color
         }}
       >
-        <img src={this.props.image} className="project-image"/>
+        <img src={this.props.image} className="project-image" alt={this.props.alt}/>
       </div>
     );
   }
@@ -18,6 +18,7 @@ class Image extends React.Component {
 
 Image.propTypes = {
   image: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired
 };
 
