@@ -1,7 +1,8 @@
 import React from 'react';
-import Lightbox from 'react-image-lightbox';
+// import Lightbox from 'react-image-lightbox';
 import Hero from '../common/Hero/Hero';
 import ProjectInfo from '../common/ProjectInfo/ProjectInfo';
+import LightBox from '../common/Lightbox/Lightbox';
 import projectInfo from '../../constants/projectInfo';
 import Title from '../common/ProjectAssets/Title';
 import Subtitle from '../common/ProjectAssets/Subtitle';
@@ -22,27 +23,51 @@ class MunchPage extends React.Component {
   constructor() {
     super();
     this.state = {
-      personaLightboxIsOpen: false,
-      personaPhotoIndex: 0
+      lightboxIsOpen: false,
+      photoIndex: 0
     };
 
-    this.openPersonaLightbox = this.openPersonaLightbox.bind(this);
-    this.closePersonaLightbox = this.closePersonaLightbox.bind(this);
+    this.openLightbox = this.openLightbox.bind(this);
   }
 
-  openPersonaLightbox(index, event) {
+  openLightbox(index, event) {
     event.preventDefault();
     this.setState({
-      personaLightboxIsOpen: true,
-      personaPhotoIndex: index
+      lightboxIsOpen: true,
+      photoIndex: index
     });
   }
 
-  closePersonaLightbox() {
+  closeLightbox() {
     this.setState({
-      personaLightboxIsOpen: false,
-      personaPhotoIndex: 0
+      lightboxIsOpen: false,
+      photoIndex: 0
     });
+  }
+
+  nextLightboxImage(images) {
+    this.setState({
+      photoIndex: (this.state.photoIndex + 1) % images.length,
+    });
+  }
+
+  prevLightboxImage(images) {
+    this.setState({
+      photoIndex: (this.state.photoIndex + images.length - 1) % images.length,
+    });
+  }
+
+  renderImageRow(image, index, altText) {
+    return (
+      <div className="one-third" key={index}>
+        <img
+          src={image}
+          className="project-image__small zoom"
+          alt={altText}
+          onClick={(event) => this.openLightbox(index, event)}
+        />
+      </div>
+    );
   }
 
   renderHero() {
@@ -75,13 +100,8 @@ class MunchPage extends React.Component {
           <p className="description-text">
             In my Interaction Design 1 – Responsive course, we were tasked with creating a website that
             could be used to keep track of something. After a few rounds of ideation, I decided that I wanted
-            to make a website that could be used to keep track of restaurants. I named my project Munch.
-          </p>
-          <p className="description-text">
-            For foodies who want to consolidate the restaurant-searching process, Munch is a social
-            media website that provides users with everything they need to find and choose restaurants:
-            search features, personalized recommendations, lists to keep track of restaurants of interest,
-            and updates on friends’ restaurant activities.
+            to make a website that could be used to keep track of restaurants that users had been to or wanted
+            to go to, and to find new restaurants.
           </p>
         </div>
       </div>
@@ -89,7 +109,7 @@ class MunchPage extends React.Component {
   }
 
   renderUserResearch() {
-    const { personaPhotoIndex, personaLightboxIsOpen } = this.state;
+    const { photoIndex, lightboxIsOpen } = this.state;
     return (
       <div className="user-research">
         <div className="portfolio-content description">
@@ -98,54 +118,77 @@ class MunchPage extends React.Component {
           />
           <div className="two-thirds">
             <p className="description-text">
-              I interviewed 3 potential users of Munch to understand their <strong>current process for
-              finding and choosing restaurants</strong> and discover their pain points. I focused especially on
+              I interviewed 3 potential users of my website idea to understand their <strong>interest in
+              keeping track of restaurants</strong>, their <strong>current process for finding and choosing
+              restaurants</strong>, and <strong>discover their pain points</strong>. I focused especially on
               which factors impact a user{`'`}s decision to try a restaurant and the effectiveness of
               currently available restaurant search websites.
             </p>
             <p className="description-text">
-              I utilized the user interview to create user personas and guide the website{`'`}s features.
+              I utilized the user interviews to create user personas and guide the website{`'`}s features.
             </p>
           </div>
         </div>
-        <div className="personas portfolio-content">
+        <div className="personas">
           <div className="full-width">
             <Subtitle
               subtitle="Personas"
             />
           </div>
-          {
-            personaImages.map((image, index) => {
-              return (
-                <div className="one-third" key={index}>
-                  <img
-                    src={image}
-                    className="project-image__small zoom"
-                    alt="Persona"
-                    onClick={(event) => this.openPersonaLightbox(index, event)}
-                  />
-                </div>
-              );
-            })
-          }
-          {personaLightboxIsOpen && (
-            <Lightbox
-              mainSrc={personaImages[personaPhotoIndex]}
-              nextSrc={personaImages[(personaPhotoIndex + 1) % personaImages.length]}
-              prevSrc={personaImages[(personaPhotoIndex + personaImages.length - 1) % personaImages.length]}
-              onCloseRequest={this.closePersonaLightbox}
-              onMovePrevRequest={() =>
-                this.setState({
-                  personaPhotoIndex: (personaPhotoIndex + personaImages.length - 1) % personaImages.length,
-                })
-              }
-              onMoveNextRequest={() =>
-                this.setState({
-                  personaPhotoIndex: (personaPhotoIndex + 1) % personaImages.length,
-                })
-              }
+          <div className="portfolio-content three-columns">
+            {
+              personaImages.map((image, index) => this.renderImageRow(image, index, "Persona"))
+            }
+          </div>
+          <LightBox
+            images={personaImages}
+            isOpen={lightboxIsOpen}
+            onClose={this.closeLightbox.bind(this)}
+            nextImage={this.nextLightboxImage.bind(this, personaImages)}
+            prevImage={this.prevLightboxImage.bind(this, personaImages)}
+            photoIndex={photoIndex}
+          />
+        </div>
+        <div className="portfolio-content description">
+          <div className="one-third">
+            <Subtitle
+              subtitle="Takeaways"
             />
-          )}
+          </div>
+          <div className="two-thirds">
+            <ul>
+              <li className="bullet-list">People have <strong>the most trust in their friends{`'`} opinions </strong>
+                and consider them heavily when choosing a restaurant.
+              </li>
+              <li className="bullet-list">One pain point is the <strong>lack of integration in the restaurant-searching process</strong>.
+                There are multiple places to look for searching, finding menus, looking at photos,
+                seeing previous restaurants you{`'`}ve been to, etc.
+              </li>
+              <li className="bullet-list"> There isn{`'`}t an easy way to <strong>keep track of restaurants </strong>
+                you{`'`}ve been to and restaurants you want to try.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  renderSketches() {
+    return (
+      <div className="sketches">
+        <div className="portfolio-content description">
+          <Title
+            title="Sketches"
+          />
+          <div className="two-thirds">
+            <p className="description-text">
+              With my user research guiding the features I wanted to include in the website,
+              I began to sketch wireframes for some of the site{`'`}s main pages.
+            </p>
+          </div>
+        </div>
+        <div className="portfolio-content">
         </div>
       </div>
     );
@@ -173,6 +216,7 @@ class MunchPage extends React.Component {
           {this.renderProjectInfo()}
           {this.renderBackground()}
           {this.renderUserResearch()}
+          {this.renderSketches()}
         </div>
       </div>
     );
