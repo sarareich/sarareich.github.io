@@ -139,6 +139,14 @@ body {
     margin-left: 0;
   }
 
+  .one-sixth {
+    grid-column: span 3;
+  }
+
+  .one-fourth {
+    grid-column: span 6;
+  }
+
   .three-columns {
     .one-third:last-child {
       grid-column: span 12;
