@@ -91,6 +91,10 @@ body {
   grid-column: span 4;
 }
 
+.one-half {
+  grid-column: span 6;
+}
+
 .two-thirds {
   grid-column: span 8;
   margin-left: 5rem;
@@ -119,9 +123,16 @@ body {
 
 @include bp(tab-portrait) {
   .one-third,
+  .one-half,
   .two-thirds {
     grid-column: span 12;
     margin-left: 0;
+  }
+
+  .three-columns {
+    .one-third:last-child {
+      grid-column: span 12;
+    }
   }
 }
 
@@ -130,6 +141,10 @@ body {
   &:focus {
     outline: none;
   }
+}
+
+.ril__toolbar {
+  left: auto !important;
 }
 
 @import '../components/Header/Header.scss';

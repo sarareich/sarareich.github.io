@@ -1,5 +1,4 @@
 import React from 'react';
-// import Lightbox from 'react-image-lightbox';
 import Hero from '../common/Hero/Hero';
 import ProjectInfo from '../common/ProjectInfo/ProjectInfo';
 import LightBox from '../common/Lightbox/Lightbox';
@@ -9,38 +8,33 @@ import Subtitle from '../common/ProjectAssets/Subtitle';
 import Image from '../common/ProjectAssets/Image';
 import LongImage from '../common/ProjectAssets/LongImage';
 import MunchHero from '../../assets/Munch/Munch_Overview.png';
-import Persona1 from '../../assets/Munch/Persona1.png';
-import Persona2 from '../../assets/Munch/Persona2.png';
-import Persona3 from '../../assets/Munch/Persona3.png';
-
-const personaImages = [
-  Persona1,
-  Persona2,
-  Persona3
-];
+import munchImages from '../../constants/munchImages';
 
 class MunchPage extends React.Component {
   constructor() {
     super();
     this.state = {
-      lightboxIsOpen: false,
+      personaLightboxIsOpen: false,
+      sketchesLightboxIsOpen: false,
+      storyboardsLightboxIsOpen: false,
       photoIndex: 0
     };
 
     this.openLightbox = this.openLightbox.bind(this);
   }
 
-  openLightbox(index, event) {
+  openLightbox(index, event, lightbox) {
     event.preventDefault();
     this.setState({
-      lightboxIsOpen: true,
+      [lightbox]: true,
       photoIndex: index
     });
+    console.log(this.state.personaLightboxIsOpen);
   }
 
-  closeLightbox() {
+  closeLightbox(lightbox) {
     this.setState({
-      lightboxIsOpen: false,
+      [lightbox]: false,
       photoIndex: 0
     });
   }
@@ -57,16 +51,29 @@ class MunchPage extends React.Component {
     });
   }
 
-  renderImageRow(image, index, altText) {
+  renderImageRow(image, index, altText, lightbox, desiredClass) {
     return (
-      <div className="one-third" key={index}>
+      <div className={desiredClass} key={index}>
         <img
           src={image}
           className="project-image__small zoom"
           alt={altText}
-          onClick={(event) => this.openLightbox(index, event)}
+          onClick={(event) => this.openLightbox(index, event, lightbox)}
         />
       </div>
+    );
+  }
+
+  renderLightbox(lightboxImages, lightbox, lightboxString, index) {
+    return (
+      <LightBox
+        images={lightboxImages}
+        isOpen={lightbox}
+        onClose={this.closeLightbox.bind(this, lightboxString)}
+        nextImage={this.nextLightboxImage.bind(this, lightboxImages)}
+        prevImage={this.prevLightboxImage.bind(this, lightboxImages)}
+        photoIndex={index}
+      />
     );
   }
 
@@ -109,7 +116,7 @@ class MunchPage extends React.Component {
   }
 
   renderUserResearch() {
-    const { photoIndex, lightboxIsOpen } = this.state;
+    const { photoIndex, personaLightboxIsOpen } = this.state;
     return (
       <div className="user-research">
         <div className="portfolio-content description">
@@ -137,17 +144,10 @@ class MunchPage extends React.Component {
           </div>
           <div className="portfolio-content three-columns">
             {
-              personaImages.map((image, index) => this.renderImageRow(image, index, "Persona"))
+              munchImages.personaImages.map((image, index) => this.renderImageRow(image, index, "Persona", "personaLightboxIsOpen", "one-third"))
             }
           </div>
-          <LightBox
-            images={personaImages}
-            isOpen={lightboxIsOpen}
-            onClose={this.closeLightbox.bind(this)}
-            nextImage={this.nextLightboxImage.bind(this, personaImages)}
-            prevImage={this.prevLightboxImage.bind(this, personaImages)}
-            photoIndex={photoIndex}
-          />
+          {this.renderLightbox(munchImages.personaImages, personaLightboxIsOpen, "personaLightboxIsOpen", photoIndex)}
         </div>
         <div className="portfolio-content description">
           <div className="one-third">
@@ -175,6 +175,7 @@ class MunchPage extends React.Component {
   }
 
   renderSketches() {
+    const { photoIndex, sketchesLightboxIsOpen } = this.state;
     return (
       <div className="sketches">
         <div className="portfolio-content description">
@@ -188,8 +189,38 @@ class MunchPage extends React.Component {
             </p>
           </div>
         </div>
-        <div className="portfolio-content">
+        <div className="portfolio-content three-columns">
+        {
+          munchImages.sketches.map((image, index) => this.renderImageRow(image, index, "Initial Sketch", "sketchesLightboxIsOpen", "one-third"))
+        }
         </div>
+        {this.renderLightbox(munchImages.sketches, sketchesLightboxIsOpen, "sketchesLightboxIsOpen", photoIndex)}
+      </div>
+    );
+  }
+
+  renderStoryboards() {
+    const { photoIndex, storyboardsLightboxIsOpen } = this.state;
+    return (
+      <div className="sketches">
+        <div className="portfolio-content description">
+          <Title
+            title="Storyboards"
+          />
+          <div className="two-thirds">
+            <p className="description-text">
+              With my user research guiding the features I wanted to include in the website,
+              I began to sketch wireframes for some of the site{`'`}s main pages.
+            </p>
+          </div>
+        </div>
+        <div className="portfolio-content three-columns">
+        {
+          munchImages.storyboards.map((image, index) =>
+            this.renderImageRow(image, index, "Storyboard", "storyboardsLightboxIsOpen", "one-half"))
+        }
+        </div>
+        {this.renderLightbox(munchImages.storyboards, storyboardsLightboxIsOpen, "storyboardsLightboxIsOpen", photoIndex)}
       </div>
     );
   }
