@@ -71,6 +71,8 @@ body {
 }
 
 .bullet-list {
+  margin-left: 1rem;
+
   &:not(:last-child) {
     margin-bottom: 1rem;
   }
@@ -87,6 +89,14 @@ body {
 }
 
 //GRID
+.one-sixth {
+  grid-column: span 2;
+}
+
+.one-fourth {
+  grid-column: span 3;
+}
+
 .one-third {
   grid-column: span 4;
 }

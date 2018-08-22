@@ -17,6 +17,9 @@ class MunchPage extends React.Component {
       personaLightboxIsOpen: false,
       sketchesLightboxIsOpen: false,
       storyboardsLightboxIsOpen: false,
+      searchLightboxIsOpen: false,
+      friendsLightboxIsOpen: false,
+      uploadLightboxIsOpen: false,
       photoIndex: 0
     };
 
@@ -180,12 +183,17 @@ class MunchPage extends React.Component {
       <div className="sketches">
         <div className="portfolio-content description">
           <Title
-            title="Sketches"
+            title="Sketches & Ideation"
           />
           <div className="two-thirds">
             <p className="description-text">
               With my user research guiding the features I wanted to include in the website,
               I began to sketch wireframes for some of the site{`'`}s main pages.
+            </p>
+            <p className="description-text">
+              I knew that I wanted to make a <strong>social media site</strong> to meet users{`'`} desire to get
+              restaurant recommendations from friends. I also wanted to include <strong>automated recommendations</strong> and
+              <strong> search features</strong> to make it easy for users to find new restaurants.
             </p>
           </div>
         </div>
@@ -209,12 +217,26 @@ class MunchPage extends React.Component {
           />
           <div className="two-thirds">
             <p className="description-text">
-              With my user research guiding the features I wanted to include in the website,
-              I began to sketch wireframes for some of the site{`'`}s main pages.
+              After defining the key features of the website, I focused on case narratives and
+              potential workflows and used these to create storyboards.
             </p>
           </div>
+          <div className="one-third">
+            <Subtitle
+              subtitle="Use Cases"
+            />
+          </div>
+          <div className="two-thirds">
+            <ul>
+              <li className="bullet-list">A "foodie" who wants to find and keep track of restaurants.
+              </li>
+              <li className="bullet-list">A social restaurant-goer who wants to plan outings while ensuring
+              that all his friends will like the food.
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="portfolio-content three-columns">
+        <div className="portfolio-content">
         {
           munchImages.storyboards.map((image, index) =>
             this.renderImageRow(image, index, "Storyboard", "storyboardsLightboxIsOpen", "one-half"))
@@ -226,16 +248,61 @@ class MunchPage extends React.Component {
   }
 
   renderWireframes() {
+    const { photoIndex, searchLightboxIsOpen, friendsLightboxIsOpen, uploadLightboxIsOpen } = this.state;
     return (
-      <div className="portfolio-content description">
-        <Title
-          title="Wireframes"
-        />
-        <div className="two-thirds">
-          <p className="description-text">
-          </p>
+      <div className="wireframes">
+        <div className="portfolio-content description">
+          <Title
+            title="Wireframes"
+          />
+          <div className="two-thirds">
+            <p className="description-text">
+              My storyboards led me to three main workflows for my project. I created wireframes for each workflow:
+            </p>
+            <ol>
+              <li className="bullet-list">Searching for restaurants</li>
+              <li className="bullet-list">Seeing friends{`'`} restaurant lists</li>
+              <li className="bullet-list">Sharing food photos</li>
+            </ol>
+          </div>
         </div>
+        <div className="wireframes">
+          <Subtitle
+            subtitle="Searching for Restaurants"
+          />
+          <div className="portfolio-content three-columns">
+          {
+            munchImages.searchWireframes.map((image, index) =>
+              this.renderImageRow(image, index, "Search Wireframes", "searchLightboxIsOpen", "one-fourth"))
+          }
+          </div>
+        {this.renderLightbox(munchImages.searchWireframes, searchLightboxIsOpen, "searchLightboxIsOpen", photoIndex)}
       </div>
+      <div className="wireframes">
+        <Subtitle
+          subtitle="Seeing Friends' Restaurants"
+        />
+        <div className="portfolio-content three-columns">
+        {
+          munchImages.friendsWireframes.map((image, index) =>
+            this.renderImageRow(image, index, "Friends Wireframes", "friendsLightboxIsOpen", "one-fourth"))
+        }
+        </div>
+        {this.renderLightbox(munchImages.friendsWireframes, friendsLightboxIsOpen, "friendsLightboxIsOpen", photoIndex)}
+      </div>
+      <div className="wireframes">
+        <Subtitle
+          subtitle="Sharing Photos"
+        />
+        <div className="portfolio-content three-columns">
+        {
+          munchImages.uploadWireframes.map((image, index) =>
+            this.renderImageRow(image, index, "Upload Wireframes", "uploadLightboxIsOpen", "one-sixth"))
+        }
+        </div>
+        {this.renderLightbox(munchImages.uploadWireframes, uploadLightboxIsOpen, "uploadLightboxIsOpen", photoIndex)}
+      </div>
+    </div>
     );
   }
 
@@ -248,6 +315,8 @@ class MunchPage extends React.Component {
           {this.renderBackground()}
           {this.renderUserResearch()}
           {this.renderSketches()}
+          {this.renderStoryboards()}
+          {this.renderWireframes()}
         </div>
       </div>
     );

@@ -4,7 +4,6 @@ import Lightbox from 'react-image-lightbox';
 
 class LightBox extends React.Component {
   render() {
-    // const { photoIndex, lightboxIsOpen } = this.state;
     const { images, isOpen, onClose, prevImage, nextImage, photoIndex } = this.props;
     return (
       <div>
