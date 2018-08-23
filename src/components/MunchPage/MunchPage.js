@@ -217,30 +217,42 @@ class MunchPage extends React.Component {
           />
           <div className="two-thirds">
             <p className="description-text">
-              After defining the key features of the website, I focused on case narratives and
-              potential workflows and used these to create storyboards.
+              After defining the key features of the website, I focused on potential users
+              and the workflows that would enable them to accomplish their goals.
             </p>
           </div>
           <div className="one-third">
             <Subtitle
-              subtitle="Use Cases"
+              subtitle="The Users"
             />
           </div>
           <div className="two-thirds">
             <ul>
-              <li className="bullet-list">A "foodie" who wants to find and keep track of restaurants.
+              <li className="bullet-list"><strong>The Foodie: </strong>Someone who goes out to eat frequently
+              and wants to find new and exciting restaurants to try.
               </li>
-              <li className="bullet-list">A social restaurant-goer who wants to plan outings while ensuring
-              that all his friends will like the food.
+              <li className="bullet-list"><strong>The Socialite: </strong>Someone who plans restaurant outings
+              with friends and wants to ensure that everyone will enjoy the food.
+              </li>
+              <li className="bullet-list"><strong>The List-Maker: </strong>Someone who likes to keep track of
+              everything, including the restaurants they{`'`}re interested in trying.
+              </li>
+              <li className="bullet-list"><strong>The Regular Restaurant-Goer: </strong>Someone who eats out on
+              a regular basis and wants an easy way to find food they will enjoy.
               </li>
             </ul>
           </div>
         </div>
-        <div className="portfolio-content">
-        {
-          munchImages.storyboards.map((image, index) =>
-            this.renderImageRow(image, index, "Storyboard", "storyboardsLightboxIsOpen", "one-half"))
-        }
+        <div className="storyboards">
+          <Subtitle
+            subtitle="Narratives"
+          />
+          <div className="portfolio-content">
+          {
+            munchImages.storyboards.map((image, index) =>
+              this.renderImageRow(image, index, "Storyboard", "storyboardsLightboxIsOpen", "one-half"))
+          }
+          </div>
         </div>
         {this.renderLightbox(munchImages.storyboards, storyboardsLightboxIsOpen, "storyboardsLightboxIsOpen", photoIndex)}
       </div>
@@ -270,10 +282,10 @@ class MunchPage extends React.Component {
           <Subtitle
             subtitle="Searching for Restaurants"
           />
-          <div className="portfolio-content three-columns">
+          <div className="portfolio-content">
           {
             munchImages.searchWireframes.map((image, index) =>
-              this.renderImageRow(image, index, "Search Wireframes", "searchLightboxIsOpen", "one-fourth"))
+              this.renderImageRow(image, index, "Search Wireframes", "searchLightboxIsOpen", "one-half"))
           }
           </div>
         {this.renderLightbox(munchImages.searchWireframes, searchLightboxIsOpen, "searchLightboxIsOpen", photoIndex)}
@@ -282,10 +294,10 @@ class MunchPage extends React.Component {
         <Subtitle
           subtitle="Seeing Friends' Restaurants"
         />
-        <div className="portfolio-content three-columns">
+        <div className="portfolio-content">
         {
           munchImages.friendsWireframes.map((image, index) =>
-            this.renderImageRow(image, index, "Friends Wireframes", "friendsLightboxIsOpen", "one-fourth"))
+            this.renderImageRow(image, index, "Friends Wireframes", "friendsLightboxIsOpen", "one-half"))
         }
         </div>
         {this.renderLightbox(munchImages.friendsWireframes, friendsLightboxIsOpen, "friendsLightboxIsOpen", photoIndex)}
@@ -294,10 +306,10 @@ class MunchPage extends React.Component {
         <Subtitle
           subtitle="Sharing Photos"
         />
-        <div className="portfolio-content three-columns">
+        <div className="portfolio-content">
         {
           munchImages.uploadWireframes.map((image, index) =>
-            this.renderImageRow(image, index, "Upload Wireframes", "uploadLightboxIsOpen", "one-sixth"))
+            this.renderImageRow(image, index, "Upload Wireframes", "uploadLightboxIsOpen", "one-half"))
         }
         </div>
         {this.renderLightbox(munchImages.uploadWireframes, uploadLightboxIsOpen, "uploadLightboxIsOpen", photoIndex)}
