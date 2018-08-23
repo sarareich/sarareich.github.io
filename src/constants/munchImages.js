@@ -14,6 +14,12 @@ import DesktopFriends from  '../assets/Munch/Wireframes/FriendSearch.png';
 import MobileFriends from  '../assets/Munch/Wireframes/FriendSearchMobile.png';
 import DesktopUpload from  '../assets/Munch/Wireframes/PhotoUpload.png';
 import MobileUpload from  '../assets/Munch/Wireframes/PhotoUploadMobile.png';
+import LogoSketches from '../assets/Munch/logos.png';
+import LogoType from '../assets/Munch/logo-type.png';
+import UI1 from '../assets/Munch/UIExploration/UI1.png';
+import UI2 from '../assets/Munch/UIExploration/UI2.png';
+import UI3 from '../assets/Munch/UIExploration/UI3.png';
+import UI4 from '../assets/Munch/UIExploration/UI4.png';
 
 export default {
   personaImages: [Persona1, Persona2, Persona3],
@@ -21,5 +27,7 @@ export default {
   storyboards: [Storyboard1, Storyboard2],
   searchWireframes: [DesktopSearch, MobileSearch],
   friendsWireframes: [DesktopFriends, MobileFriends],
-  uploadWireframes: [DesktopUpload, MobileUpload]
+  uploadWireframes: [DesktopUpload, MobileUpload],
+  logos: [LogoSketches, LogoType],
+  uiExploration: [UI1, UI2, UI3, UI4]
 }

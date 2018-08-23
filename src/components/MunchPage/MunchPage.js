@@ -20,6 +20,8 @@ class MunchPage extends React.Component {
       searchLightboxIsOpen: false,
       friendsLightboxIsOpen: false,
       uploadLightboxIsOpen: false,
+      logosLightboxIsOpen: false,
+      uiExplorationLightboxIsOpen: false,
       photoIndex: 0
     };
 
@@ -269,7 +271,8 @@ class MunchPage extends React.Component {
           />
           <div className="two-thirds">
             <p className="description-text">
-              My storyboards led me to three main workflows for my project. I created wireframes for each workflow:
+              My storyboards led me to three main workflows for my project. I created wireframes for each workflow
+              and used them for user testing:
             </p>
             <ol>
               <li className="bullet-list">Searching for restaurants</li>
@@ -318,6 +321,49 @@ class MunchPage extends React.Component {
     );
   }
 
+  renderBranding() {
+    const { logosLightboxIsOpen, uiExplorationLightboxIsOpen, photoIndex } = this.state;
+    return (
+      <div className="branding">
+        <div className="portfolio-content description">
+          <Title
+            title="Branding & UI Exploration"
+          />
+          <div className="two-thirds">
+            <p className="description-text">
+              With the basic layout of the website{`'`}s main pages complete, it was time to
+              determine the look and feel of the interface and brand.
+            </p>
+          </div>
+        </div>
+        <div className="branding">
+          <Subtitle
+            subtitle="Logo Exploration"
+          />
+          <div className="portfolio-content">
+          {
+            munchImages.logos.map((image, index) =>
+              this.renderImageRow(image, index, "Logos", "logosLightboxIsOpen", "one-half"))
+          }
+          </div>
+        </div>
+        {this.renderLightbox(munchImages.logos, logosLightboxIsOpen, "logosLightboxIsOpen", photoIndex)}
+        <div className="branding">
+          <Subtitle
+            subtitle="UI Exploration"
+          />
+          <div className="portfolio-content">
+          {
+            munchImages.uiExploration.map((image, index) =>
+              this.renderImageRow(image, index, "Logos", "uiExplorationLightboxIsOpen", "one-fourth"))
+          }
+          </div>
+        </div>
+        {this.renderLightbox(munchImages.uiExploration, uiExplorationLightboxIsOpen, "uiExplorationLightboxIsOpen", photoIndex)}
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="munch-wrapper">
@@ -329,6 +375,7 @@ class MunchPage extends React.Component {
           {this.renderSketches()}
           {this.renderStoryboards()}
           {this.renderWireframes()}
+          {this.renderBranding()}
         </div>
       </div>
     );

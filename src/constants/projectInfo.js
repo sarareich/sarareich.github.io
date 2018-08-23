@@ -5,7 +5,7 @@ export default {
     {title: 'Tools', description: 'Sketch, React, JavaScript, Sass'}
   ],
   munchProjectInfo: [
-    {title: 'Roles', description: 'User Research, Sketching, Wireframing, Prototyping, User Testing, Responsive Design, Interface Design'},
+    {title: 'Roles', description: 'User Research, Sketching, Wireframing, Prototyping, User Testing, Responsive Design, Interface Design, Branding'},
     {title: 'Timeline', description: 'September – December 2017'},
     {title: 'Tools', description: 'Balsamiq, Sketch, InVision'}
   ]
