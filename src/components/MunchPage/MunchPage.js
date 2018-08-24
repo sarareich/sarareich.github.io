@@ -207,10 +207,17 @@ class MunchPage extends React.Component {
             </p>
           </div>
         </div>
+        <div className="portfolio-content">
+          <div className="two-thirds__center">
+            <Carousel showThumbs={false} dynamicHeight={true}>
+              {munchImages.sketches.map((image, index) => this.renderCarouselImages(image, index))}
+            </Carousel>
+          </div>
+        </div>
         <div className="portfolio-content three-columns">
-        {
+        {/*
           munchImages.sketches.map((image, index) => this.renderImageRow(image, index, "Initial Sketch", "sketchesLightboxIsOpen", "one-third"))
-        }
+        */}
         </div>
         {this.renderLightbox(munchImages.sketches, sketchesLightboxIsOpen, "sketchesLightboxIsOpen", photoIndex)}
       </div>
@@ -351,7 +358,7 @@ class MunchPage extends React.Component {
             />
           </div>
           <div className="two-thirds">
-            <Carousel showThumbs={false} dynamicHeight={true} autoPlay={true}>
+            <Carousel showThumbs={false} dynamicHeight={true}>
               {munchImages.brandingExploration.map((image, index) => this.renderCarouselImages(image, index))}
             </Carousel>
           </div>

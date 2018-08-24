@@ -110,6 +110,10 @@ body {
   margin-left: 5rem;
 }
 
+.two-thirds__center {
+  grid-column: 3 / 11;
+}
+
 .full-width {
   grid-column: span 12;
 }
@@ -118,6 +122,10 @@ body {
   .one-third,
   .two-thirds {
     grid-column: span 6;
+  }
+
+  .two-thirds__center {
+    grid-column: 4 / 10;
   }
 
   .two-thirds {
@@ -137,6 +145,10 @@ body {
   .two-thirds {
     grid-column: span 12;
     margin-left: 0;
+  }
+
+  .two-thirds__center {
+    grid-column: span 12;
   }
 
   .one-sixth {
