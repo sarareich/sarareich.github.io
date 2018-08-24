@@ -20,6 +20,7 @@ import UI1 from '../assets/Munch/UIExploration/UI1.png';
 import UI2 from '../assets/Munch/UIExploration/UI2.png';
 import UI3 from '../assets/Munch/UIExploration/UI3.png';
 import UI4 from '../assets/Munch/UIExploration/UI4.png';
+import Branding from '../assets/Munch/BrandDesign.png';
 
 export default {
   personaImages: [Persona1, Persona2, Persona3],
@@ -28,6 +29,6 @@ export default {
   searchWireframes: [DesktopSearch, MobileSearch],
   friendsWireframes: [DesktopFriends, MobileFriends],
   uploadWireframes: [DesktopUpload, MobileUpload],
-  logos: [LogoSketches, LogoType],
-  uiExploration: [UI1, UI2, UI3, UI4]
+  brandingExploration: [LogoSketches, LogoType, UI1, UI2, UI3, UI4],
+  branding: Branding
 }

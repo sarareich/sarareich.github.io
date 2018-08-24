@@ -154,7 +154,7 @@ body {
   }
 }
 
-//LIGHTBOX
+//LIGHTBOX & CAROUSEL
 .ril__navButtons, .ril__builtinButton {
   &:focus {
     outline: none;
@@ -163,6 +163,13 @@ body {
 
 .ril__toolbar {
   left: auto !important;
+}
+
+.carousel .control-next.control-arrow:before {
+  border-left: 8px solid #000000 !important;
+}
+.carousel .control-prev.control-arrow:before {
+  border-right: 8px solid #000000 !important;
 }
 
 @import '../components/Header/Header.scss';

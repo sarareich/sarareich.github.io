@@ -2,6 +2,7 @@ import React from 'react';
 import Hero from '../common/Hero/Hero';
 import ProjectInfo from '../common/ProjectInfo/ProjectInfo';
 import LightBox from '../common/Lightbox/Lightbox';
+import { Carousel } from 'react-responsive-carousel';
 import projectInfo from '../../constants/projectInfo';
 import Title from '../common/ProjectAssets/Title';
 import Subtitle from '../common/ProjectAssets/Subtitle';
@@ -20,8 +21,7 @@ class MunchPage extends React.Component {
       searchLightboxIsOpen: false,
       friendsLightboxIsOpen: false,
       uploadLightboxIsOpen: false,
-      logosLightboxIsOpen: false,
-      uiExplorationLightboxIsOpen: false,
+      brandingLightboxIsOpen: false,
       photoIndex: 0
     };
 
@@ -65,6 +65,14 @@ class MunchPage extends React.Component {
           alt={altText}
           onClick={(event) => this.openLightbox(index, event, lightbox)}
         />
+      </div>
+    );
+  }
+
+  renderCarouselImages(image, index) {
+    return (
+      <div key={index}>
+        <img src={image}/>
       </div>
     );
   }
@@ -322,7 +330,7 @@ class MunchPage extends React.Component {
   }
 
   renderBranding() {
-    const { logosLightboxIsOpen, uiExplorationLightboxIsOpen, photoIndex } = this.state;
+    const { brandingLightboxIsOpen, photoIndex } = this.state;
     return (
       <div className="branding">
         <div className="portfolio-content description">
@@ -336,30 +344,28 @@ class MunchPage extends React.Component {
             </p>
           </div>
         </div>
-        <div className="branding">
-          <Subtitle
-            subtitle="Logo Exploration"
-          />
-          <div className="portfolio-content">
-          {
-            munchImages.logos.map((image, index) =>
-              this.renderImageRow(image, index, "Logos", "logosLightboxIsOpen", "one-half"))
-          }
+        <div className="portfolio-content">
+          <div className="one-third">
+            <Subtitle
+              subtitle="Exploration"
+            />
+          </div>
+          <div className="two-thirds">
+            <Carousel showThumbs={false} dynamicHeight={true} autoPlay={true}>
+              {munchImages.brandingExploration.map((image, index) => this.renderCarouselImages(image, index))}
+            </Carousel>
           </div>
         </div>
-        {this.renderLightbox(munchImages.logos, logosLightboxIsOpen, "logosLightboxIsOpen", photoIndex)}
-        <div className="branding">
-          <Subtitle
-            subtitle="UI Exploration"
-          />
-          <div className="portfolio-content">
-          {
-            munchImages.uiExploration.map((image, index) =>
-              this.renderImageRow(image, index, "Logos", "uiExplorationLightboxIsOpen", "one-fourth"))
-          }
+        <div className="portfolio-content">
+          <div className="one-third">
+            <Subtitle
+              subtitle="Final Branding"
+            />
+          </div>
+          <div className="two-thirds">
+            <img src={munchImages.branding} alt="Munch Brand Overview" className="project-image__small"/>
           </div>
         </div>
-        {this.renderLightbox(munchImages.uiExploration, uiExplorationLightboxIsOpen, "uiExplorationLightboxIsOpen", photoIndex)}
       </div>
     );
   }
