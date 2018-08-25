@@ -9,6 +9,11 @@ import Subtitle from '../common/ProjectAssets/Subtitle';
 import Image from '../common/ProjectAssets/Image';
 import LongImage from '../common/ProjectAssets/LongImage';
 import MunchHero from '../../assets/Munch/Munch_Overview.png';
+import MunchHomeLoggedOut from '../../assets/Munch/Marketing_HomePage.png';
+import Newsfeed from '../../assets/Munch/Newsfeed.png';
+import Profile from '../../assets/Munch/Profile.png';
+import RestaurantDetail from '../../assets/Munch/RestaurantDetail.png';
+import PhotoUpload from '../../assets/Munch/UploadPhoto.png';
 import munchImages from '../../constants/munchImages';
 
 class MunchPage extends React.Component {
@@ -16,12 +21,10 @@ class MunchPage extends React.Component {
     super();
     this.state = {
       personaLightboxIsOpen: false,
-      sketchesLightboxIsOpen: false,
       storyboardsLightboxIsOpen: false,
       searchLightboxIsOpen: false,
       friendsLightboxIsOpen: false,
       uploadLightboxIsOpen: false,
-      brandingLightboxIsOpen: false,
       photoIndex: 0
     };
 
@@ -188,7 +191,6 @@ class MunchPage extends React.Component {
   }
 
   renderSketches() {
-    const { photoIndex, sketchesLightboxIsOpen } = this.state;
     return (
       <div className="sketches">
         <div className="portfolio-content description">
@@ -208,18 +210,12 @@ class MunchPage extends React.Component {
           </div>
         </div>
         <div className="portfolio-content">
-          <div className="two-thirds__center">
+          <div className="two-thirds__center shadow">
             <Carousel showThumbs={false} dynamicHeight={true}>
               {munchImages.sketches.map((image, index) => this.renderCarouselImages(image, index))}
             </Carousel>
           </div>
         </div>
-        <div className="portfolio-content three-columns">
-        {/*
-          munchImages.sketches.map((image, index) => this.renderImageRow(image, index, "Initial Sketch", "sketchesLightboxIsOpen", "one-third"))
-        */}
-        </div>
-        {this.renderLightbox(munchImages.sketches, sketchesLightboxIsOpen, "sketchesLightboxIsOpen", photoIndex)}
       </div>
     );
   }
@@ -337,7 +333,6 @@ class MunchPage extends React.Component {
   }
 
   renderBranding() {
-    const { brandingLightboxIsOpen, photoIndex } = this.state;
     return (
       <div className="branding">
         <div className="portfolio-content description">
@@ -349,6 +344,10 @@ class MunchPage extends React.Component {
               With the basic layout of the website{`'`}s main pages complete, it was time to
               determine the look and feel of the interface and brand.
             </p>
+            <p className="description-text">
+              I wanted the brand to be clearly associated with food, and to be bright and eye-catching
+              to show off the fun, social experience of the website.
+            </p>
           </div>
         </div>
         <div className="portfolio-content">
@@ -357,7 +356,7 @@ class MunchPage extends React.Component {
               subtitle="Exploration"
             />
           </div>
-          <div className="two-thirds">
+          <div className="two-thirds shadow">
             <Carousel showThumbs={false} dynamicHeight={true}>
               {munchImages.brandingExploration.map((image, index) => this.renderCarouselImages(image, index))}
             </Carousel>
@@ -377,6 +376,112 @@ class MunchPage extends React.Component {
     );
   }
 
+  renderUI() {
+    return (
+      <div className="ui">
+        <div className="portfolio-content description">
+          <Title
+            title="User Interface Design"
+          />
+          <div className="two-thirds">
+            <p className="description-text">
+              I tested my wireframes with real users and used my branding explorations to create
+              the final user interface design for each of my workflows in Sketch.
+            </p>
+          </div>
+        </div>
+        <div className="portfolio-content description">
+          <div className="one-third">
+            <Subtitle
+              subtitle="Marketing Site"
+            />
+          </div>
+          <div className="two-thirds">
+            While Munch is intended to be used as a logged-in experience, many of the features can be
+            used by non-registered users. This marketing site represents the initial experience for
+            these users.
+          </div>
+          <div className="two-thirds__center shadow">
+            <img src={MunchHomeLoggedOut} alt="Munch Home Page – Logged Out" className="project-image__small"/>
+          </div>
+        </div>
+        <div className="portfolio-content description">
+          <div className="one-third">
+            <Subtitle
+              subtitle="Newsfeed"
+            />
+          </div>
+          <div className="two-thirds">
+            The home page for logged in users is a newsfeed including food photos posted by friends
+            and restaurant recommendations generated based on the user{`'`}s activity. Recommendations were
+            moved to the newsfeed after my usability testing, when I found that having the recommendations
+            live on the user{`'`}s profile was not intuitive.
+          </div>
+          <div className="full-width">
+            <Image
+              image={Newsfeed}
+              alt="Munch Newsfeed - Desktop and Mobile"
+              color="#B7345E"
+            />
+          </div>
+          <div className="one-third">
+            <Subtitle
+              subtitle="Profile"
+            />
+          </div>
+          <div className="two-thirds">
+            The profile page contains a history of photos posted by that user, as well as a list of restaurants
+            they{`'`}ve been to and a list of restaurants they would like to try. Users can keep track of their
+            own restaurants and see what their friends enjoy/are interested in.
+          </div>
+          <div className="full-width">
+            <Image
+              image={Profile}
+              alt="Munch Profile - Desktop and Mobile"
+              color="#B7345E"
+            />
+          </div>
+          <div className="one-third">
+            <Subtitle
+              subtitle="Restaurant Detail"
+            />
+          </div>
+          <div className="two-thirds">
+            The restaurant detail page contains all the information you would expect to see on a
+            restaurant searching website, such as reviews, photos, hours, website, etc. Notable features
+            include separate ratings for the total Munch community vs. your friends, based on my research
+            findings that people trust their friends{`'`} opinions more.
+          </div>
+          <div className="full-width">
+            <Image
+              image={RestaurantDetail}
+              alt="Munch Restaurant Page - Desktop and Mobile"
+              color="#B7345E"
+            />
+          </div>
+          <div className="one-third">
+            <Subtitle
+              subtitle="Photo Upload"
+            />
+          </div>
+          <div className="two-thirds">
+            When uploading a photo, users are guided through steps to find the restaurant where they ate,
+            the dish they are posting a photo of, and their ratings/review. Photos are displayed in
+            the newsfeed and on the user{`'`}s profile, and restaurants are automatically added to the
+            "restaurant history" list when a photo is uploaded.
+          </div>
+          <div className="full-width">
+            <Image
+              image={PhotoUpload}
+              alt="Munch Photo Upload - Desktop and Mobile"
+              color="#B7345E"
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="munch-wrapper">
@@ -389,6 +494,7 @@ class MunchPage extends React.Component {
           {this.renderStoryboards()}
           {this.renderWireframes()}
           {this.renderBranding()}
+          {this.renderUI()}
         </div>
       </div>
     );

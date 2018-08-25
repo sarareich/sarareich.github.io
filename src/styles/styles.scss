@@ -7,6 +7,10 @@
   padding: 0;
 }
 
+.shadow {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .1), 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 //TYPOGRAPHY
 body {
   color: $text-gray;
@@ -122,10 +126,6 @@ body {
   .one-third,
   .two-thirds {
     grid-column: span 6;
-  }
-
-  .two-thirds__center {
-    grid-column: 4 / 10;
   }
 
   .two-thirds {
