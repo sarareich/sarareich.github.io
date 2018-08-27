@@ -9,11 +9,12 @@ import Subtitle from '../common/ProjectAssets/Subtitle';
 import Image from '../common/ProjectAssets/Image';
 import LongImage from '../common/ProjectAssets/LongImage';
 import MunchHero from '../../assets/Munch/Munch_Overview.png';
-import MunchHomeLoggedOut from '../../assets/Munch/Marketing_HomePage.png';
+import MunchHomeLoggedOut from '../../assets/Munch/Marketing_HomePage.jpg';
 import Newsfeed from '../../assets/Munch/Newsfeed.png';
 import Profile from '../../assets/Munch/Profile.png';
 import RestaurantDetail from '../../assets/Munch/RestaurantDetail.png';
 import PhotoUpload from '../../assets/Munch/UploadPhoto.png';
+import MobileArtboards from '../../assets/Munch/MobileArtboards.png';
 import munchImages from '../../constants/munchImages';
 
 class MunchPage extends React.Component {
@@ -25,6 +26,7 @@ class MunchPage extends React.Component {
       searchLightboxIsOpen: false,
       friendsLightboxIsOpen: false,
       uploadLightboxIsOpen: false,
+      artboardsLightboxIsOpen: false,
       photoIndex: 0
     };
 
@@ -377,6 +379,7 @@ class MunchPage extends React.Component {
   }
 
   renderUI() {
+    const { photoIndex, artboardsLightboxIsOpen } = this.state;
     return (
       <div className="ui">
         <div className="portfolio-content description">
@@ -477,7 +480,17 @@ class MunchPage extends React.Component {
               color="#B7345E"
             />
           </div>
-        </div>
+          <div className="one-third">
+            <Subtitle
+              subtitle="Sketch Artboards"
+            />
+          </div>
+          {
+            munchImages.artboards.map((image, index) =>
+              this.renderImageRow(image, index, "Artboards", "artboardsLightboxIsOpen", "full-width"))
+          }
+          </div>
+          {this.renderLightbox(munchImages.artboards, artboardsLightboxIsOpen, "artboardsLightboxIsOpen", photoIndex)}
       </div>
     );
   }
