@@ -495,6 +495,33 @@ class MunchPage extends React.Component {
     );
   }
 
+  renderPrototypes() {
+    return (
+      <div className="prototypes">
+        <div className="portfolio-content description">
+          <Title
+            title="Prototypes"
+          />
+          <div className="two-thirds">
+            <p className="description-text">
+              I created prototypes for the Munch workflows (mobile and desktop) in InVision.
+            </p>
+          </div>
+          <div className="full-width iframe-container">
+            <iframe
+              src="https://player.vimeo.com/video/287102292"
+              className="iframe"
+              frameBorder="0"
+              webkitallowfullscreen="true"
+              mozallowfullscreen="true"
+              allowFullScreen="true"
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="munch-wrapper">
@@ -508,6 +535,7 @@ class MunchPage extends React.Component {
           {this.renderWireframes()}
           {this.renderBranding()}
           {this.renderUI()}
+          {this.renderPrototypes()}
         </div>
       </div>
     );
