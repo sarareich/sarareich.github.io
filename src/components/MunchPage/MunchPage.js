@@ -8,7 +8,7 @@ import Title from '../common/ProjectAssets/Title';
 import Subtitle from '../common/ProjectAssets/Subtitle';
 import Image from '../common/ProjectAssets/Image';
 import LongImage from '../common/ProjectAssets/LongImage';
-import MunchHero from '../../assets/Munch/Munch_Overview.png';
+import MunchHero from '../../assets/Munch/MunchHero.jpg';
 import MunchHomeLoggedOut from '../../assets/Munch/Marketing_HomePage.jpg';
 import Newsfeed from '../../assets/Munch/Newsfeed.png';
 import Profile from '../../assets/Munch/Profile.png';
@@ -101,6 +101,7 @@ class MunchPage extends React.Component {
         background="#AF1E4C"
         image={MunchHero}
         imageAlt="Munch"
+        additionalClass="non-responsive"
       />
     );
   }
