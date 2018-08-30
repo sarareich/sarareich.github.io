@@ -504,10 +504,11 @@ class MunchPage extends React.Component {
           />
           <div className="two-thirds">
             <p className="description-text">
-              I created prototypes for the Munch workflows (mobile and desktop) in InVision.
+              Here are demos of the prototypes I made for the mobile and desktop versions of the
+              Munch website.
             </p>
           </div>
-          <div className="full-width iframe-container">
+          <div className="two-thirds__center iframe-container">
             <iframe
               src="https://player.vimeo.com/video/287102292"
               className="iframe"
