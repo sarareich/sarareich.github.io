@@ -1,4 +1,6 @@
 import React from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import ffImages from '../../constants/ffImages';
 import Hero from '../common/Hero/Hero';
 import ProjectInfo from '../common/ProjectInfo/ProjectInfo';
 import Title from '../common/ProjectAssets/Title';
@@ -7,14 +9,21 @@ import Image from '../common/ProjectAssets/Image';
 import LongImage from '../common/ProjectAssets/LongImage';
 import projectInfo from '../../constants/projectInfo';
 import FFHero from '../../assets/ForwardFinancing/FF_Hero.png';
-import MPMobile from '../../assets/ForwardFinancing/MP_Mobile_Statements.png';
-import MPDesktop from '../../assets/ForwardFinancing/MP_Desktop_Statements.png';
-import MPTablet from '../../assets/ForwardFinancing/MP_Tablet_Statements.png';
+import MPDesktop from '../../assets/ForwardFinancing/Desktop_Statements.jpg';
+import MPTabletMobile from '../../assets/ForwardFinancing/MP_Tablet_Mobile_Statements.jpg';
 import AdvancesDesktop from '../../assets/ForwardFinancing/Desktop_AdvancePage.png';
 import AdvancesTablet from '../../assets/ForwardFinancing/Tablet_AdvancePage.png';
 import AdvancesMobile from '../../assets/ForwardFinancing/Mobile_AdvancePage.png';
 
 class ForwardFinancingPage extends React.Component {
+  renderCarouselImages(image, index) {
+    return (
+      <div key={index}>
+        <img src={image}/>
+      </div>
+    );
+  }
+
   renderHero() {
     return (
       <Hero
@@ -35,20 +44,20 @@ class ForwardFinancingPage extends React.Component {
     );
   }
 
-  renderContext() {
+  renderBackground() {
     return (
       <div className="portfolio-content description">
         <Title
-          title="Context"
+          title="Background"
         />
         <div className="two-thirds">
           <p className="description-text">
           I spent 7 months as an intern at Forward Financing working on both
           front end development and design. I had the opportunity to see many
           projects through from start to finish, from initial wireframes to writing the final code.
-          I designed and implemented a variety of new features that matched the company’s existing
-          UI while improving design consistency across multiple internal- and external-facing web applications.
-          I also created design tools such as a Sketch style guide and a live documentation of
+          As the only designer on the team, I designed and implemented a variety of new features that matched the
+          company’s existing UI while improving design consistency across multiple internal- and external-facing
+          web applications. I also created design tools such as a Sketch style guide and a live documentation of
           the company{`'`}s shared component library.
           </p>
         </div>
@@ -80,38 +89,52 @@ class ForwardFinancingPage extends React.Component {
             </p>
           </div>
         </div>
-        <div className="wireframes">
-          <Subtitle
-            subtitle="Wireframes"
-          />
+        <div className="portfolio-content description">
+          <div className="one-third">
+            <Subtitle
+              subtitle="Sketches & Ideation"
+            />
+          </div>
+          <div className="two-thirds">
+            <p className="description-text">
+              Given a list of information that needed to be included on the statements page, I began
+              by sketching out ideas for the best ways to organize the page. Merchants needed to be able
+              to switch between different advances, view upfront fees, and see a history of payments.
+            </p>
+          </div>
+          <div className="one-half__center shadow">
+            <Carousel showThumbs={false} dynamicHeight={true}>
+              {ffImages.mpIdeation.map((image, index) => this.renderCarouselImages(image, index))}
+            </Carousel>
+          </div>
         </div>
-        <div className="desktop">
+        <div className="portfolio-content description no-margin">
+          <div className="one-third">
+            <Subtitle
+              subtitle="Desktop UI"
+            />
+          </div>
+          <div className="two-thirds">
+            <p className="description-text">
+              For the final UI, I decided to use "card" components to highlight the information that would
+              be most important to users, and to utilize a dropdown component for switching between advances.
+            </p>
+          </div>
+          <div className="full-width">
+            <LongImage
+              image={MPDesktop}
+              alt="Merchant Portal Desktop UI"
+              color="#52995c"
+            />
+          </div>
+        </div>
+        <div className="mobile-tablet">
           <Subtitle
-            subtitle="Desktop UI"
+            subtitle="Mobile/Tablet UI"
           />
           <Image
-            image={MPDesktop}
-            alt="Merchant Portal Desktop UI"
-            color="#52995c"
-          />
-        </div>
-        <div className="tablet">
-          <Subtitle
-            subtitle="Tablet UI"
-          />
-          <Image
-            image={MPTablet}
-            alt="Merchant Portal Tablet UI"
-            color="#52995c"
-          />
-        </div>
-        <div className="mobile">
-          <Subtitle
-            subtitle="Mobile UI"
-          />
-          <Image
-            image={MPMobile}
-            alt="Merchant Portal Mobile UI"
+            image={MPTabletMobile}
+            alt="Merchant Portal Mobile/Tablet UI"
             color="#52995c"
           />
         </div>
@@ -144,14 +167,27 @@ class ForwardFinancingPage extends React.Component {
           </div>
         </div>
         <div className="desktop">
-          <Subtitle
-            subtitle="Desktop UI"
-          />
-          <LongImage
-            image={AdvancesDesktop}
-            alt="Partner Portal Advances Desktop UI"
-            color="#97BA98"
-          />
+          <div className="portfolio-content description no-margin">
+            <div className="one-third">
+              <Subtitle
+                subtitle="Desktop UI"
+              />
+            </div>
+            <div className="two-thirds">
+              <p className="description-text">
+                Given the similarities between this page and the Merchant Portal Advances page, I decided
+                to reuse a majority of the components from the merchant portal for this design in order to
+                maintain design consistency and ease development efforts.
+              </p>
+            </div>
+            <div className="full-width">
+              <LongImage
+                image={AdvancesDesktop}
+                alt="Partner Portal Advances Desktop UI"
+                color="#97BA98"
+              />
+            </div>
+          </div>
         </div>
         <div className="tablet">
           <Subtitle
@@ -264,7 +300,7 @@ class ForwardFinancingPage extends React.Component {
         {this.renderHero()}
         <div className="forward-financing page">
           {this.renderProjectInfo()}
-          {this.renderContext()}
+          {this.renderBackground()}
           {this.renderMerchantPortalStatements()}
           {this.renderPartnerPortalAdvances()}
           {this.renderSearch()}
