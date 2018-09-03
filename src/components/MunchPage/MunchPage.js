@@ -8,7 +8,7 @@ import Title from '../common/ProjectAssets/Title';
 import Subtitle from '../common/ProjectAssets/Subtitle';
 import Image from '../common/ProjectAssets/Image';
 import LongImage from '../common/ProjectAssets/LongImage';
-import MunchHero from '../../assets/Munch/MunchHero.jpg';
+import MunchHero from '../../assets/Munch/MunchHeroNew.jpg';
 import MunchHomeLoggedOut from '../../assets/Munch/Marketing_HomePage.jpg';
 import Newsfeed from '../../assets/Munch/Newsfeed.png';
 import Profile from '../../assets/Munch/Profile.png';
@@ -101,7 +101,6 @@ class MunchPage extends React.Component {
         background="#AF1E4C"
         image={MunchHero}
         imageAlt="Munch"
-        additionalClass="non-responsive"
       />
     );
   }
@@ -127,7 +126,13 @@ class MunchPage extends React.Component {
             In my Interaction Design 1 – Responsive course, we were tasked with creating a website that
             could be used to keep track of something. After a few rounds of ideation, I decided that I wanted
             to make a website that could be used to keep track of restaurants that users had been to or wanted
-            to go to, and to find new restaurants.
+            to go to, and to find new restaurants. I named my project <strong>Munch</strong>.
+          </p>
+          <p className="description-text">
+            For foodies who want to consolidate the restaurant-searching process, Munch is a social media
+            website that provides users with everything they need to find and choose restaurants: search
+            features, personalized recommendations, lists to keep track of restaurants of interest, and
+            updates on friends{`'`} restaurant activities.
           </p>
         </div>
       </div>
@@ -349,7 +354,7 @@ class MunchPage extends React.Component {
             </p>
             <p className="description-text">
               I wanted the brand to be clearly associated with food, and to be bright and eye-catching
-              to show off the fun, social experience of the website.
+              to show off the <strong>fun, social experience</strong> of the website.
             </p>
           </div>
         </div>
@@ -401,9 +406,11 @@ class MunchPage extends React.Component {
             />
           </div>
           <div className="two-thirds">
-            While Munch is intended to be used as a logged-in experience, many of the features can be
-            used by non-registered users. This marketing site represents the initial experience for
-            these users.
+            <p className="description-text">
+              While Munch is intended to be used as a logged-in experience, many of the features can be
+              used by non-registered users. This marketing site represents the initial experience for
+              these users.
+            </p>
           </div>
           <div className="two-thirds__center shadow">
             <img src={MunchHomeLoggedOut} alt="Munch Home Page – Logged Out" className="project-image__small"/>
@@ -416,10 +423,12 @@ class MunchPage extends React.Component {
             />
           </div>
           <div className="two-thirds">
-            The home page for logged in users is a newsfeed including food photos posted by friends
-            and restaurant recommendations generated based on the user{`'`}s activity. Recommendations were
-            moved to the newsfeed after my usability testing, when I found that having the recommendations
-            live on the user{`'`}s profile was not intuitive.
+            <p className="description-text">
+              The home page for logged in users is a newsfeed including <strong>food photos posted by friends </strong>
+              and <strong>restaurant recommendations</strong> generated based on the user{`'`}s activity. Recommendations were
+              moved to the newsfeed after my usability testing, when I found that having the recommendations
+              live on the user{`'`}s profile was not intuitive.
+            </p>
           </div>
           <div className="full-width">
             <Image
@@ -434,9 +443,12 @@ class MunchPage extends React.Component {
             />
           </div>
           <div className="two-thirds">
-            The profile page contains a history of photos posted by that user, as well as a list of restaurants
-            they{`'`}ve been to and a list of restaurants they would like to try. Users can keep track of their
-            own restaurants and see what their friends enjoy/are interested in.
+            <p className="description-text">
+              The profile page contains a <strong>history of photos</strong> posted by that user, as well as a
+              <strong>list of restaurants</strong> they{`'`}ve been to and a list of restaurants they would
+              like to try. Users can keep track of their own restaurants and see what their friends enjoy/are
+              interested in.
+            </p>
           </div>
           <div className="full-width">
             <Image
@@ -451,10 +463,12 @@ class MunchPage extends React.Component {
             />
           </div>
           <div className="two-thirds">
-            The restaurant detail page contains all the information you would expect to see on a
-            restaurant searching website, such as reviews, photos, hours, website, etc. Notable features
-            include separate ratings for the total Munch community vs. your friends, based on my research
-            findings that people trust their friends{`'`} opinions more.
+            <p className="description-text">
+              The restaurant detail page contains all the information you would expect to see on a
+              restaurant searching website, such as reviews, photos, hours, website, etc. Notable features
+              include <strong>separate ratings for the total Munch community vs. your friends</strong>,
+              based on my research findings that people trust their friends{`'`} opinions more.
+            </p>
           </div>
           <div className="full-width">
             <Image
@@ -469,10 +483,12 @@ class MunchPage extends React.Component {
             />
           </div>
           <div className="two-thirds">
-            When uploading a photo, users are guided through steps to find the restaurant where they ate,
-            the dish they are posting a photo of, and their ratings/review. Photos are displayed in
-            the newsfeed and on the user{`'`}s profile, and restaurants are automatically added to the
-            "restaurant history" list when a photo is uploaded.
+            <p className="description-text">
+              When uploading a photo, users are guided through steps to find the restaurant where they ate,
+              the dish they are posting a photo of, and their ratings/review. Photos are displayed in
+              the newsfeed and on the user{`'`}s profile, and restaurants are automatically added to the
+              "restaurant history" list when a photo is uploaded.
+            </p>
           </div>
           <div className="full-width">
             <Image

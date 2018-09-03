@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import FFHome from '../../assets/ForwardFinancing/FF_HomePage.png';
-import MunchHome from '../../assets/Munch/Munch_Home.png';
+import MunchHero from '../../assets/Munch/MunchHero.jpg';
 
 class HomePage extends React.Component {
   render() {
@@ -10,7 +10,7 @@ class HomePage extends React.Component {
         <div className="portfolio-content">
           <NavLink
             to="/work/forward-financing"
-            className="portfolio-image__container two-thirds green-gradient"
+            className="portfolio-image__container one-third green-gradient"
           >
             <img
               src={FFHome}
@@ -25,12 +25,12 @@ class HomePage extends React.Component {
           </NavLink>
           <NavLink
             to="/work/munch"
-            className="portfolio-image__container one-third magenta-gradient"
+            className="portfolio-image__container two-thirds"
           >
             <img
-              src={MunchHome}
+              src={MunchHero}
               alt="Munch"
-              className="portfolio-image"
+              className="portfolio-image non-responsive"
             />
             <div className="portfolio-image__caption">
               <h4 className="portfolio-image__caption-text heading-3">
