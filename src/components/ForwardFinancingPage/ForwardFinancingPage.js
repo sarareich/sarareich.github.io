@@ -1,4 +1,6 @@
 import React from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import ffImages from '../../constants/ffImages';
 import Hero from '../common/Hero/Hero';
 import ProjectInfo from '../common/ProjectInfo/ProjectInfo';
 import Title from '../common/ProjectAssets/Title';
@@ -15,6 +17,14 @@ import AdvancesTablet from '../../assets/ForwardFinancing/Tablet_AdvancePage.png
 import AdvancesMobile from '../../assets/ForwardFinancing/Mobile_AdvancePage.png';
 
 class ForwardFinancingPage extends React.Component {
+  renderCarouselImages(image, index) {
+    return (
+      <div key={index}>
+        <img src={image}/>
+      </div>
+    );
+  }
+
   renderHero() {
     return (
       <Hero
@@ -35,20 +45,20 @@ class ForwardFinancingPage extends React.Component {
     );
   }
 
-  renderContext() {
+  renderBackground() {
     return (
       <div className="portfolio-content description">
         <Title
-          title="Context"
+          title="Background"
         />
         <div className="two-thirds">
           <p className="description-text">
           I spent 7 months as an intern at Forward Financing working on both
           front end development and design. I had the opportunity to see many
           projects through from start to finish, from initial wireframes to writing the final code.
-          I designed and implemented a variety of new features that matched the company’s existing
-          UI while improving design consistency across multiple internal- and external-facing web applications.
-          I also created design tools such as a Sketch style guide and a live documentation of
+          As the only designer on the team, I designed and implemented a variety of new features that matched the
+          company’s existing UI while improving design consistency across multiple internal- and external-facing
+          web applications. I also created design tools such as a Sketch style guide and a live documentation of
           the company{`'`}s shared component library.
           </p>
         </div>
@@ -80,10 +90,24 @@ class ForwardFinancingPage extends React.Component {
             </p>
           </div>
         </div>
-        <div className="wireframes">
-          <Subtitle
-            subtitle="Wireframes"
-          />
+        <div className="portfolio-content description">
+          <div className="one-third">
+            <Subtitle
+              subtitle="Sketches & Ideation"
+            />
+          </div>
+          <div className="two-thirds">
+            <p className="description-text">
+              Given a list of information that needed to be included on the statements page, I began
+              by sketching out ideas for the best ways to organize the page. Merchants needed to be able
+              to switch between different advances, view upfront fees, and see a history of payments.
+            </p>
+          </div>
+          <div className="one-half__center shadow">
+            <Carousel showThumbs={false} dynamicHeight={true}>
+              {ffImages.mpIdeation.map((image, index) => this.renderCarouselImages(image, index))}
+            </Carousel>
+          </div>
         </div>
         <div className="desktop">
           <Subtitle
@@ -264,7 +288,7 @@ class ForwardFinancingPage extends React.Component {
         {this.renderHero()}
         <div className="forward-financing page">
           {this.renderProjectInfo()}
-          {this.renderContext()}
+          {this.renderBackground()}
           {this.renderMerchantPortalStatements()}
           {this.renderPartnerPortalAdvances()}
           {this.renderSearch()}

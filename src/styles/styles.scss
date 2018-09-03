@@ -118,6 +118,10 @@ body {
   grid-column: 3 / 11;
 }
 
+.one-half__center {
+  grid-column: 4 / 10;
+}
+
 .full-width {
   grid-column: span 12;
 }
