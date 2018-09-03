@@ -9,9 +9,8 @@ import Image from '../common/ProjectAssets/Image';
 import LongImage from '../common/ProjectAssets/LongImage';
 import projectInfo from '../../constants/projectInfo';
 import FFHero from '../../assets/ForwardFinancing/FF_Hero.png';
-import MPMobile from '../../assets/ForwardFinancing/MP_Mobile_Statements.png';
-import MPDesktop from '../../assets/ForwardFinancing/MP_Desktop_Statements.png';
-import MPTablet from '../../assets/ForwardFinancing/MP_Tablet_Statements.png';
+import MPDesktop from '../../assets/ForwardFinancing/Desktop_Statements.jpg';
+import MPTabletMobile from '../../assets/ForwardFinancing/MP_Tablet_Mobile_Statements.jpg';
 import AdvancesDesktop from '../../assets/ForwardFinancing/Desktop_AdvancePage.png';
 import AdvancesTablet from '../../assets/ForwardFinancing/Tablet_AdvancePage.png';
 import AdvancesMobile from '../../assets/ForwardFinancing/Mobile_AdvancePage.png';
@@ -109,33 +108,33 @@ class ForwardFinancingPage extends React.Component {
             </Carousel>
           </div>
         </div>
-        <div className="desktop">
-          <Subtitle
-            subtitle="Desktop UI"
-          />
-          <Image
-            image={MPDesktop}
-            alt="Merchant Portal Desktop UI"
-            color="#52995c"
-          />
+        <div className="portfolio-content description no-margin">
+          <div className="one-third">
+            <Subtitle
+              subtitle="Desktop UI"
+            />
+          </div>
+          <div className="two-thirds">
+            <p className="description-text">
+              For the final UI, I decided to use "card" components to highlight the information that would
+              be most important to users, and to utilize a dropdown component for switching between advances.
+            </p>
+          </div>
+          <div className="full-width">
+            <LongImage
+              image={MPDesktop}
+              alt="Merchant Portal Desktop UI"
+              color="#52995c"
+            />
+          </div>
         </div>
-        <div className="tablet">
+        <div className="mobile-tablet">
           <Subtitle
-            subtitle="Tablet UI"
+            subtitle="Mobile/Tablet UI"
           />
           <Image
-            image={MPTablet}
-            alt="Merchant Portal Tablet UI"
-            color="#52995c"
-          />
-        </div>
-        <div className="mobile">
-          <Subtitle
-            subtitle="Mobile UI"
-          />
-          <Image
-            image={MPMobile}
-            alt="Merchant Portal Mobile UI"
+            image={MPTabletMobile}
+            alt="Merchant Portal Mobile/Tablet UI"
             color="#52995c"
           />
         </div>
@@ -168,14 +167,27 @@ class ForwardFinancingPage extends React.Component {
           </div>
         </div>
         <div className="desktop">
-          <Subtitle
-            subtitle="Desktop UI"
-          />
-          <LongImage
-            image={AdvancesDesktop}
-            alt="Partner Portal Advances Desktop UI"
-            color="#97BA98"
-          />
+          <div className="portfolio-content description no-margin">
+            <div className="one-third">
+              <Subtitle
+                subtitle="Desktop UI"
+              />
+            </div>
+            <div className="two-thirds">
+              <p className="description-text">
+                Given the similarities between this page and the Merchant Portal Advances page, I decided
+                to reuse a majority of the components from the merchant portal for this design in order to
+                maintain design consistency and ease development efforts.
+              </p>
+            </div>
+            <div className="full-width">
+              <LongImage
+                image={AdvancesDesktop}
+                alt="Partner Portal Advances Desktop UI"
+                color="#97BA98"
+              />
+            </div>
+          </div>
         </div>
         <div className="tablet">
           <Subtitle

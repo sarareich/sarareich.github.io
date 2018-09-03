@@ -151,7 +151,8 @@ body {
     margin-left: 0;
   }
 
-  .two-thirds__center {
+  .two-thirds__center,
+  .one-half__center {
     grid-column: span 12;
   }
 
