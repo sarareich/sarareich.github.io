@@ -7,6 +7,10 @@
   padding: 0;
 }
 
+.shadow {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .1), 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 //TYPOGRAPHY
 body {
   color: $text-gray;
@@ -39,6 +43,7 @@ body {
 
 .heading-3 {
   font-size: 1.414rem;
+  margin-bottom: 0.5rem;
   text-transform: uppercase;
 }
 
@@ -69,6 +74,14 @@ body {
   }
 }
 
+.bullet-list {
+  margin-left: 1rem;
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
 //CONTAINER WIDTH
 .page {
   max-width: 85vw;
@@ -80,13 +93,29 @@ body {
 }
 
 //GRID
+.one-sixth {
+  grid-column: span 2;
+}
+
+.one-fourth {
+  grid-column: span 3;
+}
+
 .one-third {
   grid-column: span 4;
+}
+
+.one-half {
+  grid-column: span 6;
 }
 
 .two-thirds {
   grid-column: span 8;
   margin-left: 5rem;
+}
+
+.two-thirds__center {
+  grid-column: 3 / 11;
 }
 
 .full-width {
@@ -102,14 +131,57 @@ body {
   .two-thirds {
     margin-left: 1rem;
   }
+
+  .three-columns {
+    .one-third:last-child {
+      grid-column: 3 / 9;
+    }
+  }
 }
 
 @include bp(tab-portrait) {
   .one-third,
+  .one-half,
   .two-thirds {
     grid-column: span 12;
     margin-left: 0;
   }
+
+  .two-thirds__center {
+    grid-column: span 12;
+  }
+
+  .one-sixth {
+    grid-column: span 3;
+  }
+
+  .one-fourth {
+    grid-column: span 6;
+  }
+
+  .three-columns {
+    .one-third:last-child {
+      grid-column: span 12;
+    }
+  }
+}
+
+//LIGHTBOX & CAROUSEL
+.ril__navButtons, .ril__builtinButton {
+  &:focus {
+    outline: none;
+  }
+}
+
+.ril__toolbar {
+  left: auto !important;
+}
+
+.carousel .control-next.control-arrow:before {
+  border-left: 8px solid #000000 !important;
+}
+.carousel .control-prev.control-arrow:before {
+  border-right: 8px solid #000000 !important;
 }
 
 @import '../components/Header/Header.scss';

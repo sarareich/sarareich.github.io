@@ -13,7 +13,7 @@ class Hero extends React.Component {
         <img
           src={this.props.image}
           alt={this.props.imageAlt}
-          className="hero-image"
+          className={`hero-image ${this.props.additionalClass}`}
         />
       </div>
     );
@@ -23,7 +23,12 @@ class Hero extends React.Component {
 Hero.propTypes = {
   background: PropTypes.string.isRequired,
   image: PropTypes.string,
-  imageAlt: PropTypes.string
+  imageAlt: PropTypes.string,
+  additionalClass: PropTypes.string
 };
+
+Hero.defaultProps = {
+  additionalClass: ""
+}
 
 export default Hero;
