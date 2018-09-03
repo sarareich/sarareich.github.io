@@ -1,10 +1,7 @@
 import React from 'react';
 import Hero from '../common/Hero/Hero';
 import ProjectInfo from '../common/ProjectInfo/ProjectInfo';
-import Title from '../common/ProjectAssets/Title';
-import Subtitle from '../common/ProjectAssets/Subtitle';
-import Image from '../common/ProjectAssets/Image';
-import LongImage from '../common/ProjectAssets/LongImage';
+import ProjectDescription from '../common/ProjectDescription/ProjectDescription'
 import projectInfo from '../../constants/projectInfo';
 import FFHero from '../../assets/ForwardFinancing/FF_Hero.png';
 import MPMobile from '../../assets/ForwardFinancing/MP_Mobile_Statements.png';
@@ -35,12 +32,52 @@ class ForwardFinancingPage extends React.Component {
     );
   }
 
+  renderTitle(title) {
+    return (
+      <h2 className="heading-2 one-third">
+        {title}
+      </h2>
+    );
+  }
+
+  renderSubtitle(subtitle) {
+    return (
+      <h3 className="heading-3">
+        {subtitle}
+      </h3>
+    )
+  }
+
+  renderImage(color, image) {
+    return (
+      <div
+        className="project-image__container"
+        style={{
+          backgroundColor: color
+        }}
+      >
+        <img src={image} className="project-image"/>
+      </div>
+    );
+  }
+
+  renderLongImage(color, image) {
+    return (
+      <div
+        className="project-image__container__large"
+        style={{
+          backgroundColor: color
+        }}
+      >
+        <img src={image} className="project-image"/>
+      </div>
+    )
+  }
+
   renderContext() {
     return (
       <div className="portfolio-content description">
-        <Title
-          title="Context"
-        />
+        {this.renderTitle("Context")}
         <div className="two-thirds">
           <p className="description-text">
           I spent 7 months as an intern at Forward Financing working on both
@@ -60,9 +97,7 @@ class ForwardFinancingPage extends React.Component {
     return (
       <div className="merchant-portal-statements">
         <div className="portfolio-content description">
-          <Title
-            title="Merchant Portal Statements"
-          />
+          {this.renderTitle("Merchant Portal Statements")}
           <div className="two-thirds">
             <p className="description-text">
               The merchant portal{`'`}s users are business owners who have been funded by Forward Financing.
@@ -81,39 +116,19 @@ class ForwardFinancingPage extends React.Component {
           </div>
         </div>
         <div className="wireframes">
-          <Subtitle
-            subtitle="Wireframes"
-          />
+          {this.renderSubtitle("Wireframes")}
         </div>
         <div className="desktop">
-          <Subtitle
-            subtitle="Desktop UI"
-          />
-          <Image
-            image={MPDesktop}
-            alt="Merchant Portal Desktop UI"
-            color="#52995c"
-          />
+          {this.renderSubtitle("Desktop UI")}
+          {this.renderImage("#52995c", MPDesktop)}
         </div>
         <div className="tablet">
-          <Subtitle
-            subtitle="Tablet UI"
-          />
-          <Image
-            image={MPTablet}
-            alt="Merchant Portal Tablet UI"
-            color="#52995c"
-          />
+          {this.renderSubtitle("Tablet UI")}
+          {this.renderImage("#52995c", MPTablet)}
         </div>
         <div className="mobile">
-          <Subtitle
-            subtitle="Mobile UI"
-          />
-          <Image
-            image={MPMobile}
-            alt="Merchant Portal Mobile UI"
-            color="#52995c"
-          />
+          {this.renderSubtitle("Mobile UI")}
+          {this.renderImage("#52995c", MPMobile)}
         </div>
       </div>
     );
@@ -123,9 +138,7 @@ class ForwardFinancingPage extends React.Component {
     return (
       <div className="partner-portal-advances">
         <div className="portfolio-content description">
-          <Title
-            title="Partner Portal Advances"
-          />
+          {this.renderTitle("Partner Portal Advances")}
           <div className="two-thirds">
             <p className="description-text">
               The partner portal{`'`}s users are Forward Financing{`'`}s referral partners, who work with
@@ -144,34 +157,16 @@ class ForwardFinancingPage extends React.Component {
           </div>
         </div>
         <div className="desktop">
-          <Subtitle
-            subtitle="Desktop UI"
-          />
-          <LongImage
-            image={AdvancesDesktop}
-            alt="Partner Portal Advances Desktop UI"
-            color="#97BA98"
-          />
+          {this.renderSubtitle("Desktop UI")}
+          {this.renderLongImage("#97BA98", AdvancesDesktop)}
         </div>
         <div className="tablet">
-          <Subtitle
-            subtitle="Tablet UI"
-          />
-          <Image
-            image={AdvancesTablet}
-            alt="Partner Portal Advances Tablet UI"
-            color="#97BA98"
-          />
+          {this.renderSubtitle("Tablet UI")}
+          {this.renderImage("#97BA98", AdvancesTablet)}
         </div>
         <div className="mobile">
-          <Subtitle
-            subtitle="Mobile UI"
-          />
-          <Image
-            image={AdvancesMobile}
-            alt="Partner Portal Advances Mobile UI"
-            color="#97BA98"
-          />
+          {this.renderSubtitle("Mobile UI")}
+          {this.renderImage("#97BA98", AdvancesMobile)}
         </div>
       </div>
     );
@@ -181,9 +176,7 @@ class ForwardFinancingPage extends React.Component {
     return (
       <div className="partner-portal-search">
         <div className="portfolio-content description">
-          <Title
-            title="Partner Portal Search"
-          />
+          {this.renderTitle("Partner Portal Search")}
           <div className="two-thirds">
             <p className="description-text">
               Two of the pages in the partner portal contain tables with information about deals that have
@@ -209,9 +202,7 @@ class ForwardFinancingPage extends React.Component {
     return (
       <div className="partner-portal-user-management">
         <div className="portfolio-content description">
-          <Title
-            title="Partner Portal User Management"
-          />
+          {this.renderTitle("Partner Portal User Management")}
           <div className="two-thirds">
             <p className="description-text">
               Most partners have multiple representatives who can access the portal. However, not all
@@ -235,9 +226,7 @@ class ForwardFinancingPage extends React.Component {
     return (
       <div className="partner-portal-contact-info">
         <div className="portfolio-content description">
-          <Title
-            title="Partner Portal Contact Information"
-          />
+          {this.renderTitle("Partner Portal Contact Information")}
           <div className="two-thirds">
             <p className="description-text">
               Each partner has multiple points of contact at Forward Financing, such as Account Managers and
