@@ -2,12 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import './styles/styles.css';
-import 'react-image-lightbox/style.css';
-import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
 import App from './components/App/App';
 import HomePage from './components/HomePage/HomePage';
 import ForwardFinancingPage from './components/ForwardFinancingPage/ForwardFinancingPage';
-import MunchPage from './components/MunchPage/MunchPage';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -15,7 +12,6 @@ ReactDOM.render(
       <div>
         <Route exact path="/work" component={HomePage}/>
         <Route path="/work/forward-financing" component={ForwardFinancingPage}/>
-        <Route path="/work/munch" component={MunchPage}/>
       </div>
     </App>
   </BrowserRouter>,
