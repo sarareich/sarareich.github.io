@@ -304,24 +304,44 @@ class ForwardFinancingPage extends React.Component {
             </p>
           </div>
         </div>
-        <Subtitle
-          subtitle="Original Designs"
-        />
-        <div className="portfolio-content">
-          {
-            ffImages.originalSearch.map((image, index) => this.renderImageRow(image, index, "Original Search Design", "originalSearchLightboxIsOpen", "two-thirds__center"))
-          }
+        <div className="original-designs">
+          <div className="portfolio-content description">
+            <div className="one-third">
+              <Subtitle
+                subtitle="Original Designs"
+              />
+            </div>
+            <div className="two-thirds">
+              <p className="description-text">
+                I began by identifying potential issues with the current search/filtering component design.
+              </p>
+            </div>
+            {
+              ffImages.originalSearch.map((image, index) => this.renderImageRow(image, index, "Original Search Design", "originalSearchLightboxIsOpen", "two-thirds__center"))
+            }
+          </div>
+          {this.renderLightbox(ffImages.originalSearch, originalSearchLightboxIsOpen, "originalSearchLightboxIsOpen", photoIndex)}
         </div>
-        {this.renderLightbox(ffImages.originalSearch, originalSearchLightboxIsOpen, "originalSearchLightboxIsOpen", photoIndex)}
-        <Subtitle
-          subtitle="New Designs"
-        />
-        <div className="portfolio-content">
-          {
-            ffImages.newSearch.map((image, index) => this.renderImageRow(image, index, "New Search Designs", "newSearchLightboxIsOpen", "one-half"))
-          }
+        <div className="new-designs">
+          <div className="portfolio-content description">
+            <div className="one-third">
+              <Subtitle
+                subtitle="New Designs"
+              />
+            </div>
+            <div className="two-thirds">
+              <p className="description-text">
+                I redesigned the search component by separating the filters from the search bar for
+                greater clarity, renaming the filter labels to better match the table headers, and
+                changing the button colors and locations.
+              </p>
+            </div>
+            {
+              ffImages.newSearch.map((image, index) => this.renderImageRow(image, index, "New Search Designs", "newSearchLightboxIsOpen", "one-half"))
+            }
+          </div>
+          {this.renderLightbox(ffImages.newSearch, newSearchLightboxIsOpen, "newSearchLightboxIsOpen", photoIndex)}
         </div>
-        {this.renderLightbox(ffImages.newSearch, newSearchLightboxIsOpen, "newSearchLightboxIsOpen", photoIndex)}
       </div>
     );
   }
