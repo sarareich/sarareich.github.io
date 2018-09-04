@@ -368,6 +368,30 @@ class ForwardFinancingPage extends React.Component {
             </p>
           </div>
         </div>
+        <div className="portfolio-content description">
+          <div className="one-third">
+            <Subtitle
+              subtitle="Adding Users"
+            />
+          </div>
+          <div className="two-thirds shadow">
+            <Carousel showThumbs={false} dynamicHeight={false}>
+              {ffImages.addUser.map((image, index) => this.renderCarouselImages(image, index))}
+            </Carousel>
+          </div>
+        </div>
+        <div className="portfolio-content description">
+          <div className="one-third">
+            <Subtitle
+              subtitle="Editing/Removing Users"
+            />
+          </div>
+          <div className="two-thirds shadow">
+            <Carousel showThumbs={false} dynamicHeight={false}>
+              {ffImages.editUser.map((image, index) => this.renderCarouselImages(image, index))}
+            </Carousel>
+          </div>
+        </div>
       </div>
     );
   }

@@ -189,6 +189,10 @@ body {
   border-right: 8px solid #000000 !important;
 }
 
+.carousel.carousel-slider .control-arrow:hover {
+  background: rgba(255, 255, 255, .5) !important;
+}
+
 @import '../components/Header/Header.scss';
 @import '../components/Footer/Footer.scss';
 @import '../components/HomePage/HomePage.scss';
