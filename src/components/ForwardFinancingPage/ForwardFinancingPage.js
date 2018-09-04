@@ -13,8 +13,8 @@ import FFHero from '../../assets/ForwardFinancing/FF_Hero.png';
 import MPDesktop from '../../assets/ForwardFinancing/Desktop_Statements.jpg';
 import MPTabletMobile from '../../assets/ForwardFinancing/MP_Tablet_Mobile_Statements.jpg';
 import AdvancesDesktop from '../../assets/ForwardFinancing/Desktop_AdvancePage.png';
-import AdvancesTablet from '../../assets/ForwardFinancing/Tablet_AdvancePage.png';
-import AdvancesMobile from '../../assets/ForwardFinancing/Mobile_AdvancePage.png';
+import AdvancesTablet from '../../assets/ForwardFinancing/Tablet_AdvancePage.jpg';
+import AdvancesMobile from '../../assets/ForwardFinancing/Mobile_AdvancePage.jpg';
 
 class ForwardFinancingPage extends React.Component {
   constructor() {
