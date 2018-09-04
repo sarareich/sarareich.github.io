@@ -39,7 +39,6 @@ class MunchPage extends React.Component {
       [lightbox]: true,
       photoIndex: index
     });
-    console.log(this.state.personaLightboxIsOpen);
   }
 
   closeLightbox(lightbox) {
