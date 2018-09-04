@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
+import LightBox from '../common/Lightbox/Lightbox';
 import ffImages from '../../constants/ffImages';
 import Hero from '../common/Hero/Hero';
 import ProjectInfo from '../common/ProjectInfo/ProjectInfo';
@@ -16,6 +17,70 @@ import AdvancesTablet from '../../assets/ForwardFinancing/Tablet_AdvancePage.png
 import AdvancesMobile from '../../assets/ForwardFinancing/Mobile_AdvancePage.png';
 
 class ForwardFinancingPage extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      originalSearchLightboxIsOpen: false,
+      newSearchLightboxIsOpen: false,
+      photoIndex: 0
+    };
+
+    this.openLightbox = this.openLightbox.bind(this);
+  }
+
+  openLightbox(index, event, lightbox) {
+    event.preventDefault();
+    this.setState({
+      [lightbox]: true,
+      photoIndex: index
+    });
+  }
+
+  closeLightbox(lightbox) {
+    this.setState({
+      [lightbox]: false,
+      photoIndex: 0
+    });
+  }
+
+  nextLightboxImage(images) {
+    this.setState({
+      photoIndex: (this.state.photoIndex + 1) % images.length,
+    });
+  }
+
+  prevLightboxImage(images) {
+    this.setState({
+      photoIndex: (this.state.photoIndex + images.length - 1) % images.length,
+    });
+  }
+
+  renderImageRow(image, index, altText, lightbox, desiredClass) {
+    return (
+      <div className={desiredClass} key={index}>
+        <img
+          src={image}
+          className="project-image__small zoom"
+          alt={altText}
+          onClick={(event) => this.openLightbox(index, event, lightbox)}
+        />
+      </div>
+    );
+  }
+
+  renderLightbox(lightboxImages, lightbox, lightboxString, index) {
+    return (
+      <LightBox
+        images={lightboxImages}
+        isOpen={lightbox}
+        onClose={this.closeLightbox.bind(this, lightboxString)}
+        nextImage={this.nextLightboxImage.bind(this, lightboxImages)}
+        prevImage={this.prevLightboxImage.bind(this, lightboxImages)}
+        photoIndex={index}
+      />
+    );
+  }
+
   renderCarouselImages(image, index) {
     return (
       <div key={index}>
@@ -214,6 +279,8 @@ class ForwardFinancingPage extends React.Component {
   }
 
   renderSearch() {
+    const { photoIndex, originalSearchLightboxIsOpen, newSearchLightboxIsOpen } = this.state;
+
     return (
       <div className="partner-portal-search">
         <div className="portfolio-content description">
@@ -237,6 +304,24 @@ class ForwardFinancingPage extends React.Component {
             </p>
           </div>
         </div>
+        <Subtitle
+          subtitle="Original Designs"
+        />
+        <div className="portfolio-content">
+          {
+            ffImages.originalSearch.map((image, index) => this.renderImageRow(image, index, "Original Search Design", "originalSearchLightboxIsOpen", "two-thirds__center"))
+          }
+        </div>
+        {this.renderLightbox(ffImages.originalSearch, originalSearchLightboxIsOpen, "originalSearchLightboxIsOpen", photoIndex)}
+        <Subtitle
+          subtitle="New Designs"
+        />
+        <div className="portfolio-content">
+          {
+            ffImages.newSearch.map((image, index) => this.renderImageRow(image, index, "New Search Designs", "newSearchLightboxIsOpen", "one-half"))
+          }
+        </div>
+        {this.renderLightbox(ffImages.newSearch, newSearchLightboxIsOpen, "newSearchLightboxIsOpen", photoIndex)}
       </div>
     );
   }
