@@ -45,6 +45,10 @@ body {
   font-size: 1.414rem;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
+
+  &.lowercase {
+    text-transform: none;
+  }
 }
 
 .heading-4 {
@@ -196,6 +200,7 @@ body {
 @import '../components/Header/Header.scss';
 @import '../components/Footer/Footer.scss';
 @import '../components/HomePage/HomePage.scss';
+@import '../components/AboutPage/AboutPage.scss';
 @import '../components/ForwardFinancingPage/ForwardFinancingPage.scss';
 @import '../components/common/Hero/Hero.scss';
 @import '../components/common/Logo/Logo.scss';

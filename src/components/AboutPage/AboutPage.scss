@@ -1,0 +1,13 @@
+@import '../../styles/colors.scss';
+
+.portrait__container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 15rem;
+}
