@@ -6,6 +6,7 @@ import 'react-image-lightbox/style.css';
 import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
 import App from './components/App/App';
 import HomePage from './components/HomePage/HomePage';
+import AboutPage from './components/AboutPage/AboutPage';
 import ForwardFinancingPage from './components/ForwardFinancingPage/ForwardFinancingPage';
 import MunchPage from './components/MunchPage/MunchPage';
 
@@ -16,6 +17,7 @@ ReactDOM.render(
         <Route exact path="/work" component={HomePage}/>
         <Route path="/work/forward-financing" component={ForwardFinancingPage}/>
         <Route path="/work/munch" component={MunchPage}/>
+        <Route path="/about" component={AboutPage}/>
       </div>
     </App>
   </BrowserRouter>,
