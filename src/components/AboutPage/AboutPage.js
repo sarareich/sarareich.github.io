@@ -1,5 +1,6 @@
 import React from 'react';
 import Portrait from "../../assets/portrait.jpg";
+import Resume from "../../assets/SaraReich-Resume2018-2.pdf";
 
 class AboutPage extends React.Component {
   render() {
@@ -28,7 +29,7 @@ class AboutPage extends React.Component {
               reading a book.
             </p>
             <p className="description-text">
-              For more information, take a look at my <a href="#" className="link">resume</a>, or drop me a line at [email-here]!
+              For more information, take a look at my <a href={Resume} className="link" target="blank">resume</a>, or drop me a line at [email-here]!
             </p>
           </div>
         </div>

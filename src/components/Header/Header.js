@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from '../common/Logo/Logo';
 import { NavLink } from 'react-router-dom';
+import Resume from '../../assets/SaraReich-Resume2018-2.pdf';
 
 class Header extends React.Component {
   render() {
@@ -20,7 +21,7 @@ class Header extends React.Component {
               <NavLink to="/about" className="link">about</NavLink>
             </div>
             <div className="header__sub-link">
-              <NavLink to="/contact" className="link">contact</NavLink>
+              <NavLink to={Resume} target="blank" className="link">resume</NavLink>
             </div>
           </div>
         </div>
