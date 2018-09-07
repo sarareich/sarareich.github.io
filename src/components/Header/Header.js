@@ -9,13 +9,13 @@ class Header extends React.Component {
       <div className="header__wrap page">
         <div className="header">
           <div className="header__logo">
-            <NavLink to="/work">
+            <NavLink to="/">
               <Logo/>
             </NavLink>
           </div>
           <div className="header__nav-links">
             <div className="header__sub-link">
-              <NavLink to="/work" className="link">work</NavLink>
+              <NavLink to="/" className="link">work</NavLink>
             </div>
             <div className="header__sub-link">
               <NavLink to="/about" className="link">about</NavLink>

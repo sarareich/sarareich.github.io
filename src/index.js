@@ -14,7 +14,7 @@ ReactDOM.render(
   <BrowserRouter>
     <App>
       <div>
-        <Route exact path="/work" component={HomePage}/>
+        <Route exact path="/" component={HomePage}/>
         <Route path="/work/forward-financing" component={ForwardFinancingPage}/>
         <Route path="/work/munch" component={MunchPage}/>
         <Route path="/about" component={AboutPage}/>
