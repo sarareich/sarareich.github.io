@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import FFHome from '../../assets/ForwardFinancing/FF_HomePage.png';
 import MunchHero from '../../assets/Munch/MunchHero.jpg';
+import MiscHome from '../../assets/Miscellaneous/MiscellaneousHome.jpg';
 
 class HomePage extends React.Component {
   renderImage(size, route, desiredClass, image, title, imageClass) {
@@ -30,7 +31,7 @@ class HomePage extends React.Component {
         <div className="portfolio-content">
           {this.renderImage("full-width", "work/munch", "", MunchHero, "Munch", "non-responsive")}
           {this.renderImage("two-thirds", "/work/forward-financing", "green-gradient", FFHome, "Forward Financing", "")}
-          {this.renderImage("one-third", "/work/miscellaneous", "", null, "Miscellaneous", "")}
+          {this.renderImage("one-third", "/work/miscellaneous", "", MiscHome, "Miscellaneous", "")}
         </div>
       </div>
     );
