@@ -337,7 +337,7 @@ class ForwardFinancingPage extends React.Component {
               </p>
             </div>
             {
-              ffImages.newSearch.map((image, index) => this.renderImageRow(image, index, "New Search Designs", "newSearchLightboxIsOpen", "one-half"))
+              ffImages.newSearch.map((image, index) => this.renderImageRow(image, index, "New Search Designs", "newSearchLightboxIsOpen", "one-half column"))
             }
           </div>
           {this.renderLightbox(ffImages.newSearch, newSearchLightboxIsOpen, "newSearchLightboxIsOpen", photoIndex)}

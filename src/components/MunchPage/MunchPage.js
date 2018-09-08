@@ -167,7 +167,7 @@ class MunchPage extends React.Component {
           </div>
           <div className="portfolio-content three-columns">
             {
-              munchImages.personaImages.map((image, index) => this.renderImageRow(image, index, "Persona", "personaLightboxIsOpen", "one-third"))
+              munchImages.personaImages.map((image, index) => this.renderImageRow(image, index, "Persona", "personaLightboxIsOpen", "one-third column"))
             }
           </div>
           {this.renderLightbox(munchImages.personaImages, personaLightboxIsOpen, "personaLightboxIsOpen", photoIndex)}
@@ -270,7 +270,7 @@ class MunchPage extends React.Component {
           <div className="portfolio-content">
           {
             munchImages.storyboards.map((image, index) =>
-              this.renderImageRow(image, index, "Storyboard", "storyboardsLightboxIsOpen", "one-half"))
+              this.renderImageRow(image, index, "Storyboard", "storyboardsLightboxIsOpen", "one-half column"))
           }
           </div>
         </div>
@@ -306,7 +306,7 @@ class MunchPage extends React.Component {
           <div className="portfolio-content">
           {
             munchImages.searchWireframes.map((image, index) =>
-              this.renderImageRow(image, index, "Search Wireframes", "searchLightboxIsOpen", "one-half"))
+              this.renderImageRow(image, index, "Search Wireframes", "searchLightboxIsOpen", "one-half column"))
           }
           </div>
         {this.renderLightbox(munchImages.searchWireframes, searchLightboxIsOpen, "searchLightboxIsOpen", photoIndex)}
@@ -318,7 +318,7 @@ class MunchPage extends React.Component {
         <div className="portfolio-content">
         {
           munchImages.friendsWireframes.map((image, index) =>
-            this.renderImageRow(image, index, "Friends Wireframes", "friendsLightboxIsOpen", "one-half"))
+            this.renderImageRow(image, index, "Friends Wireframes", "friendsLightboxIsOpen", "one-half column"))
         }
         </div>
         {this.renderLightbox(munchImages.friendsWireframes, friendsLightboxIsOpen, "friendsLightboxIsOpen", photoIndex)}
@@ -330,7 +330,7 @@ class MunchPage extends React.Component {
         <div className="portfolio-content">
         {
           munchImages.uploadWireframes.map((image, index) =>
-            this.renderImageRow(image, index, "Upload Wireframes", "uploadLightboxIsOpen", "one-half"))
+            this.renderImageRow(image, index, "Upload Wireframes", "uploadLightboxIsOpen", "one-half column"))
         }
         </div>
         {this.renderLightbox(munchImages.uploadWireframes, uploadLightboxIsOpen, "uploadLightboxIsOpen", photoIndex)}
@@ -503,7 +503,7 @@ class MunchPage extends React.Component {
           </div>
           {
             munchImages.artboards.map((image, index) =>
-              this.renderImageRow(image, index, "Artboards", "artboardsLightboxIsOpen", "full-width"))
+              this.renderImageRow(image, index, "Artboards", "artboardsLightboxIsOpen", "full-width column"))
           }
           </div>
           {this.renderLightbox(munchImages.artboards, artboardsLightboxIsOpen, "artboardsLightboxIsOpen", photoIndex)}
