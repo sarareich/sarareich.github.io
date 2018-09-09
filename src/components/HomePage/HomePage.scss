@@ -5,15 +5,10 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
   margin-bottom: 3rem;
 
   &.no-margin {
     margin-bottom: 0;
-  }
-
-  @include bp(tab-portrait) {
-    grid-row-gap: 0;
   }
 }
 
@@ -22,6 +17,7 @@
   display: flex;
   background: $blue-green;
   height: 350px;
+  margin-bottom: 1rem;
   position: relative;
   transition: box-shadow .3s ease-out, transform .3s ease-out;
 

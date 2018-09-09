@@ -128,6 +128,10 @@ body {
 
 .full-width {
   grid-column: span 12;
+
+  &.column {
+    margin-bottom: 1rem;
+  }
 }
 
 @include bp(tab) {
@@ -136,6 +140,7 @@ body {
     grid-column: span 6;
   }
 
+
   .two-thirds {
     margin-left: 1rem;
   }
@@ -143,6 +148,12 @@ body {
   .three-columns {
     .one-third:last-child {
       grid-column: 3 / 9;
+    }
+  }
+
+  .column {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
     }
   }
 }
@@ -171,6 +182,12 @@ body {
   .three-columns {
     .one-third:last-child {
       grid-column: span 12;
+    }
+  }
+
+  .column {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
     }
   }
 }
