@@ -6,7 +6,8 @@ class ScrollUp extends React.Component {
     return (
       <ScrollUpButton
         style={{
-          backgroundColor: "transparent"
+          backgroundColor: "transparent",
+          fill: "#202224"
         }}
         ToggledStyle={{
           bottom: 40,

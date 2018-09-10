@@ -15,11 +15,14 @@
 .portfolio-image__container {
   align-items: center;
   display: flex;
-  background: $blue-green;
   height: 350px;
   margin-bottom: 1rem;
   position: relative;
   transition: box-shadow .3s ease-out, transform .3s ease-out;
+
+  &.default {
+    background: $blue-green;
+  }
 
   &.green-gradient {
     background: linear-gradient(#97ba98, #52995c);

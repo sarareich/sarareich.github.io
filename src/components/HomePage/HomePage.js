@@ -31,7 +31,7 @@ class HomePage extends React.Component {
         <div className="portfolio-content">
           {this.renderImage("full-width", "work/munch", "", MunchHero, "Munch", "non-responsive")}
           {this.renderImage("two-thirds", "/work/forward-financing", "green-gradient", FFHome, "Forward Financing", "")}
-          {this.renderImage("one-third", "/work/miscellaneous", "", MiscHome, "Miscellaneous", "")}
+          {this.renderImage("one-third", "/work/miscellaneous", "default", MiscHome, "Miscellaneous", "")}
         </div>
       </div>
     );
