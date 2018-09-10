@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollUp from '../common/ScrollUp/ScrollUp';
 import Hero from '../common/Hero/Hero';
 import ProjectInfo from '../common/ProjectInfo/ProjectInfo';
 import LightBox from '../common/Lightbox/Lightbox';
@@ -544,6 +545,7 @@ class MunchPage extends React.Component {
       <div className="munch-wrapper">
         {this.renderHero()}
         <div className="munch page">
+          <ScrollUp />
           {this.renderProjectInfo()}
           {this.renderBackground()}
           {this.renderUserResearch()}

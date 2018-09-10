@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
+import ScrollUp from '../common/ScrollUp/ScrollUp';
 import LightBox from '../common/Lightbox/Lightbox';
 import ffImages from '../../constants/ffImages';
 import Hero from '../common/Hero/Hero';
@@ -428,6 +429,7 @@ class ForwardFinancingPage extends React.Component {
       <div className="forward-financing-wrapper">
         {this.renderHero()}
         <div className="forward-financing page">
+          <ScrollUp />
           {this.renderProjectInfo()}
           {this.renderBackground()}
           {this.renderMerchantPortalStatements()}

@@ -10,18 +10,21 @@ import AboutPage from './components/AboutPage/AboutPage';
 import ForwardFinancingPage from './components/ForwardFinancingPage/ForwardFinancingPage';
 import MunchPage from './components/MunchPage/MunchPage';
 import MiscPage from './components/MiscPage/MiscPage';
+import ScrollToTop from './components/common/ScrollToTop/ScrollToTop'
 
 ReactDOM.render(
   <BrowserRouter>
-    <App>
-      <div>
-        <Route exact path="/" component={HomePage}/>
-        <Route path="/work/forward-financing" component={ForwardFinancingPage}/>
-        <Route path="/work/munch" component={MunchPage}/>
-        <Route path="/work/miscellaneous" component={MiscPage}/>
-        <Route path="/about" component={AboutPage}/>
-      </div>
-    </App>
+    <ScrollToTop>
+      <App>
+        <div>
+          <Route exact path="/" component={HomePage}/>
+          <Route path="/work/forward-financing" component={ForwardFinancingPage}/>
+          <Route path="/work/munch" component={MunchPage}/>
+          <Route path="/work/miscellaneous" component={MiscPage}/>
+          <Route path="/about" component={AboutPage}/>
+        </div>
+      </App>
+    </ScrollToTop>
   </BrowserRouter>,
   document.getElementById('root')
 );
