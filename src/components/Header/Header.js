@@ -15,7 +15,7 @@ class Header extends React.Component {
           </div>
           <div className="header__nav-links">
             <div className="header__sub-link">
-              <NavLink to="/" className="link">work</NavLink>
+              <NavLink exact to="/" className="link">work</NavLink>
             </div>
             <div className="header__sub-link">
               <NavLink to="/about" className="link">about</NavLink>
