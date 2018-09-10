@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
+import ScrollUp from '../common/ScrollUp/ScrollUp';
 import Hero from '../common/Hero/Hero';
 import ProjectInfo from '../common/ProjectInfo/ProjectInfo';
 import projectInfo from '../../constants/projectInfo';
@@ -143,6 +144,7 @@ class MiscPage extends React.Component {
       <div className="miscellaneous-wrapper">
         {this.renderHero()}
         <div className="miscellaneous page">
+          <ScrollUp/>
           {this.renderProjectInfo()}
           {this.renderImpact()}
           {this.renderVideoGame()}
