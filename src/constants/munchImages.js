@@ -21,8 +21,8 @@ import UI2 from '../assets/Munch/UIExploration/UI2.jpg';
 import UI3 from '../assets/Munch/UIExploration/UI3.jpg';
 import UI4 from '../assets/Munch/UIExploration/UI4.jpg';
 import Branding from '../assets/Munch/BrandDesign.png';
-import MobileArtboards from '../assets/Munch/MobileArtboards.png';
-import DesktopArtboards from '../assets/Munch/DesktopArtboardsHalf.png';
+import MobileArtboards from '../assets/Munch/MobileArtboards.jpg';
+import DesktopArtboards from '../assets/Munch/DesktopArtboards.jpg';
 
 export default {
   personaImages: [Persona1, Persona2, Persona3],
