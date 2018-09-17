@@ -15,7 +15,6 @@ import Newsfeed from '../../assets/Munch/Newsfeed.png';
 import Profile from '../../assets/Munch/Profile.png';
 import RestaurantDetail from '../../assets/Munch/RestaurantDetail.png';
 import PhotoUpload from '../../assets/Munch/UploadPhoto.png';
-import MobileArtboards from '../../assets/Munch/MobileArtboards.png';
 import munchImages from '../../constants/munchImages';
 
 class MunchPage extends React.Component {
@@ -525,9 +524,19 @@ class MunchPage extends React.Component {
               Munch website.
             </p>
           </div>
-          <div className="two-thirds__center iframe-container">
+          <div className="one-half iframe-container column">
             <iframe
               src="https://player.vimeo.com/video/287102292"
+              className="iframe"
+              frameBorder="0"
+              webkitallowfullscreen="true"
+              mozallowfullscreen="true"
+              allowFullScreen="true"
+            />
+          </div>
+          <div className="one-half iframe-container column">
+            <iframe
+              src="https://player.vimeo.com/video/290289266"
               className="iframe"
               frameBorder="0"
               webkitallowfullscreen="true"
