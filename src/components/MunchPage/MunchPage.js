@@ -524,7 +524,7 @@ class MunchPage extends React.Component {
               Munch website.
             </p>
           </div>
-          <div className="one-half iframe-container column">
+          <div className="two-thirds__center iframe-container column">
             <iframe
               src="https://player.vimeo.com/video/287102292"
               className="iframe"
@@ -534,7 +534,7 @@ class MunchPage extends React.Component {
               allowFullScreen="true"
             />
           </div>
-          <div className="one-half iframe-container column">
+          <div className="two-thirds__center iframe-container column">
             <iframe
               src="https://player.vimeo.com/video/290289266"
               className="iframe"
