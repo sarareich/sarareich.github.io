@@ -23,6 +23,7 @@ class ForwardFinancingPage extends React.Component {
     this.state = {
       originalSearchLightboxIsOpen: false,
       newSearchLightboxIsOpen: false,
+      contactInfoLightboxIsOpen: false,
       photoIndex: 0
     };
 
@@ -398,6 +399,7 @@ class ForwardFinancingPage extends React.Component {
   }
 
   renderContactInfo() {
+    const { photoIndex, contactInfoLightboxIsOpen } = this.state;
     return (
       <div className="partner-portal-contact-info">
         <div className="portfolio-content description">
@@ -419,7 +421,11 @@ class ForwardFinancingPage extends React.Component {
               customer service need. Akways contact the right person.
             </p>
           </div>
+          {
+            ffImages.contactInfo.map((image, index) => this.renderImageRow(image, index, "Contact Information", "contactInfoLightboxIsOpen", "one-half column shadow"))
+          }
         </div>
+        {this.renderLightbox(ffImages.contactInfo, contactInfoLightboxIsOpen, "contactInfoLightboxIsOpen", photoIndex)}
       </div>
     );
   }
