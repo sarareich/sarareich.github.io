@@ -11,14 +11,11 @@ import UserManagementNew from '../assets/ForwardFinancing/UserManagement/NewUser
 import UserManagementNewSuccess from '../assets/ForwardFinancing/UserManagement/AddUserSuccess.png';
 import UserManagementRemoveSuccess from '../assets/ForwardFinancing/UserManagement/RemoveUserSuccess.png';
 import UserManagementConfirmRemoval from '../assets/ForwardFinancing/UserManagement/ConfirmRemoval.png';
-import ContactOpen from '../assets/ForwardFinancing/PP_Contact_Open.png';
-import ContactClosed from '../assets/ForwardFinancing/PP_Contact_Closed.png';
 
 export default {
   mpIdeation: [MPIdeation1, MPIdeation2, MPIdeation3],
   originalSearch: [OriginalSearch],
   newSearch: [PipelineSearch, PortfolioSearch],
   addUser: [UserManagementHome, UserManagementNew, UserManagementNewSuccess],
-  editUser: [UserManagementActions, UserManagementConfirmRemoval, UserManagementRemoveSuccess, UserManagementEdit],
-  contactInfo: [ContactOpen, ContactClosed]
+  editUser: [UserManagementActions, UserManagementConfirmRemoval, UserManagementRemoveSuccess, UserManagementEdit]
 }

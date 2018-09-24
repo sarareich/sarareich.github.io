@@ -24,7 +24,6 @@ class ForwardFinancingPage extends React.Component {
     this.state = {
       originalSearchLightboxIsOpen: false,
       newSearchLightboxIsOpen: false,
-      contactInfoLightboxIsOpen: false,
       photoIndex: 0
     };
 
@@ -400,7 +399,6 @@ class ForwardFinancingPage extends React.Component {
   }
 
   renderContactInfo() {
-    const { photoIndex, contactInfoLightboxIsOpen } = this.state;
     return (
       <div className="partner-portal-contact-info">
         <div className="portfolio-content description">
