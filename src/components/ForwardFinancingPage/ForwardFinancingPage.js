@@ -16,6 +16,7 @@ import MPTabletMobile from '../../assets/ForwardFinancing/MP_Tablet_Mobile_State
 import AdvancesDesktop from '../../assets/ForwardFinancing/Desktop_AdvancePage.png';
 import AdvancesTablet from '../../assets/ForwardFinancing/Tablet_AdvancePage.jpg';
 import AdvancesMobile from '../../assets/ForwardFinancing/Mobile_AdvancePage.jpg';
+import PPContactInfo from '../../assets/ForwardFinancing/ContactInfo.jpg';
 
 class ForwardFinancingPage extends React.Component {
   constructor() {
@@ -420,6 +421,11 @@ class ForwardFinancingPage extends React.Component {
             </p>
           </div>
         </div>
+        <Image
+          image={PPContactInfo}
+          alt="Partner Portal Contact Information UI"
+          color="#52995c"
+        />
       </div>
     );
   }
