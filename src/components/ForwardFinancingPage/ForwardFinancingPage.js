@@ -17,6 +17,7 @@ import AdvancesDesktop from '../../assets/ForwardFinancing/Desktop_AdvancePage.p
 import AdvancesTablet from '../../assets/ForwardFinancing/Tablet_AdvancePage.jpg';
 import AdvancesMobile from '../../assets/ForwardFinancing/Mobile_AdvancePage.jpg';
 import PPContactInfo from '../../assets/ForwardFinancing/ContactInfo.jpg';
+import StyleGuideFullSize from '../../assets/ForwardFinancing/Sketch-Style-Guide.png';
 
 class ForwardFinancingPage extends React.Component {
   constructor() {
@@ -24,6 +25,7 @@ class ForwardFinancingPage extends React.Component {
     this.state = {
       originalSearchLightboxIsOpen: false,
       newSearchLightboxIsOpen: false,
+      styleGuideLightboxIsOpen: false,
       photoIndex: 0
     };
 
@@ -430,6 +432,37 @@ class ForwardFinancingPage extends React.Component {
     );
   }
 
+  renderStyleGuide() {
+    const { photoIndex, styleGuideLightboxIsOpen } = this.state;
+    return (
+      <div className="partner-portal-style-guide">
+        <div className="portfolio-content description">
+          <Title
+            title="Sketch Library & Style Guide"
+          />
+          <div className="two-thirds">
+            <p className="description-text">
+              Throughout my time at Forward Financing, I worked on establishing a shareable Sketch Library and style guide
+              to maintain consistency across front end designs and streamline the creation of new designs.
+            </p>
+            <p className="description-text">
+              The library is made up of nested symbols and includes a style guide that can be utilized to ensure that
+              the proper colors, icons, etc. are used in a given situation.
+            </p>
+            <p className="description-text">
+              You can download the full-sized version of the style guide <a href={StyleGuideFullSize} target="blank" className="link">here</a>.
+            </p>
+          </div>
+          {
+            ffImages.styleGuide.map((image, index) =>
+              this.renderImageRow(image, index, "StyleGuide", "styleGuideLightboxIsOpen", "full-width shadow"))
+          }
+        </div>
+        {this.renderLightbox(ffImages.styleGuide, styleGuideLightboxIsOpen, "styleGuideLightboxIsOpen", photoIndex)}
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="forward-financing-wrapper">
@@ -443,6 +476,7 @@ class ForwardFinancingPage extends React.Component {
           {this.renderSearch()}
           {this.renderUserManagement()}
           {this.renderContactInfo()}
+          {this.renderStyleGuide()}
         </div>
       </div>
     );
