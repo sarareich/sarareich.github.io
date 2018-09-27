@@ -66,7 +66,7 @@ class MiscPage extends React.Component {
           and fish, as well as some environmentally friendly, plant-based alternatives.
           </p>
         </div>
-        <div className="two-thirds__center shadow">
+        <div className="two-thirds__center">
           <Carousel showThumbs={false} dynamicHeight={false}>
             {miscImages.impact.map((image, index) => this.renderCarouselImages(image, index))}
           </Carousel>
@@ -88,7 +88,7 @@ class MiscPage extends React.Component {
           to generate levels indefinitely until the user drops too many cookies.
           </p>
         </div>
-        <div className="two-thirds__center shadow">
+        <div className="two-thirds__center">
           <Carousel showThumbs={false} dynamicHeight={true}>
             {miscImages.cookieCatcher.map((image, index) => this.renderCarouselVideos(image, index))}
           </Carousel>
@@ -110,7 +110,7 @@ class MiscPage extends React.Component {
           The background randomly cycles through a series of colors.
           </p>
         </div>
-        <div className="two-thirds__center shadow">
+        <div className="two-thirds__center">
         <video autoPlay="autoplay" loop="loop" className="video">
           <source src={QuoteGenerator} type="video/mp4" />
         </video>
@@ -132,7 +132,7 @@ class MiscPage extends React.Component {
           the <a href="https://www.wunderground.com/weather/api/" target="blank" className="link">Weather Underground API</a>.
           </p>
         </div>
-        <div className="one-half__center shadow">
+        <div className="one-half__center">
           <img src={WeatherApp} altText="Weather App" className="video"/>
         </div>
       </div>
