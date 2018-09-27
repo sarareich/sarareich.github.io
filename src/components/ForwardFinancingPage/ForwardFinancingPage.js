@@ -419,7 +419,7 @@ class ForwardFinancingPage extends React.Component {
             </p>
             <p className="description-text">
               <strong>User Goal:</strong> Easily find contact information based on the user{`'`} current
-              customer service need. Akways contact the right person.
+              customer service need. Always contact the right person.
             </p>
           </div>
         </div>
