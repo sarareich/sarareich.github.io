@@ -88,11 +88,12 @@ body {
 
 //CONTAINER WIDTH
 .page {
-  max-width: 85vw;
+  max-width: 1224px;
+  width: 85vw;
   margin: 0 auto;
 
   @include bp(tab) {
-    max-width: 90vw;
+    width: 90vw;
   }
 }
 

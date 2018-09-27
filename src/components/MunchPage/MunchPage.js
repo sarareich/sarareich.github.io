@@ -241,6 +241,8 @@ class MunchPage extends React.Component {
               and the workflows that would enable them to accomplish their goals.
             </p>
           </div>
+        </div>
+        <div clasName="portfolio-content description">
           <div className="one-third">
             <Subtitle
               subtitle="The Users"
@@ -339,50 +341,6 @@ class MunchPage extends React.Component {
     );
   }
 
-  renderBranding() {
-    return (
-      <div className="branding">
-        <div className="portfolio-content description">
-          <Title
-            title="Branding & UI Exploration"
-          />
-          <div className="two-thirds">
-            <p className="description-text">
-              With the basic layout of the website{`'`}s main pages complete, it was time to
-              determine the look and feel of the interface and brand.
-            </p>
-            <p className="description-text">
-              I wanted the brand to be clearly associated with food, and to be bright and eye-catching
-              to show off the <strong>fun, social experience</strong> of the website.
-            </p>
-          </div>
-        </div>
-        <div className="portfolio-content">
-          <div className="one-third">
-            <Subtitle
-              subtitle="Exploration"
-            />
-          </div>
-          <div className="two-thirds shadow">
-            <Carousel showThumbs={false} dynamicHeight={true}>
-              {munchImages.brandingExploration.map((image, index) => this.renderCarouselImages(image, index))}
-            </Carousel>
-          </div>
-        </div>
-        <div className="portfolio-content">
-          <div className="one-third">
-            <Subtitle
-              subtitle="Final Branding"
-            />
-          </div>
-          <div className="two-thirds">
-            <img src={munchImages.branding} alt="Munch Brand Overview" className="project-image__small"/>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   renderUI() {
     const { photoIndex, artboardsLightboxIsOpen } = this.state;
     return (
@@ -444,7 +402,7 @@ class MunchPage extends React.Component {
           <div className="two-thirds">
             <p className="description-text">
               The profile page contains a <strong>history of photos</strong> posted by that user, as well as a
-              <strong>list of restaurants</strong> they{`'`}ve been to and a list of restaurants they would
+              <strong> list of restaurants</strong> they{`'`}ve been to and a list of restaurants they would
               like to try. Users can keep track of their own restaurants and see what their friends enjoy/are
               interested in.
             </p>
@@ -561,7 +519,6 @@ class MunchPage extends React.Component {
           {this.renderSketches()}
           {this.renderStoryboards()}
           {this.renderWireframes()}
-          {this.renderBranding()}
           {this.renderUI()}
           {this.renderPrototypes()}
         </div>
