@@ -9,7 +9,7 @@ import Title from '../common/ProjectAssets/Title';
 import Subtitle from '../common/ProjectAssets/Subtitle';
 import Image from '../common/ProjectAssets/Image';
 import LongImage from '../common/ProjectAssets/LongImage';
-import MunchHero from '../../assets/Munch/MunchHeroNew.jpg';
+import MunchHero from '../../assets/Munch/MunchHome.jpg';
 import MunchHomeLoggedOut from '../../assets/Munch/Marketing_HomePage.jpg';
 import Newsfeed from '../../assets/Munch/Newsfeed.png';
 import Profile from '../../assets/Munch/Profile.png';
