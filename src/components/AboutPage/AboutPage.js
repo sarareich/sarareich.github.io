@@ -1,6 +1,6 @@
 import React from 'react';
 import Portrait from "../../assets/portrait.jpg";
-import Resume from "../../assets/SaraReich-Resume2018-2.pdf";
+import Resume from "../../assets/Resume.pdf";
 
 class AboutPage extends React.Component {
   render() {
