@@ -25,6 +25,9 @@ class AboutPage extends React.Component {
               the design process — from planning to execution.
             </p>
             <p className="description-text">
+              I am currently seeking full-time employment opportunities beginning in May 2019.
+            </div>
+            <p className="description-text">
               In my spare time, you can probably find me cooking/eating vegan food, lifting weights, or
               reading a book.
             </p>
