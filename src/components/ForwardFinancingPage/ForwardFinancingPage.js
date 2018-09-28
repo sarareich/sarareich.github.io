@@ -119,7 +119,7 @@ class ForwardFinancingPage extends React.Component {
         <Title
           title="Background"
         />
-        <div className="two-thirds">
+        <div className="two-thirds text">
           <p className="description-text">
           I spent 7 months as an intern at Forward Financing working on both
           front end development and design. I had the opportunity to see many
@@ -141,7 +141,7 @@ class ForwardFinancingPage extends React.Component {
           <Title
             title="Merchant Portal Statements"
           />
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <p className="description-text">
               The merchant portal{`'`}s users are business owners who have been funded by Forward Financing.
               At the time that this page was designed, merchants could only access information about how much
@@ -159,12 +159,12 @@ class ForwardFinancingPage extends React.Component {
           </div>
         </div>
         <div className="portfolio-content description">
-          <div className="one-third">
+          <div className="one-third text">
             <Subtitle
               subtitle="Sketches & Ideation"
             />
           </div>
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <p className="description-text">
               Given a list of information that needed to be included on the statements page, I began
               by sketching out ideas for the best ways to organize the page. Merchants needed to be able
@@ -178,12 +178,12 @@ class ForwardFinancingPage extends React.Component {
           </div>
         </div>
         <div className="portfolio-content description no-margin">
-          <div className="one-third">
+          <div className="one-third text">
             <Subtitle
               subtitle="Desktop UI"
             />
           </div>
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <p className="description-text">
               For the final UI, I decided to use "card" components to highlight the information that would
               be most important to users, and to utilize a dropdown component for switching between advances.
@@ -218,7 +218,7 @@ class ForwardFinancingPage extends React.Component {
           <Title
             title="Partner Portal Advances"
           />
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <p className="description-text">
               The partner portal{`'`}s users are Forward Financing{`'`}s referral partners, who work with
               the company to fund business owners. Partners bring in a majority of the deals that are funded
@@ -237,12 +237,12 @@ class ForwardFinancingPage extends React.Component {
         </div>
         <div className="desktop">
           <div className="portfolio-content description no-margin">
-            <div className="one-third">
+            <div className="one-third text">
               <Subtitle
                 subtitle="Desktop UI"
               />
             </div>
-            <div className="two-thirds">
+            <div className="two-thirds text">
               <p className="description-text">
                 Given the similarities between this page and the Merchant Portal Advances page, I decided
                 to reuse a majority of the components from the merchant portal for this design in order to
@@ -291,7 +291,7 @@ class ForwardFinancingPage extends React.Component {
           <Title
             title="Partner Portal Search"
           />
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <p className="description-text">
               Two of the pages in the partner portal contain tables with information about deals that have
               not yet been funded (Pipeline page) and deals that have already been funded (Portfolio page).
@@ -310,12 +310,12 @@ class ForwardFinancingPage extends React.Component {
         </div>
         <div className="original-designs">
           <div className="portfolio-content description">
-            <div className="one-third">
+            <div className="one-third text">
               <Subtitle
                 subtitle="Original Designs"
               />
             </div>
-            <div className="two-thirds">
+            <div className="two-thirds text">
               <p className="description-text">
                 I began by identifying potential issues with the current search/filtering component design.
               </p>
@@ -328,12 +328,12 @@ class ForwardFinancingPage extends React.Component {
         </div>
         <div className="new-designs">
           <div className="portfolio-content description">
-            <div className="one-third">
+            <div className="one-third text">
               <Subtitle
                 subtitle="New Designs"
               />
             </div>
-            <div className="two-thirds">
+            <div className="two-thirds text">
               <p className="description-text">
                 I redesigned the search component by separating the filters from the search bar for
                 greater clarity, renaming the filter labels to better match the table headers, and
@@ -357,7 +357,7 @@ class ForwardFinancingPage extends React.Component {
           <Title
             title="Partner Portal User Management"
           />
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <p className="description-text">
               Most partners have multiple representatives who can access the portal. However, not all
               representatives should have access to the same information.
@@ -373,24 +373,24 @@ class ForwardFinancingPage extends React.Component {
           </div>
         </div>
         <div className="portfolio-content description">
-          <div className="one-third">
+          <div className="one-third text">
             <Subtitle
               subtitle="Adding Users"
             />
           </div>
-          <div className="two-thirds shadow">
+          <div className="two-thirds shadow text">
             <Carousel showThumbs={false} dynamicHeight={false}>
               {ffImages.addUser.map((image, index) => this.renderCarouselImages(image, index))}
             </Carousel>
           </div>
         </div>
         <div className="portfolio-content description">
-          <div className="one-third">
+          <div className="one-third text">
             <Subtitle
               subtitle="Editing/Removing Users"
             />
           </div>
-          <div className="two-thirds shadow">
+          <div className="two-thirds shadow text">
             <Carousel showThumbs={false} dynamicHeight={false}>
               {ffImages.editUser.map((image, index) => this.renderCarouselImages(image, index))}
             </Carousel>
@@ -407,7 +407,7 @@ class ForwardFinancingPage extends React.Component {
           <Title
             title="Partner Portal Contact Information"
           />
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <p className="description-text">
               Each partner has multiple points of contact at Forward Financing, such as Account Managers and
               Funding Coordinators. Previously, partners saw a generic page that listed information for each
@@ -440,7 +440,7 @@ class ForwardFinancingPage extends React.Component {
           <Title
             title="Sketch Library & Style Guide"
           />
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <p className="description-text">
               Throughout my time at Forward Financing, I worked on establishing a shareable Sketch Library and style guide
               to maintain consistency across front end designs and streamline the creation of new designs.

@@ -56,7 +56,7 @@ class MiscPage extends React.Component {
         <Title
           title="What's Your Impact?"
         />
-        <div className="two-thirds">
+        <div className="two-thirds text">
           <p className="description-text">
           This project was created in my Programming Basics class, where we used
           the <a href="https://processing.org/" target="blank" className="link">Processing</a> language
@@ -81,7 +81,7 @@ class MiscPage extends React.Component {
         <Title
           title="Cookie Catcher"
         />
-        <div className="two-thirds">
+        <div className="two-thirds text">
           <p className="description-text">
           This video game, called Cookie Catcher, was also created in my Programming Basics course.
           The game increases in difficulty each time the user completes a level, and will continue
@@ -103,7 +103,7 @@ class MiscPage extends React.Component {
         <Title
           title="Quote Generator"
         />
-        <div className="two-thirds">
+        <div className="two-thirds text">
           <p className="description-text">
           This project was created using JavaScript and generates random quotes from
           the <a href="https://forismatic.com/en/api/" target="blank" className="link">forismatic API</a>.
@@ -125,7 +125,7 @@ class MiscPage extends React.Component {
         <Title
           title="Weather App"
         />
-        <div className="two-thirds">
+        <div className="two-thirds text">
           <p className="description-text">
           This project was created using JavaScript. It identifies the user{`'`}s location and provides
           the current weather by utilizing
