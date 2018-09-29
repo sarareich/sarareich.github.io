@@ -56,7 +56,7 @@ class MiscPage extends React.Component {
         <Title
           title="What's Your Impact?"
         />
-        <div className="two-thirds">
+        <div className="two-thirds text">
           <p className="description-text">
           This project was created in my Programming Basics class, where we used
           the <a href="https://processing.org/" target="blank" className="link">Processing</a> language
@@ -66,7 +66,7 @@ class MiscPage extends React.Component {
           and fish, as well as some environmentally friendly, plant-based alternatives.
           </p>
         </div>
-        <div className="two-thirds__center shadow">
+        <div className="two-thirds__center">
           <Carousel showThumbs={false} dynamicHeight={false}>
             {miscImages.impact.map((image, index) => this.renderCarouselImages(image, index))}
           </Carousel>
@@ -81,14 +81,14 @@ class MiscPage extends React.Component {
         <Title
           title="Cookie Catcher"
         />
-        <div className="two-thirds">
+        <div className="two-thirds text">
           <p className="description-text">
           This video game, called Cookie Catcher, was also created in my Programming Basics course.
           The game increases in difficulty each time the user completes a level, and will continue
           to generate levels indefinitely until the user drops too many cookies.
           </p>
         </div>
-        <div className="two-thirds__center shadow">
+        <div className="two-thirds__center">
           <Carousel showThumbs={false} dynamicHeight={true}>
             {miscImages.cookieCatcher.map((image, index) => this.renderCarouselVideos(image, index))}
           </Carousel>
@@ -103,14 +103,14 @@ class MiscPage extends React.Component {
         <Title
           title="Quote Generator"
         />
-        <div className="two-thirds">
+        <div className="two-thirds text">
           <p className="description-text">
           This project was created using JavaScript and generates random quotes from
           the <a href="https://forismatic.com/en/api/" target="blank" className="link">forismatic API</a>.
           The background randomly cycles through a series of colors.
           </p>
         </div>
-        <div className="two-thirds__center shadow">
+        <div className="two-thirds__center">
         <video autoPlay="autoplay" loop="loop" className="video">
           <source src={QuoteGenerator} type="video/mp4" />
         </video>
@@ -125,14 +125,14 @@ class MiscPage extends React.Component {
         <Title
           title="Weather App"
         />
-        <div className="two-thirds">
+        <div className="two-thirds text">
           <p className="description-text">
           This project was created using JavaScript. It identifies the user{`'`}s location and provides
           the current weather by utilizing
           the <a href="https://www.wunderground.com/weather/api/" target="blank" className="link">Weather Underground API</a>.
           </p>
         </div>
-        <div className="one-half__center shadow">
+        <div className="one-half__center">
           <img src={WeatherApp} altText="Weather App" className="video"/>
         </div>
       </div>

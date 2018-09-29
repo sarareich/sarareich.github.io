@@ -1,6 +1,6 @@
 import React from 'react';
 import Portrait from "../../assets/portrait.jpg";
-import Resume from "../../assets/SaraReich-Resume2018-2.pdf";
+import Resume from "../../assets/Resume.pdf";
 
 class AboutPage extends React.Component {
   render() {
@@ -25,11 +25,16 @@ class AboutPage extends React.Component {
               the design process — from planning to execution.
             </p>
             <p className="description-text">
+              <strong>I am currently seeking full-time employment opportunities beginning in May 2019.</strong>
+            </p>
+            <p className="description-text">
               In my spare time, you can probably find me cooking/eating vegan food, lifting weights, or
               reading a book.
             </p>
             <p className="description-text">
-              For more information, take a look at my <a href={Resume} className="link" target="blank">resume</a>, or drop me a line at [email-here]!
+              For more information, take a look at my <a href={Resume} className="link" target="blank">resume</a>, find
+              me on <a href="https://www.linkedin.com/in/sara-reich-281941114/" className="link" target="blank">LinkedIn</a>, or
+              drop me a line at <a href="mailto:reichsara96@gmail.com" className="link">reichsara96@gmail.com</a>!
             </p>
           </div>
         </div>

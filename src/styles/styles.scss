@@ -88,11 +88,12 @@ body {
 
 //CONTAINER WIDTH
 .page {
-  max-width: 85vw;
+  max-width: 1224px;
+  width: 85vw;
   margin: 0 auto;
 
   @include bp(tab) {
-    max-width: 90vw;
+    width: 90vw;
   }
 }
 
@@ -138,8 +139,12 @@ body {
   .one-third,
   .two-thirds {
     grid-column: span 6;
-  }
 
+    &.text {
+      grid-column: span 12;
+      margin-left: 0;
+    }
+  }
 
   .two-thirds {
     margin-left: 1rem;

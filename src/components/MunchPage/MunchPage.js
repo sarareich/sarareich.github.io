@@ -9,7 +9,7 @@ import Title from '../common/ProjectAssets/Title';
 import Subtitle from '../common/ProjectAssets/Subtitle';
 import Image from '../common/ProjectAssets/Image';
 import LongImage from '../common/ProjectAssets/LongImage';
-import MunchHero from '../../assets/Munch/MunchHeroNew.jpg';
+import MunchHero from '../../assets/Munch/MunchHome.jpg';
 import MunchHomeLoggedOut from '../../assets/Munch/Marketing_HomePage.jpg';
 import Newsfeed from '../../assets/Munch/Newsfeed.png';
 import Profile from '../../assets/Munch/Profile.png';
@@ -120,7 +120,7 @@ class MunchPage extends React.Component {
         <Title
           title="Background"
         />
-        <div className="two-thirds">
+        <div className="two-thirds text">
           <p className="description-text">
             In my Interaction Design 1 – Responsive course, we were tasked with creating a website that
             could be used to keep track of something. After a few rounds of ideation, I decided that I wanted
@@ -146,7 +146,7 @@ class MunchPage extends React.Component {
           <Title
             title="User Research"
           />
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <p className="description-text">
               I interviewed 3 potential users of my website idea to understand their <strong>interest in
               keeping track of restaurants</strong>, their <strong>current process for finding and choosing
@@ -173,12 +173,12 @@ class MunchPage extends React.Component {
           {this.renderLightbox(munchImages.personaImages, personaLightboxIsOpen, "personaLightboxIsOpen", photoIndex)}
         </div>
         <div className="portfolio-content description">
-          <div className="one-third">
+          <div className="one-third text">
             <Subtitle
               subtitle="Takeaways"
             />
           </div>
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <ul>
               <li className="bullet-list">People have <strong>the most trust in their friends{`'`} opinions </strong>
                 and consider them heavily when choosing a restaurant.
@@ -204,7 +204,7 @@ class MunchPage extends React.Component {
           <Title
             title="Sketches & Ideation"
           />
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <p className="description-text">
               With my user research guiding the features I wanted to include in the website,
               I began to sketch wireframes for some of the site{`'`}s main pages.
@@ -235,18 +235,20 @@ class MunchPage extends React.Component {
           <Title
             title="Storyboards"
           />
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <p className="description-text">
               After defining the key features of the website, I focused on potential users
               and the workflows that would enable them to accomplish their goals.
             </p>
           </div>
-          <div className="one-third">
+        </div>
+        <div className="portfolio-content description">
+          <div className="one-third text">
             <Subtitle
               subtitle="The Users"
             />
           </div>
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <ul>
               <li className="bullet-list"><strong>The Foodie: </strong>Someone who goes out to eat frequently
               and wants to find new and exciting restaurants to try.
@@ -287,7 +289,7 @@ class MunchPage extends React.Component {
           <Title
             title="Wireframes"
           />
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <p className="description-text">
               My storyboards led me to three main workflows for my project. I created wireframes for each workflow
               and used them for user testing:
@@ -339,50 +341,6 @@ class MunchPage extends React.Component {
     );
   }
 
-  renderBranding() {
-    return (
-      <div className="branding">
-        <div className="portfolio-content description">
-          <Title
-            title="Branding & UI Exploration"
-          />
-          <div className="two-thirds">
-            <p className="description-text">
-              With the basic layout of the website{`'`}s main pages complete, it was time to
-              determine the look and feel of the interface and brand.
-            </p>
-            <p className="description-text">
-              I wanted the brand to be clearly associated with food, and to be bright and eye-catching
-              to show off the <strong>fun, social experience</strong> of the website.
-            </p>
-          </div>
-        </div>
-        <div className="portfolio-content">
-          <div className="one-third">
-            <Subtitle
-              subtitle="Exploration"
-            />
-          </div>
-          <div className="two-thirds shadow">
-            <Carousel showThumbs={false} dynamicHeight={true}>
-              {munchImages.brandingExploration.map((image, index) => this.renderCarouselImages(image, index))}
-            </Carousel>
-          </div>
-        </div>
-        <div className="portfolio-content">
-          <div className="one-third">
-            <Subtitle
-              subtitle="Final Branding"
-            />
-          </div>
-          <div className="two-thirds">
-            <img src={munchImages.branding} alt="Munch Brand Overview" className="project-image__small"/>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   renderUI() {
     const { photoIndex, artboardsLightboxIsOpen } = this.state;
     return (
@@ -391,7 +349,7 @@ class MunchPage extends React.Component {
           <Title
             title="User Interface Design"
           />
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <p className="description-text">
               I tested my wireframes with real users and used my branding explorations to create
               the final user interface design for each of my workflows in Sketch.
@@ -399,29 +357,29 @@ class MunchPage extends React.Component {
           </div>
         </div>
         <div className="portfolio-content description">
-          <div className="one-third">
+          <div className="one-third text">
             <Subtitle
               subtitle="Marketing Site"
             />
           </div>
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <p className="description-text">
               While Munch is intended to be used as a logged-in experience, many of the features can be
               used by non-registered users. This marketing site represents the initial experience for
               these users.
             </p>
           </div>
-          <div className="two-thirds__center shadow">
+          <div className="two-thirds__center shadow text">
             <img src={MunchHomeLoggedOut} alt="Munch Home Page – Logged Out" className="project-image__small"/>
           </div>
         </div>
         <div className="portfolio-content description">
-          <div className="one-third">
+          <div className="one-third text">
             <Subtitle
               subtitle="Newsfeed"
             />
           </div>
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <p className="description-text">
               The home page for logged in users is a newsfeed including <strong>food photos posted by friends </strong>
               and <strong>restaurant recommendations</strong> generated based on the user{`'`}s activity. Recommendations were
@@ -436,15 +394,15 @@ class MunchPage extends React.Component {
               color="#B7345E"
             />
           </div>
-          <div className="one-third">
+          <div className="one-third text">
             <Subtitle
               subtitle="Profile"
             />
           </div>
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <p className="description-text">
               The profile page contains a <strong>history of photos</strong> posted by that user, as well as a
-              <strong>list of restaurants</strong> they{`'`}ve been to and a list of restaurants they would
+              <strong> list of restaurants</strong> they{`'`}ve been to and a list of restaurants they would
               like to try. Users can keep track of their own restaurants and see what their friends enjoy/are
               interested in.
             </p>
@@ -456,12 +414,12 @@ class MunchPage extends React.Component {
               color="#B7345E"
             />
           </div>
-          <div className="one-third">
+          <div className="one-third text">
             <Subtitle
               subtitle="Restaurant Detail"
             />
           </div>
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <p className="description-text">
               The restaurant detail page contains all the information you would expect to see on a
               restaurant searching website, such as reviews, photos, hours, website, etc. Notable features
@@ -476,12 +434,12 @@ class MunchPage extends React.Component {
               color="#B7345E"
             />
           </div>
-          <div className="one-third">
+          <div className="one-third text">
             <Subtitle
               subtitle="Photo Upload"
             />
           </div>
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <p className="description-text">
               When uploading a photo, users are guided through steps to find the restaurant where they ate,
               the dish they are posting a photo of, and their ratings/review. Photos are displayed in
@@ -518,7 +476,7 @@ class MunchPage extends React.Component {
           <Title
             title="Prototypes"
           />
-          <div className="two-thirds">
+          <div className="two-thirds text">
             <p className="description-text">
               Here are demos of the prototypes I made for the mobile and desktop versions of the
               Munch website.
@@ -561,7 +519,6 @@ class MunchPage extends React.Component {
           {this.renderSketches()}
           {this.renderStoryboards()}
           {this.renderWireframes()}
-          {this.renderBranding()}
           {this.renderUI()}
           {this.renderPrototypes()}
         </div>

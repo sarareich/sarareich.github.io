@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../common/Logo/Logo';
 import { NavLink } from 'react-router-dom';
-import Resume from '../../assets/SaraReich-Resume2018-2.pdf';
+import Resume from '../../assets/Resume.pdf';
 
 class Header extends React.Component {
   render() {
