@@ -34,7 +34,7 @@ class AboutPage extends React.Component {
             <p className="description-text">
               For more information, take a look at my <a href={Resume} className="link" target="blank">resume</a>, find
               me on <a href="https://www.linkedin.com/in/sara-reich-281941114/" className="link" target="blank">LinkedIn</a>, or
-              drop me a line at [email-here]!
+              drop me a line at <a href="mailto:reichsara96@gmail.com" className="link">reichsara96@gmail.com</a>!
             </p>
           </div>
         </div>
