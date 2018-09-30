@@ -20,16 +20,6 @@ class MiscPage extends React.Component {
     );
   }
 
-  renderCarouselVideos(video, index) {
-    return (
-      <div key={index}>
-        <video autoPlay="autoplay" loop="loop" className="video">
-          <source src={video} type="video/mp4" />
-        </video>
-      </div>
-    )
-  }
-
   renderHero() {
     return (
       <Hero
