@@ -8,7 +8,7 @@ import Title from '../common/ProjectAssets/Title';
 import Subtitle from '../common/ProjectAssets/Subtitle';
 import miscImages from '../../constants/miscImages';
 import MiscHero from '../../assets/Miscellaneous/MiscellaneousHome.jpg';
-import QuoteGenerator from '../../assets/Miscellaneous/quoteGenerator.mp4';
+import QuoteGenerator from '../../assets/Miscellaneous/quoteGenerator.gif';
 import WeatherApp from '../../assets/Miscellaneous/weather.gif';
 
 class MiscPage extends React.Component {
@@ -18,16 +18,6 @@ class MiscPage extends React.Component {
         <img src={image}/>
       </div>
     );
-  }
-
-  renderCarouselVideos(video, index) {
-    return (
-      <div key={index}>
-        <video autoPlay="autoplay" loop="loop" className="video">
-          <source src={video} type="video/mp4" />
-        </video>
-      </div>
-    )
   }
 
   renderHero() {
@@ -90,7 +80,7 @@ class MiscPage extends React.Component {
         </div>
         <div className="two-thirds__center">
           <Carousel showThumbs={false} dynamicHeight={true}>
-            {miscImages.cookieCatcher.map((image, index) => this.renderCarouselVideos(image, index))}
+            {miscImages.cookieCatcher.map((image, index) => this.renderCarouselImages(image, index))}
           </Carousel>
         </div>
       </div>
@@ -111,9 +101,7 @@ class MiscPage extends React.Component {
           </p>
         </div>
         <div className="two-thirds__center">
-        <video autoPlay="autoplay" loop="loop" className="video">
-          <source src={QuoteGenerator} type="video/mp4" />
-        </video>
+          <img src={QuoteGenerator} altText="Quote Generator" className="video"/>
         </div>
       </div>
     );
