@@ -7,6 +7,14 @@
   padding: 0;
 }
 
+.App {
+  display: block;
+  min-height: 100vh;
+  overflow: hidden;
+  padding-bottom: 155px;
+  position: relative;
+}
+
 .shadow {
   box-shadow: 0 6px 20px rgba(0, 0, 0, .1), 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -88,7 +96,7 @@ body {
 
 //CONTAINER WIDTH
 .page {
-  max-width: 1224px;
+  max-width: 1408px;
   width: 85vw;
   margin: 0 auto;
 
