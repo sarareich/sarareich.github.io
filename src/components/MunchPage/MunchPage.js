@@ -8,7 +8,6 @@ import projectInfo from '../../constants/projectInfo';
 import Title from '../common/ProjectAssets/Title';
 import Subtitle from '../common/ProjectAssets/Subtitle';
 import Image from '../common/ProjectAssets/Image';
-import LongImage from '../common/ProjectAssets/LongImage';
 import MunchHero from '../../assets/Munch/MunchHome.jpg';
 import MunchHomeLoggedOut from '../../assets/Munch/Marketing_HomePage.jpg';
 import Newsfeed from '../../assets/Munch/Newsfeed.png';
@@ -73,10 +72,10 @@ class MunchPage extends React.Component {
     );
   }
 
-  renderCarouselImages(image, index) {
+  renderCarouselImages(image, index, altText) {
     return (
       <div key={index}>
-        <img src={image}/>
+        <img src={image} alt={altText}/>
       </div>
     );
   }
@@ -219,7 +218,7 @@ class MunchPage extends React.Component {
         <div className="portfolio-content">
           <div className="two-thirds__center shadow">
             <Carousel showThumbs={false} dynamicHeight={true}>
-              {munchImages.sketches.map((image, index) => this.renderCarouselImages(image, index))}
+              {munchImages.sketches.map((image, index) => this.renderCarouselImages(image, index, "Munch Sketch"))}
             </Carousel>
           </div>
         </div>
@@ -490,6 +489,7 @@ class MunchPage extends React.Component {
               webkitallowfullscreen="true"
               mozallowfullscreen="true"
               allowFullScreen="true"
+              title="Desktop Prototype"
             />
           </div>
           <div className="two-thirds__center iframe-container column">
@@ -500,6 +500,7 @@ class MunchPage extends React.Component {
               webkitallowfullscreen="true"
               mozallowfullscreen="true"
               allowFullScreen="true"
+              title="Mobile Prototype"
             />
           </div>
         </div>

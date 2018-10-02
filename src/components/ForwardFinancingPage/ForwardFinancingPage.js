@@ -85,10 +85,10 @@ class ForwardFinancingPage extends React.Component {
     );
   }
 
-  renderCarouselImages(image, index) {
+  renderCarouselImages(image, index, altText) {
     return (
       <div key={index}>
-        <img src={image}/>
+        <img src={image} alt={altText}/>
       </div>
     );
   }
@@ -173,7 +173,7 @@ class ForwardFinancingPage extends React.Component {
           </div>
           <div className="one-half__center shadow">
             <Carousel showThumbs={false} dynamicHeight={true}>
-              {ffImages.mpIdeation.map((image, index) => this.renderCarouselImages(image, index))}
+              {ffImages.mpIdeation.map((image, index) => this.renderCarouselImages(image, index, "Merchant Portal Ideation"))}
             </Carousel>
           </div>
         </div>
@@ -380,7 +380,7 @@ class ForwardFinancingPage extends React.Component {
           </div>
           <div className="two-thirds shadow text">
             <Carousel showThumbs={false} dynamicHeight={false}>
-              {ffImages.addUser.map((image, index) => this.renderCarouselImages(image, index))}
+              {ffImages.addUser.map((image, index) => this.renderCarouselImages(image, index, "User Management - Adding Users"))}
             </Carousel>
           </div>
         </div>
@@ -392,7 +392,7 @@ class ForwardFinancingPage extends React.Component {
           </div>
           <div className="two-thirds shadow text">
             <Carousel showThumbs={false} dynamicHeight={false}>
-              {ffImages.editUser.map((image, index) => this.renderCarouselImages(image, index))}
+              {ffImages.editUser.map((image, index) => this.renderCarouselImages(image, index, "User Management - Editing Users"))}
             </Carousel>
           </div>
         </div>
