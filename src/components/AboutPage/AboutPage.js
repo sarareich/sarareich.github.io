@@ -10,6 +10,7 @@ class AboutPage extends React.Component {
           <img
             src={Portrait}
             className="circle"
+            alt="Portrait of Sara Reich"
           />
         </div>
         <div className="portfolio-content description">

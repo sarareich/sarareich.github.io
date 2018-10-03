@@ -5,17 +5,16 @@ import Hero from '../common/Hero/Hero';
 import ProjectInfo from '../common/ProjectInfo/ProjectInfo';
 import projectInfo from '../../constants/projectInfo';
 import Title from '../common/ProjectAssets/Title';
-import Subtitle from '../common/ProjectAssets/Subtitle';
 import miscImages from '../../constants/miscImages';
 import MiscHero from '../../assets/Miscellaneous/MiscellaneousHome.jpg';
 import QuoteGenerator from '../../assets/Miscellaneous/quoteGenerator.gif';
 import WeatherApp from '../../assets/Miscellaneous/weather.gif';
 
 class MiscPage extends React.Component {
-  renderCarouselImages(image, index) {
+  renderCarouselImages(image, index, altText) {
     return (
       <div key={index}>
-        <img src={image}/>
+        <img src={image} alt={altText}/>
       </div>
     );
   }
@@ -58,7 +57,7 @@ class MiscPage extends React.Component {
         </div>
         <div className="two-thirds__center">
           <Carousel showThumbs={false} dynamicHeight={false}>
-            {miscImages.impact.map((image, index) => this.renderCarouselImages(image, index))}
+            {miscImages.impact.map((image, index) => this.renderCarouselImages(image, index, "What's Your Impact?"))}
           </Carousel>
         </div>
       </div>
@@ -80,7 +79,7 @@ class MiscPage extends React.Component {
         </div>
         <div className="two-thirds__center">
           <Carousel showThumbs={false} dynamicHeight={true}>
-            {miscImages.cookieCatcher.map((image, index) => this.renderCarouselImages(image, index))}
+            {miscImages.cookieCatcher.map((image, index) => this.renderCarouselImages(image, index, "Cookie Catcher"))}
           </Carousel>
         </div>
       </div>
@@ -101,7 +100,7 @@ class MiscPage extends React.Component {
           </p>
         </div>
         <div className="two-thirds__center">
-          <img src={QuoteGenerator} altText="Quote Generator" className="video"/>
+          <img src={QuoteGenerator} alt="Quote Generator" className="video"/>
         </div>
       </div>
     );
@@ -121,7 +120,7 @@ class MiscPage extends React.Component {
           </p>
         </div>
         <div className="one-half__center">
-          <img src={WeatherApp} altText="Weather App" className="video"/>
+          <img src={WeatherApp} alt="Weather App" className="video"/>
         </div>
       </div>
     );
