@@ -16,7 +16,6 @@ import MPTabletMobile from '../../assets/ForwardFinancing/MP_Tablet_Mobile_State
 import AdvancesDesktop from '../../assets/ForwardFinancing/Desktop_AdvancePage.png';
 import AdvancesTablet from '../../assets/ForwardFinancing/Tablet_AdvancePage.jpg';
 import AdvancesMobile from '../../assets/ForwardFinancing/Mobile_AdvancePage.jpg';
-import PPContactInfo from '../../assets/ForwardFinancing/ContactInfo.jpg';
 import StyleGuideFullSize from '../../assets/ForwardFinancing/Sketch-Style-Guide.png';
 
 class ForwardFinancingPage extends React.Component {
@@ -25,6 +24,7 @@ class ForwardFinancingPage extends React.Component {
     this.state = {
       originalSearchLightboxIsOpen: false,
       newSearchLightboxIsOpen: false,
+      contactInfoLightboxIsOpen: false,
       styleGuideLightboxIsOpen: false,
       photoIndex: 0
     };
@@ -401,6 +401,7 @@ class ForwardFinancingPage extends React.Component {
   }
 
   renderContactInfo() {
+    const { photoIndex, contactInfoLightboxIsOpen } = this.state;
     return (
       <div className="partner-portal-contact-info">
         <div className="portfolio-content description">
@@ -422,12 +423,11 @@ class ForwardFinancingPage extends React.Component {
               customer service need. Always contact the right person.
             </p>
           </div>
+          {
+            ffImages.contactInfo.map((image, index) => this.renderImageRow(image, index, "Contact Information Designs", "contactInfoLightboxIsOpen", "one-half column shadow"))
+          }
         </div>
-        <Image
-          image={PPContactInfo}
-          alt="Partner Portal Contact Information UI"
-          color="#52995c"
-        />
+        {this.renderLightbox(ffImages.contactInfo, contactInfoLightboxIsOpen, "contactInfoLightboxIsOpen", photoIndex)}
       </div>
     );
   }
