@@ -18,6 +18,7 @@ class DoughPage extends React.Component {
     this.state = {
       workflowLightboxIsOpen: false,
       uiLightboxIsOpen: false,
+      prototypeLightboxIsOpen: false,
       photoIndex: 0
     };
 
@@ -141,21 +142,72 @@ class DoughPage extends React.Component {
     const { photoIndex, uiLightboxIsOpen } = this.state;
     return (
       <div className="UI-spec">
+        <div className="portfolio-content description">
+          <Title
+            title="User Interface Spec"
+          />
+          <div className="two-thirds text">
+            <p className="description-text">
+              I created a new workflow for my app and made initial wireframes for the screens. I used the wireframes to
+              create user interface specifications which detail interactions and navigation between screens.
+            </p>
+            <p className="description-text">
+              The main functions of the app are finding recipes, a step-by-step recipe mode with troubleshooting and
+              additional details about each step, and a bread basics section so users can learn more about the bread-making
+              process outside of individual recipes.
+            </p>
+          </div>
+          {
+            doughImages.uiSpec.map((image, index) => this.renderImageRow(image, index, "Interaction Flow", "uiLightboxIsOpen", "full-width"))
+          }
+        </div>
+        {this.renderLightbox(doughImages.uiSpec, uiLightboxIsOpen, "uiLightboxIsOpen", photoIndex)}
+      </div>
+    );
+  }
+
+  renderPaperPrototype() {
+    const { photoIndex, prototypeLightboxIsOpen } = this.state;
+    return (
+      <div className="paper-prototype">
       <div className="portfolio-content description">
         <Title
-          title="User Interface Spec"
+          title="Paper Prototype"
         />
         <div className="two-thirds text">
           <p className="description-text">
-            I created a new workflow for my app and made initial wireframes for the screens. I used the wireframes to
-            create user interface specifications which detail interactions and navigation between screens.
+            I used the wireframes as a paper prototype for usability testing. Testing led me to add new features
+            to the app, such as the ability to look for more recipes while the timer counts down without having
+            to exit the recipe.
           </p>
         </div>
         {
-          doughImages.uiSpec.map((image, index) => this.renderImageRow(image, index, "Interaction Flow", "uiLightboxIsOpen", "full-width"))
+          doughImages.paperPrototype.map((image, index) => this.renderImageRow(image, index, "Paper Prototype", "prototypeLightboxIsOpen", "one-half__center"))
         }
       </div>
-      {this.renderLightbox(doughImages.uiSpec, uiLightboxIsOpen, "uiLightboxIsOpen", photoIndex)}
+      {this.renderLightbox(doughImages.paperPrototype, prototypeLightboxIsOpen, "prototypeLightboxIsOpen", photoIndex)}
+      </div>
+    );
+  }
+
+  renderUI() {
+    const { photoIndex, uiLightboxIsOpen } = this.state;
+    return (
+      <div className="user-interface">
+        <div className="portfolio-content description">
+          <Title
+            title="User Interface"
+          />
+          <div className="two-thirds text">
+            <p className="description-text">
+              Here are all of the screens I created for the final Dough user interface.
+            </p>
+          </div>
+          {
+            doughImages.interface.map((image, index) => this.renderImageRow(image, index, "User Interface", "uiLightboxIsOpen", "full-width column"))
+          }
+        </div>
+        {this.renderLightbox(doughImages.interface, uiLightboxIsOpen, "uiLightboxIsOpen", photoIndex)}
       </div>
     );
   }
@@ -170,6 +222,8 @@ class DoughPage extends React.Component {
           {this.renderBackground()}
           {this.renderWorkflow()}
           {this.renderUISpec()}
+          {this.renderPaperPrototype()}
+          {this.renderUI()}
         </div>
       </div>
     );
