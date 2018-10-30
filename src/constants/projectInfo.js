@@ -12,5 +12,10 @@ export default {
   miscProjectInfo: [
     {title: 'Roles', description: 'Interface Design, Development'},
     {title: 'Tools', description: 'Processing, JavaScript, HTML/CSS'}
+  ],
+  doughProjectInfo: [
+    {title: 'Roles', description: 'Wireframing, Interface Design'},
+    {title: 'Timeline', description: 'September – October 2018'},
+    {title: 'Tools', description: 'Sketch'}
   ]
 };
