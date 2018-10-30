@@ -14,6 +14,7 @@ class DoughPage extends React.Component {
     this.state = {
       workflowLightboxIsOpen: false,
       uiLightboxIsOpen: false,
+      uiSpecLightboxIsOpen: false,
       prototypeLightboxIsOpen: false,
       photoIndex: 0
     };
@@ -135,7 +136,7 @@ class DoughPage extends React.Component {
   }
 
   renderUISpec() {
-    const { photoIndex, uiLightboxIsOpen } = this.state;
+    const { photoIndex, uiSpecLightboxIsOpen } = this.state;
     return (
       <div className="UI-spec">
         <div className="portfolio-content description">
@@ -154,10 +155,10 @@ class DoughPage extends React.Component {
             </p>
           </div>
           {
-            doughImages.uiSpec.map((image, index) => this.renderImageRow(image, index, "Interaction Flow", "uiLightboxIsOpen", "full-width"))
+            doughImages.uiSpec.map((image, index) => this.renderImageRow(image, index, "Interaction Flow", "uiSpecLightboxIsOpen", "full-width"))
           }
         </div>
-        {this.renderLightbox(doughImages.uiSpec, uiLightboxIsOpen, "uiLightboxIsOpen", photoIndex)}
+        {this.renderLightbox(doughImages.uiSpec, uiSpecLightboxIsOpen, "uiSpecLightboxIsOpen", photoIndex)}
       </div>
     );
   }
