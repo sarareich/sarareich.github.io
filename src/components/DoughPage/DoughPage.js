@@ -1,14 +1,10 @@
 import React from 'react';
-import { Carousel } from 'react-responsive-carousel';
 import ScrollUp from '../common/ScrollUp/ScrollUp';
 import LightBox from '../common/Lightbox/Lightbox';
 import doughImages from '../../constants/doughImages';
 import Hero from '../common/Hero/Hero';
 import ProjectInfo from '../common/ProjectInfo/ProjectInfo';
 import Title from '../common/ProjectAssets/Title';
-import Subtitle from '../common/ProjectAssets/Subtitle';
-import Image from '../common/ProjectAssets/Image';
-import LongImage from '../common/ProjectAssets/LongImage';
 import projectInfo from '../../constants/projectInfo';
 import DoughHero from '../../assets/Dough/hero.jpg';
 
