@@ -29,6 +29,10 @@ class HomePage extends React.Component {
   render() {
     return (
       <div className="portfolio-home page">
+        <div className="header-description">
+          <h3 className="heading-2 lato title-case">Hi there! I'm Sara, and I'm a digital product designer.</h3>
+          <p>I'm currently completing my senior year at Northeastern University.</p>
+        </div>
         <div className="portfolio-content">
           {this.renderImage("two-thirds", "work/munch", "", MunchHero, "Munch", "non-responsive")}
           {this.renderImage("one-third", "work/dough", "blue-gradient", DoughHome, "Dough", "")}
