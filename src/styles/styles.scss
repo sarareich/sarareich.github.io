@@ -47,6 +47,14 @@ body {
 
 .heading-2 {
   font-size: 1.999rem;
+
+  &.lato {
+    font-family: 'Lato', sans-serif;
+  }
+
+  &.title-case {
+    text-transform: none;
+  }
 }
 
 .heading-3 {
