@@ -4,6 +4,7 @@ import FFHome from '../../assets/ForwardFinancing/FF_HomePage.png';
 import MunchHero from '../../assets/Munch/MunchHero.jpg';
 import MiscHome from '../../assets/Miscellaneous/MiscellaneousHome.jpg';
 import DoughHome from '../../assets/Dough/homePage.png';
+import TourzyHome from '../../assets/Tourzy/tourzyHome.png';
 
 class HomePage extends React.Component {
   renderImage(size, route, desiredClass, image, title, imageClass) {
@@ -34,6 +35,7 @@ class HomePage extends React.Component {
           <p>I'm currently completing my senior year at Northeastern University.</p>
         </div>
         <div className="portfolio-content">
+          {this.renderImage("full-width", "work/tourzy", "red-gradient", TourzyHome, "Tourzy", "")}
           {this.renderImage("two-thirds", "work/munch", "", MunchHero, "Munch", "non-responsive")}
           {this.renderImage("one-third", "work/dough", "blue-gradient", DoughHome, "Dough", "")}
           {this.renderImage("one-third", "/work/forward-financing", "green-gradient", FFHome, "Forward Financing", "")}
