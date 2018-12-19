@@ -17,5 +17,10 @@ export default {
     {title: 'Roles', description: 'Wireframing, Interface Design'},
     {title: 'Timeline', description: 'September – October 2018'},
     {title: 'Tools', description: 'Sketch'}
+  ],
+  tourzyProjectInfo: [
+    {title: 'Roles', description: 'User Research, Wireframing, User Testing, Interface Design, Branding'},
+    {title: 'Timeline', description: 'November – December 2018'},
+    {title: 'Tools', description: 'Sketch, Illustrator'}
   ]
 };
