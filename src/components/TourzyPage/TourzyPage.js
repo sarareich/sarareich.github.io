@@ -1,13 +1,78 @@
 import React from 'react';
 import ScrollUp from '../common/ScrollUp/ScrollUp';
 import LightBox from '../common/Lightbox/Lightbox';
+import tourzyImages from '../../constants/tourzyImages';
 import Hero from '../common/Hero/Hero';
 import ProjectInfo from '../common/ProjectInfo/ProjectInfo';
 import Title from '../common/ProjectAssets/Title';
+import Subtitle from '../common/ProjectAssets/Subtitle';
 import projectInfo from '../../constants/projectInfo';
 import TourzyHero from '../../assets/Tourzy/tourzyHero.jpg';
 
 class TourzyPage extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      taskLightboxIsOpen: false,
+      photoIndex: 0
+    };
+
+    this.openLightbox = this.openLightbox.bind(this);
+  }
+
+  openLightbox(index, event, lightbox) {
+    event.preventDefault();
+    this.setState({
+      [lightbox]: true,
+      photoIndex: index
+    });
+  }
+
+  closeLightbox(lightbox) {
+    this.setState({
+      [lightbox]: false,
+      photoIndex: 0
+    });
+  }
+
+  nextLightboxImage(images) {
+    this.setState({
+      photoIndex: (this.state.photoIndex + 1) % images.length,
+    });
+  }
+
+  prevLightboxImage(images) {
+    this.setState({
+      photoIndex: (this.state.photoIndex + images.length - 1) % images.length,
+    });
+  }
+
+  renderImageRow(image, index, altText, lightbox, desiredClass) {
+    return (
+      <div className={desiredClass} key={index}>
+        <img
+          src={image}
+          className="project-image__small zoom"
+          alt={altText}
+          onClick={(event) => this.openLightbox(index, event, lightbox)}
+        />
+      </div>
+    );
+  }
+
+  renderLightbox(lightboxImages, lightbox, lightboxString, index) {
+    return (
+      <LightBox
+        images={lightboxImages}
+        isOpen={lightbox}
+        onClose={this.closeLightbox.bind(this, lightboxString)}
+        nextImage={this.nextLightboxImage.bind(this, lightboxImages)}
+        prevImage={this.prevLightboxImage.bind(this, lightboxImages)}
+        photoIndex={index}
+      />
+    );
+  }
+
   renderHero() {
     return (
       <Hero
@@ -41,11 +106,46 @@ class TourzyPage extends React.Component {
             additional needs that younger travelers do not have to consider.
           </p>
           <p className="description-text">
-            <strong>Tourzy</strong> is a “virtual tour guide” who helps you plan activities for your travels based on  
+            <strong>Tourzy</strong> is a “virtual tour guide” who helps you plan activities for your travels based on
             personal preferences and needs. The app responds to in-the-moment needs and makes suggestions
             during your travels.
           </p>
         </div>
+      </div>
+    );
+  }
+
+  renderUserResearch() {
+    const { photoIndex, taskLightboxIsOpen } = this.state;
+    return (
+      <div className="user-research">
+        <div className="portfolio-content description">
+          <Title
+            title="User Research"
+          />
+          <div className="two-thirds text">
+            <p className="description-text">
+              I interviewed a retired couple who travels frequently as the starting point for the creation of my
+              app. I focused primarily on their <strong>current process</strong> for making travel plans in order
+              to discover pain points and find places to intervene in the process.
+            </p>
+          </div>
+        </div>
+        <div className="portfolio-content description">
+          <div className="one-third text">
+            <Subtitle
+              subtitle="Task Analysis"
+            />
+          </div>
+          <div className="two-thirds text">
+            Based on the interview, I created a task analysis chart including all of the tasks and subtasks
+            the interview participants went through while planning and going on a trip.
+          </div>
+          {
+            tourzyImages.taskAnalysis.map((image, index) => this.renderImageRow(image, index, "Task Analysis", "taskLightboxIsOpen", "two-thirds__center"))
+          }
+        </div>
+        {this.renderLightbox(tourzyImages.taskAnalysis, taskLightboxIsOpen, "taskLightboxIsOpen", photoIndex)}
       </div>
     );
   }
@@ -58,6 +158,7 @@ class TourzyPage extends React.Component {
           <ScrollUp />
           {this.renderProjectInfo()}
           {this.renderBackground()}
+          {this.renderUserResearch()}
         </div>
       </div>
     );
