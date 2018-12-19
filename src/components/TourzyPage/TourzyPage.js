@@ -28,6 +28,28 @@ class TourzyPage extends React.Component {
     );
   }
 
+  renderBackground() {
+    return (
+      <div className="portfolio-content description">
+        <Title
+          title="Background"
+        />
+        <div className="two-thirds text">
+          <p className="description-text">
+            In my Interaction Design 2 – Mobile course, our second project was to create a mobile app for an
+            elderly audience. I decided to design a travel app, keeping in mind that older travelers may have
+            additional needs that younger travelers do not have to consider.
+          </p>
+          <p className="description-text">
+            <strong>Tourzy</strong> is a “virtual tour guide” who helps you plan activities for your travels based on  
+            personal preferences and needs. The app responds to in-the-moment needs and makes suggestions
+            during your travels.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="tourzy-wrapper">
@@ -35,6 +57,7 @@ class TourzyPage extends React.Component {
         <div className="tourzy page">
           <ScrollUp />
           {this.renderProjectInfo()}
+          {this.renderBackground()}
         </div>
       </div>
     );
