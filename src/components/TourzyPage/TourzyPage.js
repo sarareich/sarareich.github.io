@@ -14,6 +14,7 @@ class TourzyPage extends React.Component {
     super();
     this.state = {
       taskLightboxIsOpen: false,
+      ideationLightboxIsOpen: false,
       photoIndex: 0
     };
 
@@ -138,14 +139,46 @@ class TourzyPage extends React.Component {
             />
           </div>
           <div className="two-thirds text">
-            Based on the interview, I created a task analysis chart including all of the tasks and subtasks
-            the interview participants went through while planning and going on a trip.
+            <p className="description-text">
+              Based on the interview, I created a task analysis chart including all of the tasks and subtasks
+              the interview participants went through while planning and going on a trip.
+            </p>
           </div>
           {
-            tourzyImages.taskAnalysis.map((image, index) => this.renderImageRow(image, index, "Task Analysis", "taskLightboxIsOpen", "two-thirds__center"))
+            tourzyImages.taskAnalysis.map((image, index) => this.renderImageRow(image, index, "Task Analysis", "taskLightboxIsOpen", "two-thirds__center shadow"))
           }
         </div>
         {this.renderLightbox(tourzyImages.taskAnalysis, taskLightboxIsOpen, "taskLightboxIsOpen", photoIndex)}
+      </div>
+    );
+  }
+
+  renderIdeation() {
+    const { photoIndex, ideationLightboxIsOpen } = this.state;
+    return (
+      <div className="user-research">
+        <div className="portfolio-content description">
+          <Title
+            title="Ideation"
+          />
+          <div className="two-thirds text">
+            <p className="description-text">
+              Using my task analysis chart, I began brainstorming service concepts and brand personalities. I identified
+              steps in the travel process that were especially complex or time-consuming and considered
+              what an elderly audience specifically would want from a travel app.
+            </p>
+            <p className="description-text">
+              My brainstorming led me to the idea of a "tour guide" who helps the user plan activities.
+              Given the additional needs of an elderly population, especially in terms of health and ability
+              to be active for long periods of the day, I chose to include features that help users plan around
+              and respond to their physical needs.
+            </p>
+          </div>
+          {
+            tourzyImages.brainstorming.map((image, index) => this.renderImageRow(image, index, "Brainstorming", "ideationLightboxIsOpen", "one-half__center"))
+          }
+        </div>
+        {this.renderLightbox(tourzyImages.brainstorming, ideationLightboxIsOpen, "ideationLightboxIsOpen", photoIndex)}
       </div>
     );
   }
@@ -159,6 +192,7 @@ class TourzyPage extends React.Component {
           {this.renderProjectInfo()}
           {this.renderBackground()}
           {this.renderUserResearch()}
+          {this.renderIdeation()}
         </div>
       </div>
     );
