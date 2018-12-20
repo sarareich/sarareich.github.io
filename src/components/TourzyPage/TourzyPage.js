@@ -15,6 +15,8 @@ class TourzyPage extends React.Component {
     this.state = {
       taskLightboxIsOpen: false,
       ideationLightboxIsOpen: false,
+      heroLightboxIsOpen: false,
+      storyLightboxIsOpen: false,
       photoIndex: 0
     };
 
@@ -156,7 +158,7 @@ class TourzyPage extends React.Component {
   renderIdeation() {
     const { photoIndex, ideationLightboxIsOpen } = this.state;
     return (
-      <div className="user-research">
+      <div className="ideation">
         <div className="portfolio-content description">
           <Title
             title="Ideation"
@@ -183,6 +185,48 @@ class TourzyPage extends React.Component {
     );
   }
 
+  renderStories() {
+    const { photoIndex, heroLightboxIsOpen, storyLightboxIsOpen } = this.state;
+    return (
+      <div className="user-stories">
+        <div className="portfolio-content description">
+          <Title
+            title="User Stories"
+          />
+          <div className="two-thirds text">
+            <p className="description-text">
+              Once I defined the app's service concept, I began thinking about use cases. I created a hero's journey
+              and a storyboard based on two users — an elderly couple named Maggie and Joe — and how the app
+              benefits them.
+            </p>
+          </div>
+        </div>
+        <div className="portfolio-content">
+          <div className="one-third text">
+            <Subtitle
+              subtitle="Hero's Journey"
+            />
+          </div>
+          {
+            tourzyImages.heroJourney.map((image, index) => this.renderImageRow(image, index, "Hero's Journey", "heroLightboxIsOpen", "two-thirds shadow"))
+          }
+        </div>
+        {this.renderLightbox(tourzyImages.heroJourney, heroLightboxIsOpen, "heroLightboxIsOpen", photoIndex)}
+        <div className="portfolio-content">
+          <div className="one-third text">
+            <Subtitle
+              subtitle="Storyboard"
+            />
+          </div>
+          {
+            tourzyImages.storyboard.map((image, index) => this.renderImageRow(image, index, "Storyboard", "storyLightboxIsOpen", "two-thirds shadow"))
+          }
+        </div>
+        {this.renderLightbox(tourzyImages.storyboard, storyLightboxIsOpen, "storyLightboxIsOpen", photoIndex)}
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="tourzy-wrapper">
@@ -193,6 +237,7 @@ class TourzyPage extends React.Component {
           {this.renderBackground()}
           {this.renderUserResearch()}
           {this.renderIdeation()}
+          {this.renderStories()}
         </div>
       </div>
     );
