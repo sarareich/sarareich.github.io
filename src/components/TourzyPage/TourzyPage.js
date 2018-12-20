@@ -50,12 +50,12 @@ class TourzyPage extends React.Component {
     });
   }
 
-  renderImageRow(image, index, altText, lightbox, desiredClass) {
+  renderImageRow(image, index, altText, lightbox, desiredClass, imageClass) {
     return (
       <div className={desiredClass} key={index}>
         <img
           src={image}
-          className="project-image__small zoom"
+          className={`project-image__small zoom ${imageClass}`}
           alt={altText}
           onClick={(event) => this.openLightbox(index, event, lightbox)}
         />
@@ -147,7 +147,7 @@ class TourzyPage extends React.Component {
             </p>
           </div>
           {
-            tourzyImages.taskAnalysis.map((image, index) => this.renderImageRow(image, index, "Task Analysis", "taskLightboxIsOpen", "two-thirds__center shadow"))
+            tourzyImages.taskAnalysis.map((image, index) => this.renderImageRow(image, index, "Task Analysis", "taskLightboxIsOpen", "two-thirds__center shadow", ""))
           }
         </div>
         {this.renderLightbox(tourzyImages.taskAnalysis, taskLightboxIsOpen, "taskLightboxIsOpen", photoIndex)}
@@ -177,7 +177,7 @@ class TourzyPage extends React.Component {
             </p>
           </div>
           {
-            tourzyImages.brainstorming.map((image, index) => this.renderImageRow(image, index, "Brainstorming", "ideationLightboxIsOpen", "one-half__center"))
+            tourzyImages.brainstorming.map((image, index) => this.renderImageRow(image, index, "Brainstorming", "ideationLightboxIsOpen", "one-half__center", "shadow"))
           }
         </div>
         {this.renderLightbox(tourzyImages.brainstorming, ideationLightboxIsOpen, "ideationLightboxIsOpen", photoIndex)}
@@ -208,7 +208,7 @@ class TourzyPage extends React.Component {
             />
           </div>
           {
-            tourzyImages.heroJourney.map((image, index) => this.renderImageRow(image, index, "Hero's Journey", "heroLightboxIsOpen", "two-thirds shadow"))
+            tourzyImages.heroJourney.map((image, index) => this.renderImageRow(image, index, "Hero's Journey", "heroLightboxIsOpen", "two-thirds shadow", ""))
           }
         </div>
         {this.renderLightbox(tourzyImages.heroJourney, heroLightboxIsOpen, "heroLightboxIsOpen", photoIndex)}
@@ -219,7 +219,7 @@ class TourzyPage extends React.Component {
             />
           </div>
           {
-            tourzyImages.storyboard.map((image, index) => this.renderImageRow(image, index, "Storyboard", "storyLightboxIsOpen", "two-thirds shadow"))
+            tourzyImages.storyboard.map((image, index) => this.renderImageRow(image, index, "Storyboard", "storyLightboxIsOpen", "two-thirds shadow", ""))
           }
         </div>
         {this.renderLightbox(tourzyImages.storyboard, storyLightboxIsOpen, "storyLightboxIsOpen", photoIndex)}

@@ -49,12 +49,12 @@ class DoughPage extends React.Component {
     });
   }
 
-  renderImageRow(image, index, altText, lightbox, desiredClass) {
+  renderImageRow(image, index, altText, lightbox, desiredClass, imageClass) {
     return (
       <div className={desiredClass} key={index}>
         <img
           src={image}
-          className="project-image__small zoom"
+          className={`project-image__small zoom ${imageClass}`}
           alt={altText}
           onClick={(event) => this.openLightbox(index, event, lightbox)}
         />
@@ -127,7 +127,7 @@ class DoughPage extends React.Component {
             </p>
           </div>
           {
-            doughImages.interactionFlow.map((image, index) => this.renderImageRow(image, index, "Interaction Flow", "workflowLightboxIsOpen", "one-half__center"))
+            doughImages.interactionFlow.map((image, index) => this.renderImageRow(image, index, "Interaction Flow", "workflowLightboxIsOpen", "one-half__center", "shadow"))
           }
         </div>
         {this.renderLightbox(doughImages.interactionFlow, workflowLightboxIsOpen, "workflowLightboxIsOpen", photoIndex)}
@@ -155,7 +155,7 @@ class DoughPage extends React.Component {
             </p>
           </div>
           {
-            doughImages.uiSpec.map((image, index) => this.renderImageRow(image, index, "Interaction Flow", "uiSpecLightboxIsOpen", "full-width"))
+            doughImages.uiSpec.map((image, index) => this.renderImageRow(image, index, "Interaction Flow", "uiSpecLightboxIsOpen", "full-width", ""))
           }
         </div>
         {this.renderLightbox(doughImages.uiSpec, uiSpecLightboxIsOpen, "uiSpecLightboxIsOpen", photoIndex)}
@@ -179,7 +179,7 @@ class DoughPage extends React.Component {
           </p>
         </div>
         {
-          doughImages.paperPrototype.map((image, index) => this.renderImageRow(image, index, "Paper Prototype", "prototypeLightboxIsOpen", "one-half__center"))
+          doughImages.paperPrototype.map((image, index) => this.renderImageRow(image, index, "Paper Prototype", "prototypeLightboxIsOpen", "one-half__center", "shadow"))
         }
       </div>
       {this.renderLightbox(doughImages.paperPrototype, prototypeLightboxIsOpen, "prototypeLightboxIsOpen", photoIndex)}
@@ -201,7 +201,7 @@ class DoughPage extends React.Component {
             </p>
           </div>
           {
-            doughImages.interface.map((image, index) => this.renderImageRow(image, index, "User Interface", "uiLightboxIsOpen", "full-width column"))
+            doughImages.interface.map((image, index) => this.renderImageRow(image, index, "User Interface", "uiLightboxIsOpen", "full-width column", ""))
           }
         </div>
         {this.renderLightbox(doughImages.interface, uiLightboxIsOpen, "uiLightboxIsOpen", photoIndex)}
