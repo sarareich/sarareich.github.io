@@ -8,6 +8,7 @@ import Title from '../common/ProjectAssets/Title';
 import Subtitle from '../common/ProjectAssets/Subtitle';
 import projectInfo from '../../constants/projectInfo';
 import TourzyHero from '../../assets/Tourzy/tourzyHero.jpg';
+import UISpec from '../../assets/Tourzy/UISpec.pdf';
 
 class TourzyPage extends React.Component {
   constructor() {
@@ -17,6 +18,7 @@ class TourzyPage extends React.Component {
       ideationLightboxIsOpen: false,
       heroLightboxIsOpen: false,
       storyLightboxIsOpen: false,
+      uiSpecLightboxIsOpen: false,
       photoIndex: 0
     };
 
@@ -227,6 +229,35 @@ class TourzyPage extends React.Component {
     );
   }
 
+  renderUISpec() {
+    const { photoIndex, uiSpecLightboxIsOpen } = this.state;
+    return (
+      <div className="UI-spec">
+        <div className="portfolio-content description">
+          <Title
+            title="User Interface Spec"
+          />
+          <div className="two-thirds text">
+            <p className="description-text">
+              I then moved on to creating the workflows and wireframes for my app. I used the wireframes for
+              user interface specifications which detail interactions and navigation between screens. You can
+              view the full-sized version of the file <a href={UISpec} target="blank" className="link">here</a>.
+            </p>
+            <p className="description-text">
+              The main functions of the app are choosing your preferred activities and additional needs,
+              creating trips and itineraries, and editing your itinerary either in response to in-the-moment
+              events or to better suit your preferences.
+            </p>
+          </div>
+          {
+            tourzyImages.uiSpec.map((image, index) => this.renderImageRow(image, index, "Interaction Flow", "uiSpecLightboxIsOpen", "full-width", ""))
+          }
+        </div>
+        {this.renderLightbox(tourzyImages.uiSpec, uiSpecLightboxIsOpen, "uiSpecLightboxIsOpen", photoIndex)}
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="tourzy-wrapper">
@@ -238,6 +269,7 @@ class TourzyPage extends React.Component {
           {this.renderUserResearch()}
           {this.renderIdeation()}
           {this.renderStories()}
+          {this.renderUISpec()}
         </div>
       </div>
     );
