@@ -66,6 +66,12 @@
   }
 }
 
+.video-container {
+  max-height: 770px;
+  overflow: hidden;
+}
+
 .video {
+  margin-top: -5px;
   width: 100%;
 }

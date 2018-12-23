@@ -9,6 +9,11 @@ import Subtitle from '../common/ProjectAssets/Subtitle';
 import projectInfo from '../../constants/projectInfo';
 import TourzyHero from '../../assets/Tourzy/tourzyHero.jpg';
 import UISpec from '../../assets/Tourzy/UISpec.pdf';
+import AlertVideo from '../../assets/Tourzy/Videos/alert.mp4';
+import EditTripVideo from '../../assets/Tourzy/Videos/editTrip.mp4';
+import ItineraryVideo from '../../assets/Tourzy/Videos/itinerary.mp4';
+import NewTripVideo from '../../assets/Tourzy/Videos/newTrip.mp4';
+import PreferencesVideo from '../../assets/Tourzy/Videos/preferences.mp4';
 
 class TourzyPage extends React.Component {
   constructor() {
@@ -95,6 +100,16 @@ class TourzyPage extends React.Component {
         subtitle="Interaction Design 2: Mobile"
         summaryInfo={projectInfo.tourzyProjectInfo}
       />
+    );
+  }
+
+  renderVideo(videoSource) {
+    return (
+      <div className="one-fourth__center video-container">
+        <video autoplay="true" loop="true" className="video">
+          <source type="video/mp4" src={videoSource}/>
+        </video>
+      </div>
     );
   }
 
@@ -258,6 +273,99 @@ class TourzyPage extends React.Component {
     );
   }
 
+  renderPrototypes() {
+    return (
+      <div className="prototypes">
+        <div className="portfolio-content description">
+          <Title
+            title="UI & Prototypes"
+          />
+          <div className="two-thirds text">
+            <p className="description-text">
+              After conducting user tests with the wireframes I created, I moved on to visual design and developing
+              prototypes for the main workflows of the app.
+            </p>
+          </div>
+        </div>
+        <div className="portfolio-content description">
+          <div className="one-third text">
+            <Subtitle
+              subtitle="Onboarding"
+            />
+          </div>
+          <div className="two-thirds text">
+            <p className="description-text">
+              During their first time using the app, users are asked to input their preferred travel activities
+              and any additional needs they have.
+            </p>
+          </div>
+          {this.renderVideo(PreferencesVideo)}
+        </div>
+        <div className="portfolio-content description">
+          <div className="one-third text">
+            <Subtitle
+              subtitle="Create Itinerary"
+            />
+          </div>
+          <div className="two-thirds text">
+            <p className="description-text">
+              Users can add trips to the app, including the locations, dates, and where they are staying.
+              Adding a trip allows them to generate a personalized itinerary based on the preferences they
+              entered during onboarding.
+            </p>
+          </div>
+          {this.renderVideo(NewTripVideo)}
+        </div>
+        <div className="portfolio-content description">
+          <div className="one-third text">
+            <Subtitle
+              subtitle="Edit Itinerary"
+            />
+          </div>
+          <div className="two-thirds text">
+            <p className="description-text">
+              Itineraries can easily be edited in the app. Users can reorder, delete, or reschedule activities.
+              Below, you can see the workflow for rescheduling activities. Users can either choose a new date and
+              time themselves or have the app suggest a new date and time.
+            </p>
+          </div>
+          {this.renderVideo(EditTripVideo)}
+        </div>
+        <div className="portfolio-content description">
+          <div className="one-third text">
+            <Subtitle
+              subtitle="Alerts"
+            />
+          </div>
+          <div className="two-thirds text">
+            <p className="description-text">
+              Tourzy will alert the user if one of the activities in their itinerary may need to change,
+              such as in the case of inclement weather. The app enables users to search for activities
+              on their own or use a suggested activity.
+            </p>
+          </div>
+          {this.renderVideo(AlertVideo)}
+        </div>
+        <div className="portfolio-content description">
+          <div className="one-third text">
+            <Subtitle
+              subtitle="Itinerary Views"
+            />
+          </div>
+          <div className="two-thirds text">
+            <p className="description-text">
+              Users can choose from three different itinerary views: list, map, and schedule. The schedule view
+              was added after user testing, when one of the participants noted that being able to scroll through
+              all of the activities on one page would be useful when deciding on a date and time to reschedule
+              activities in the itinerary.
+            </p>
+          </div>
+          {this.renderVideo(ItineraryVideo)}
+        </div>
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="tourzy-wrapper">
@@ -270,6 +378,7 @@ class TourzyPage extends React.Component {
           {this.renderIdeation()}
           {this.renderStories()}
           {this.renderUISpec()}
+          {this.renderPrototypes()}
         </div>
       </div>
     );
