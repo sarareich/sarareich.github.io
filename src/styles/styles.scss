@@ -143,7 +143,7 @@ body {
   grid-column: 4 / 10;
 }
 
-.one-fourth__center {
+.one-third__center {
   grid-column: 5 / 9;
 }
 
@@ -170,6 +170,10 @@ body {
     margin-left: 1rem;
   }
 
+  .one-third__center {
+    grid-column: 4 / 10;
+  }
+
   .three-columns {
     .one-third:last-child {
       grid-column: 3 / 9;
@@ -194,6 +198,10 @@ body {
   .two-thirds__center,
   .one-half__center {
     grid-column: span 12;
+  }
+
+  .one-third__center {
+    grid-column: 3 / 11;
   }
 
   .one-sixth {

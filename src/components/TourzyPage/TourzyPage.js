@@ -105,7 +105,7 @@ class TourzyPage extends React.Component {
 
   renderVideo(videoSource) {
     return (
-      <div className="one-fourth__center video-container">
+      <div className="one-third__center video-container">
         <video autoplay="true" loop="true" className="video">
           <source type="video/mp4" src={videoSource}/>
         </video>
