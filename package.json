@@ -10,10 +10,11 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-image-lightbox": "^5.0.0",
+    "react-on-screen": "^2.1.1",
     "react-responsive-carousel": "^3.1.43",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4",
+    "react-scripts": "2.1.2",
     "react-scroll-up-button": "^1.6.4"
   },
   "scripts": {
@@ -27,5 +28,11 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build",
     "eject": "react-scripts eject"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
