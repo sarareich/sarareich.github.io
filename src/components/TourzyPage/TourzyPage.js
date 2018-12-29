@@ -230,7 +230,7 @@ class TourzyPage extends React.Component {
             />
           </div>
           {
-            tourzyImages.heroJourney.map((image, index) => this.renderImageRow(image, index, "Hero's Journey", "heroLightboxIsOpen", "two-thirds shadow", ""))
+            tourzyImages.heroJourney.map((image, index) => this.renderImageRow(image, index, "Hero's Journey", "heroLightboxIsOpen", "two-thirds shadow text", ""))
           }
         </div>
         {this.renderLightbox(tourzyImages.heroJourney, heroLightboxIsOpen, "heroLightboxIsOpen", photoIndex)}
@@ -241,7 +241,7 @@ class TourzyPage extends React.Component {
             />
           </div>
           {
-            tourzyImages.storyboard.map((image, index) => this.renderImageRow(image, index, "Storyboard", "storyLightboxIsOpen", "two-thirds shadow", ""))
+            tourzyImages.storyboard.map((image, index) => this.renderImageRow(image, index, "Storyboard", "storyLightboxIsOpen", "two-thirds shadow text", ""))
           }
         </div>
         {this.renderLightbox(tourzyImages.storyboard, storyLightboxIsOpen, "storyLightboxIsOpen", photoIndex)}

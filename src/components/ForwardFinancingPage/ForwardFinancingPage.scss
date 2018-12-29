@@ -69,10 +69,15 @@
 .video-container {
   max-height: 885px;
   overflow: hidden;
+  padding: 1.5rem;
+
+  @include bp(tab-portrait) {
+    padding: 0;
+  }
 }
 
 .video {
-  margin-top: -5px;
+  margin-top: -29px;
   width: 100%;
 
   @include bp(tab-portrait) {
