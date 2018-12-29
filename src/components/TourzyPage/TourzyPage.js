@@ -11,6 +11,7 @@ import Subtitle from '../common/ProjectAssets/Subtitle';
 import projectInfo from '../../constants/projectInfo';
 import TourzyHero from '../../assets/Tourzy/tourzyHero.jpg';
 import UISpec from '../../assets/Tourzy/UISpec.pdf';
+import Artboards from '../../assets/Tourzy/artboards.pdf';
 import AlertVideo from '../../assets/Tourzy/Videos/alert.mp4';
 import EditTripVideo from '../../assets/Tourzy/Videos/editTrip.mp4';
 import ItineraryVideo from '../../assets/Tourzy/Videos/itinerary.mp4';
@@ -287,8 +288,9 @@ class TourzyPage extends React.Component {
           />
           <div className="two-thirds text">
             <p className="description-text">
-              After conducting user tests with the wireframes I created, I moved on to visual design and developing
-              prototypes for the main workflows of the app.
+              After conducting user tests with the wireframes I created, I moved on to visual design in Sketch and developing
+              prototypes for the main workflows of the app in InVision. You can view all of the Sketch
+              artboards <a href={Artboards} target="blank" className="link">here</a>.
             </p>
           </div>
         </div>
