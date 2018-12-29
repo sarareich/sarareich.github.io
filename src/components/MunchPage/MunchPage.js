@@ -215,7 +215,7 @@ class MunchPage extends React.Component {
             </p>
           </div>
           <div className="two-thirds__center shadow">
-            <Carousel showThumbs={false} dynamicHeight={true}>
+            <Carousel dynamicHeight={true}>
               {munchImages.sketches.map((image, index) => this.renderCarouselImages(image, index, "Munch Sketch"))}
             </Carousel>
           </div>

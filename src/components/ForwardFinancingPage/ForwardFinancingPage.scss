@@ -66,6 +66,10 @@
   }
 }
 
+.video {
+  width: 100%;
+}
+
 .video-container {
   max-height: 885px;
   overflow: hidden;
@@ -76,7 +80,7 @@
   }
 }
 
-.video {
+.video-margin {
   margin-top: -29px;
   width: 100%;
 

@@ -247,6 +247,10 @@ body {
   background: rgba(255, 255, 255, .5) !important;
 }
 
+.carousel .thumbs {
+  text-align: center;
+}
+
 @import '../components/Header/Header.scss';
 @import '../components/Footer/Footer.scss';
 @import '../components/HomePage/HomePage.scss';

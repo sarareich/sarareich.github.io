@@ -16,7 +16,7 @@ class Video extends React.Component {
 
   render() {
     return (
-      <video autoPlay loop className="video" ref={this.videoRef}>
+      <video autoPlay loop className="video-margin" ref={this.videoRef}>
         <source type="video/mp4" src={this.props.source} />
       </video>
     );
