@@ -1,7 +1,8 @@
 import React from 'react';
-import TrackVisibility from 'react-on-screen';
+import VisibilitySensor from 'react-visibility-sensor';
 import ScrollUp from '../common/ScrollUp/ScrollUp';
 import LightBox from '../common/Lightbox/Lightbox';
+import Video from '../common/Video/Video';
 import tourzyImages from '../../constants/tourzyImages';
 import Hero from '../common/Hero/Hero';
 import ProjectInfo from '../common/ProjectInfo/ProjectInfo';
@@ -106,16 +107,14 @@ class TourzyPage extends React.Component {
 
   renderVideo(videoSource) {
     return (
-      <div className="one-third__center video-container">
-        <TrackVisibility once>
-        {
-          ({ isVisible }) => isVisible &&
-          <video autoPlay="true" loop="true" className="video">
-            <source type="video/mp4" src={videoSource}/>
-          </video>
-        }
-        </TrackVisibility>
-      </div>
+      <VisibilitySensor minTopValue="200" partialVisibility={true}>
+       {
+         ({isVisible}) =>
+            <div className="one-third__center video-container">
+              <Video active={isVisible} source={videoSource} />
+            </div>
+       }
+      </VisibilitySensor>
     );
   }
 
