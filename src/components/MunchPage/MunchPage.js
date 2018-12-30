@@ -214,10 +214,8 @@ class MunchPage extends React.Component {
               <strong> search features</strong> to make it easy for users to find new restaurants.
             </p>
           </div>
-        </div>
-        <div className="portfolio-content">
           <div className="two-thirds__center shadow">
-            <Carousel showThumbs={false} dynamicHeight={true}>
+            <Carousel dynamicHeight={true}>
               {munchImages.sketches.map((image, index) => this.renderCarouselImages(image, index, "Munch Sketch"))}
             </Carousel>
           </div>

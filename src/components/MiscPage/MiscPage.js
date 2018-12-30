@@ -56,7 +56,7 @@ class MiscPage extends React.Component {
           </p>
         </div>
         <div className="two-thirds__center">
-          <Carousel showThumbs={false} dynamicHeight={false}>
+          <Carousel dynamicHeight={false}>
             {miscImages.impact.map((image, index) => this.renderCarouselImages(image, index, "What's Your Impact?"))}
           </Carousel>
         </div>
@@ -78,7 +78,7 @@ class MiscPage extends React.Component {
           </p>
         </div>
         <div className="two-thirds__center">
-          <Carousel showThumbs={false} dynamicHeight={true}>
+          <Carousel dynamicHeight={true}>
             {miscImages.cookieCatcher.map((image, index) => this.renderCarouselImages(image, index, "Cookie Catcher"))}
           </Carousel>
         </div>

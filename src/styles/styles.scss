@@ -143,6 +143,10 @@ body {
   grid-column: 4 / 10;
 }
 
+.one-third__center {
+  grid-column: 5 / 9;
+}
+
 .full-width {
   grid-column: span 12;
 
@@ -164,6 +168,10 @@ body {
 
   .two-thirds {
     margin-left: 1rem;
+  }
+
+  .one-third__center {
+    grid-column: 4 / 10;
   }
 
   .three-columns {
@@ -190,6 +198,10 @@ body {
   .two-thirds__center,
   .one-half__center {
     grid-column: span 12;
+  }
+
+  .one-third__center {
+    grid-column: 3 / 11;
   }
 
   .one-sixth {
@@ -233,6 +245,10 @@ body {
 
 .carousel.carousel-slider .control-arrow:hover {
   background: rgba(255, 255, 255, .5) !important;
+}
+
+.carousel .thumbs {
+  text-align: center;
 }
 
 @import '../components/Header/Header.scss';
