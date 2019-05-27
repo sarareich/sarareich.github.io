@@ -12,7 +12,8 @@ import MunchPage from './components/MunchPage/MunchPage';
 import MiscPage from './components/MiscPage/MiscPage';
 import DoughPage from './components/DoughPage/DoughPage';
 import TourzyPage from './components/TourzyPage/TourzyPage';
-import ScrollToTop from './components/common/ScrollToTop/ScrollToTop'
+import MindfullyPage from './components/MindfullyPage/MindfullyPage';
+import ScrollToTop from './components/common/ScrollToTop/ScrollToTop';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -25,6 +26,7 @@ ReactDOM.render(
           <Route path="/work/miscellaneous" component={MiscPage}/>
           <Route path="/work/dough" component={DoughPage}/>
           <Route path="/work/tourzy" component={TourzyPage}/>
+          <Route path="/work/mindfully" component={MindfullyPage}/>
           <Route path="/about" component={AboutPage}/>
         </div>
       </App>
