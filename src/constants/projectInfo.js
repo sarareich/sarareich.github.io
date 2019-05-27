@@ -22,5 +22,11 @@ export default {
     {title: 'Roles', description: 'User Research, Wireframing, User Testing, Interface Design, Branding'},
     {title: 'Timeline', description: 'November – December 2018'},
     {title: 'Tools', description: 'Sketch, Illustrator'}
+  ],
+  mindfullyProjectInfo: [
+    {title: 'Roles', description: 'User Research, Wireframing, Prototyping, User Testing, Interface Design, Branding, Front End Development'},
+    {title: 'Timeline', description: 'October 2018 – April 2019'},
+    {title: 'Tools', description: 'Sketch, InVision, React, JavaScript, CSS'},
+    {title: 'Team', description: 'Emily Boyle, Madeline Sullivan, Christine Taing'}
   ]
 };
