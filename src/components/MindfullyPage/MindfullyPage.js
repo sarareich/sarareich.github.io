@@ -16,7 +16,8 @@ class MindfullyPage extends React.Component {
   constructor() {
     super();
     this.state = {
-      researchLightboxIsOpen: false
+      posterLightboxIsOpen: false,
+      personaLightboxIsOpen: false
     };
 
     this.openLightbox = this.openLightbox.bind(this);
@@ -157,7 +158,6 @@ class MindfullyPage extends React.Component {
   }
 
   renderResearch() {
-    const { photoIndex, researchLightboxIsOpen } = this.state;
     return (
       <div className="user-research">
         <div className="portfolio-content description">
@@ -183,7 +183,6 @@ class MindfullyPage extends React.Component {
   }
 
   renderIdeation() {
-    const { photoIndex, researchLightboxIsOpen } = this.state;
     return (
       <div className="user-research">
         <div className="portfolio-content description">
@@ -256,6 +255,51 @@ class MindfullyPage extends React.Component {
     );
   }
 
+  renderRefinement() {
+    const { photoIndex, posterLightboxIsOpen, personaLightboxIsOpen } = this.state;
+    return (
+      <div className="user-research">
+        <div className="portfolio-content description">
+          <Title
+            title="Refinement"
+          />
+          <div className="two-thirds text">
+            <p className="description-text">
+              We decided to move forward with the mental health aspect of early education as an area with the
+              greatest opportunity for an innovative interactive design. After conducting further research, we
+              shifted our focus from meditation to incorporating <strong>mindfulness</strong> and
+              <strong> emotional literacy</strong> into the classroom experience.
+            </p>
+          </div>
+          {
+            mindfullyImages.poster.map((image, index) => this.renderImageRow(image, index, "Research Summary", "posterLightboxIsOpen", "two-thirds__center", ""))
+          }
+        </div>
+        {this.renderLightbox(mindfullyImages.poster, posterLightboxIsOpen, "posterLightboxIsOpen", photoIndex)}
+
+        <div className="portfolio-content description">
+          <div className="one-third text">
+            <Subtitle
+              subtitle="Use Case & Personas"
+            />
+          </div>
+          <div className="two-thirds text">
+            <p className="description-text">
+              We defined our key users as students in grades K-5 who have difficultly expressing and managing their
+              emotions, which may lead to disruptive behavior and difficulty concentrating in class. We wanted to create
+              an application that could be used for a few minutes at a time inside the classroom whenever a student is
+              distracted or stressed.
+            </p>
+          </div>
+          {
+            mindfullyImages.personas.map((image, index) => this.renderImageRow(image, index, "Persona", "personaLightboxIsOpen", "one-fourth column", "shadow"))
+          }
+        </div>
+        {this.renderLightbox(mindfullyImages.personas, personaLightboxIsOpen, "personaLightboxIsOpen", photoIndex)}
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="mindfully-wrapper">
@@ -266,6 +310,7 @@ class MindfullyPage extends React.Component {
           {this.renderBackground()}
           {this.renderResearch()}
           {this.renderIdeation()}
+          {this.renderRefinement()}
         </div>
       </div>
     );

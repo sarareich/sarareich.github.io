@@ -16,10 +16,17 @@ import Meditation3 from '../assets/Mindfully/Meditation/Meditation3.jpg';
 import Meditation4 from '../assets/Mindfully/Meditation/Meditation4.jpg';
 import Meditation5 from '../assets/Mindfully/Meditation/Meditation5.jpg';
 import Meditation6 from '../assets/Mindfully/Meditation/Meditation6.jpg';
+import ResearchPoster from '../assets/Mindfully/ResearchPoster.jpg';
+import Persona1 from '../assets/Mindfully/Personas/Persona1.jpg';
+import Persona2 from '../assets/Mindfully/Personas/Persona2.jpg';
+import Persona3 from '../assets/Mindfully/Personas/Persona3.jpg';
+import Persona4 from '../assets/Mindfully/Personas/Persona4.jpg';
 
 export default {
   research: [ResearchQuestions, Interviews, SecondaryResearch],
   parentNetwork: [Network1, Network2, Network3, Network4, Network5],
   curriculum: [Curriculum1, Curriculum2, Curriculum3, Curriculum4],
-  meditation: [Meditation1, Meditation2, Meditation3, Meditation4, Meditation5, Meditation6]
+  meditation: [Meditation1, Meditation2, Meditation3, Meditation4, Meditation5, Meditation6],
+  poster: [ResearchPoster],
+  personas: [Persona1, Persona2, Persona3, Persona4]
 }

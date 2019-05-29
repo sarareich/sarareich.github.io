@@ -59,12 +59,12 @@ class MunchPage extends React.Component {
     });
   }
 
-  renderImageRow(image, index, altText, lightbox, desiredClass) {
+  renderImageRow(image, index, altText, lightbox, desiredClass, imageClass) {
     return (
       <div className={desiredClass} key={index}>
         <img
           src={image}
-          className="project-image__small zoom"
+          className={`project-image__small zoom ${imageClass}`}
           alt={altText}
           onClick={(event) => this.openLightbox(index, event, lightbox)}
         />
@@ -166,7 +166,7 @@ class MunchPage extends React.Component {
           </div>
           <div className="portfolio-content three-columns">
             {
-              munchImages.personaImages.map((image, index) => this.renderImageRow(image, index, "Persona", "personaLightboxIsOpen", "one-third column"))
+              munchImages.personaImages.map((image, index) => this.renderImageRow(image, index, "Persona", "personaLightboxIsOpen", "one-third column", "shadow"))
             }
           </div>
           {this.renderLightbox(munchImages.personaImages, personaLightboxIsOpen, "personaLightboxIsOpen", photoIndex)}
