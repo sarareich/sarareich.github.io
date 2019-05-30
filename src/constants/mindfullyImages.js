@@ -21,6 +21,12 @@ import Persona1 from '../assets/Mindfully/Personas/Persona1.jpg';
 import Persona2 from '../assets/Mindfully/Personas/Persona2.jpg';
 import Persona3 from '../assets/Mindfully/Personas/Persona3.jpg';
 import Persona4 from '../assets/Mindfully/Personas/Persona4.jpg';
+import Wireframe1 from '../assets/Mindfully/Wireframes/Wireframe1.png';
+import Wireframe2 from '../assets/Mindfully/Wireframes/Wireframe2.png';
+import Wireframe3 from '../assets/Mindfully/Wireframes/Wireframe3.png';
+import Wireframe4 from '../assets/Mindfully/Wireframes/Wireframe4.png';
+import Wireframe5 from '../assets/Mindfully/Wireframes/Wireframe5.png';
+import Wireframe6 from '../assets/Mindfully/Wireframes/Wireframe6.png';
 
 export default {
   research: [ResearchQuestions, Interviews, SecondaryResearch],
@@ -28,5 +34,6 @@ export default {
   curriculum: [Curriculum1, Curriculum2, Curriculum3, Curriculum4],
   meditation: [Meditation1, Meditation2, Meditation3, Meditation4, Meditation5, Meditation6],
   poster: [ResearchPoster],
-  personas: [Persona1, Persona2, Persona3, Persona4]
+  personas: [Persona1, Persona2, Persona3, Persona4],
+  wireframes: [Wireframe1, Wireframe2, Wireframe3, Wireframe4, Wireframe5, Wireframe6]
 }

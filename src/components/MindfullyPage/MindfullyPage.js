@@ -184,7 +184,7 @@ class MindfullyPage extends React.Component {
 
   renderIdeation() {
     return (
-      <div className="user-research">
+      <div className="ideation">
         <div className="portfolio-content description">
           <Title
             title="Ideation"
@@ -258,7 +258,7 @@ class MindfullyPage extends React.Component {
   renderRefinement() {
     const { photoIndex, posterLightboxIsOpen, personaLightboxIsOpen } = this.state;
     return (
-      <div className="user-research">
+      <div className="refinement">
         <div className="portfolio-content description">
           <Title
             title="Refinement"
@@ -300,6 +300,30 @@ class MindfullyPage extends React.Component {
     );
   }
 
+  renderWireframes() {
+    return(
+      <div className="wireframes">
+        <div className="portfolio-content description">
+          <Title
+            title="Wireframes"
+          />
+          <div className="two-thirds text">
+            <p className="description-text">
+              After additional rounds of sketching and idea refinement, we created mid-fidelity wireframes to
+              showcase the key features of the app. The app came to focus on emotional identification and emotional
+              management through various activities.
+            </p>
+          </div>
+          <div className="two-thirds__center shadow">
+            <Carousel dynamicHeight={false}>
+              {mindfullyImages.wireframes.map((image, index) => this.renderCarouselImages(image, index, "Wireframes"))}
+            </Carousel>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="mindfully-wrapper">
@@ -311,6 +335,7 @@ class MindfullyPage extends React.Component {
           {this.renderResearch()}
           {this.renderIdeation()}
           {this.renderRefinement()}
+          {this.renderWireframes()}
         </div>
       </div>
     );
